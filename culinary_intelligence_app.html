@@ -1830,6 +1830,10 @@ details.rationale-drawer {
   margin-top: 4px;
 }
 
+.compact-item-row details.rationale-drawer[open] {
+  width: 100%;
+}
+
 details.rationale-drawer > summary::-webkit-details-marker {
   display: none;
 }
@@ -10026,6 +10030,10 @@ details.rationale-drawer {
   margin-top: 4px;
 }
 
+.compact-item-row details.rationale-drawer[open] {
+  width: 100%;
+}
+
 details.rationale-drawer > summary::-webkit-details-marker {
   display: none;
 }
@@ -10736,7 +10744,7 @@ class CulinaryAppController {
             const evalPreview = this.engine.evaluateDish(draft, { limit: 6 });
             const previewRecList = evalPreview.ingredientRecs?.recommendations || [];
             for (const rec of previewRecList.slice(0, 3)) {
-              draft = addIngredientToDish(this.graph, draft, rec.id, {
+              draft = addIngredientToDish(this.graph, draft, rec.candidateId || rec.id, {
                 role: rec.suggestedRole || "supporting_component",
                 preparation: rec.suggestedPreparation || "raw",
                 isOverride: false
@@ -12241,27 +12249,38 @@ class CulinaryAppController {
                 .slice(0, 4)
                 .map(
                   (rec) => `
-                <div class="compact-item-row" style="margin-bottom: 6px;">
-                  <div style="display: flex; align-items: center; gap: 8px; min-width: 0; flex: 1 1 auto;">
-                    <strong style="white-space: nowrap;">${escapeHtml(rec.name)}</strong>
-                    <span class="badge badge-strong">${rec.totalScore}% Match</span>
-                    <details class="rationale-drawer">
-                      <summary class="btn-why-toggle" data-action="toggle-rationale-detail">Why? ▾</summary>
-                      <div class="rationale-expanded">${escapeHtml(rec.explanation)}</div>
-                    </details>
+                <div class="compact-item-row" style="margin-bottom: 6px; flex-direction: column; align-items: stretch;">
+                  <div style="display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; width: 100%;">
+                    <div style="display: flex; align-items: center; gap: 8px; min-width: 0; flex: 1 1 auto; flex-wrap: wrap;">
+                      <strong style="white-space: nowrap; margin-top: 1px;">${escapeHtml(rec.name)}</strong>
+                      <span class="badge badge-strong" style="margin-top: 1px;">${rec.totalScore}% Match</span>
+                      <details class="rationale-drawer" style="margin-top: 0;">
+                        <summary class="btn-why-toggle">Why? ▾</summary>
+                        <div class="rationale-expanded" style="margin-top: 6px;">
+                          <p class="rec-explanation" style="margin: 0 0 4px 0; font-size: 12px; line-height: 1.45;">
+                            ${escapeHtml(rec.primaryExplanation || rec.explanation || "Harmonious flavor profile and structural affinity.")}
+                          </p>
+                          ${(rec.explanationCategories || []).length > 0 ? `
+                            <div class="rec-tags-row" style="margin-top: 4px;">
+                              ${(rec.explanationCategories || []).map((cat) => `<span class="tag-pill">${escapeHtml(cat)}</span>`).join("")}
+                            </div>
+                          ` : ""}
+                        </div>
+                      </details>
+                    </div>
+                    <button
+                      type="button"
+                      class="btn btn-sm btn-secondary"
+                      style="white-space: nowrap; flex-shrink: 0;"
+                      data-action="home-launch-pair-with-anchor"
+                      data-anchor-id="${escapeHtml(spotlightIng.id)}"
+                      data-pair-id="${escapeHtml(rec.candidateId || rec.id)}"
+                      data-role="${escapeHtml(rec.suggestedRole || "supporting_component")}"
+                      data-prep="${escapeHtml(rec.suggestedPreparation || "raw")}"
+                    >
+                      + Pair
+                    </button>
                   </div>
-                  <button
-                    type="button"
-                    class="btn btn-sm btn-secondary"
-                    style="white-space: nowrap;"
-                    data-action="home-launch-pair-with-anchor"
-                    data-anchor-id="${escapeHtml(spotlightIng.id)}"
-                    data-pair-id="${escapeHtml(rec.id)}"
-                    data-role="${escapeHtml(rec.suggestedRole || "supporting_component")}"
-                    data-prep="${escapeHtml(rec.suggestedPreparation || "raw")}"
-                  >
-                    + Pair
-                  </button>
                 </div>
               `
                 )

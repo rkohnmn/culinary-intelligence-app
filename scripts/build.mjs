@@ -132,17 +132,18 @@ const bootstrapCode = `
 
 fs.writeFileSync(path.join(distDir, "assets/app.bundle.js"), bootstrapCode.trim() + "\n");
 
+const buildTime = Date.now();
 const distIndexHtml = `<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Culinary Intelligence, Recipe Discovery &amp; Menu Building Workbench</title>
-  <link rel="stylesheet" href="./assets/styles.css" />
+  <link rel="stylesheet" href="./assets/styles.css?v=${buildTime}" />
 </head>
 <body>
   <div id="app-root"></div>
-  <script src="./assets/app.bundle.js"></script>
+  <script src="./assets/app.bundle.js?v=${buildTime}"></script>
 </body>
 </html>
 `;

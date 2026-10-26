@@ -1829,6 +1829,10 @@ details.rationale-drawer {
   margin-top: 4px;
 }
 
+.compact-item-row details.rationale-drawer[open] {
+  width: 100%;
+}
+
 details.rationale-drawer > summary::-webkit-details-marker {
   display: none;
 }
