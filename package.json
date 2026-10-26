@@ -7,12 +7,13 @@
   "scripts": {
     "validate:data": "node scripts/validate_data.mjs",
     "typecheck": "node scripts/typecheck.mjs",
-    "test": "node --test tests/engine.test.mjs tests/menu_storage_ai.test.mjs tests/audit_adversarial.test.mjs tests/parser.test.js",
+    "test": "node --test tests/engine.test.mjs tests/menu_storage_ai.test.mjs tests/audit_adversarial.test.mjs tests/parser.test.js tests/phase2_recipes.test.mjs",
     "test:e2e": "python3 scripts/e2e_browser_test.py",
     "benchmark": "node scripts/benchmark.mjs",
     "build": "node scripts/build.mjs",
     "verify": "npm run validate:data && npm run typecheck && npm run test && npm run build"
   },
+  "dependencies": {},
   "engines": {
     "node": ">=18.0.0"
   },

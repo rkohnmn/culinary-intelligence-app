@@ -974,6 +974,18 @@ body {
   border-radius: var(--radius-xs);
 }
 
+.tag-pill-clickable {
+  cursor: pointer;
+  background-color: var(--color-surface);
+  transition: all 120ms var(--ease-out-expo);
+}
+
+.tag-pill-clickable:hover {
+  background-color: var(--color-surface-sunken);
+  color: var(--color-text);
+  border-color: var(--color-text-muted);
+}
+
 .custom-sauce-box, .storage-disclosure-box {
   margin-top: 10px;
   padding: 10px 12px;

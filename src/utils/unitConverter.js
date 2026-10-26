@@ -286,9 +286,17 @@ export function scaleRecipeIngredients(
  */
 export function formatTemperatureForSystem(text, unitSystem = "original") {
   if (!text || unitSystem === "original") return String(text || "");
-  return String(text).replace(/(\d{3})\s*°\s*F(?:\s*\/\s*\d{2,3}\s*°\s*C)?/g, (match, fStr) => {
+  let res = String(text).replace(/(\d{3})\s*°\s*F(?:\s*\/\s*\d{2,3}\s*°\s*C)?/g, (match, fStr) => {
     const f = Number(fStr);
     const c = Math.round(((f - 32) * 5) / 9 / 5) * 5;
     return unitSystem === "metric" ? `${c}°C (${f}°F)` : `${f}°F (${c}°C)`;
   });
+  if (unitSystem === "imperial") {
+    res = res.replace(/(\d{2,3})\s*°\s*C(?!\s*\))/g, (match, cStr) => {
+      const c = Number(cStr);
+      const f = Math.round((c * 9) / 5 + 32);
+      return `${f}°F (${c}°C)`;
+    });
+  }
+  return res;
 }

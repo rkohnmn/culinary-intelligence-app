@@ -4220,11 +4220,19 @@ function scaleRecipeIngredients(
  */
 function formatTemperatureForSystem(text, unitSystem = "original") {
   if (!text || unitSystem === "original") return String(text || "");
-  return String(text).replace(/(\d{3})\s*°\s*F(?:\s*\/\s*\d{2,3}\s*°\s*C)?/g, (match, fStr) => {
+  let res = String(text).replace(/(\d{3})\s*°\s*F(?:\s*\/\s*\d{2,3}\s*°\s*C)?/g, (match, fStr) => {
     const f = Number(fStr);
     const c = Math.round(((f - 32) * 5) / 9 / 5) * 5;
     return unitSystem === "metric" ? `${c}°C (${f}°F)` : `${f}°F (${c}°C)`;
   });
+  if (unitSystem === "imperial") {
+    res = res.replace(/(\d{2,3})\s*°\s*C(?!\s*\))/g, (match, cStr) => {
+      const c = Number(cStr);
+      const f = Math.round((c * 9) / 5 + 32);
+      return `${f}°F (${c}°C)`;
+    });
+  }
+  return res;
 }
 
 
@@ -7198,6 +7206,18 @@ body {
   border-radius: var(--radius-xs);
 }
 
+.tag-pill-clickable {
+  cursor: pointer;
+  background-color: var(--color-surface);
+  transition: all 120ms var(--ease-out-expo);
+}
+
+.tag-pill-clickable:hover {
+  background-color: var(--color-surface-sunken);
+  color: var(--color-text);
+  border-color: var(--color-text-muted);
+}
+
 .custom-sauce-box, .storage-disclosure-box {
   margin-top: 10px;
   padding: 10px 12px;
@@ -9593,7 +9613,8 @@ class CulinaryAppController {
   }
 
   /**
-   * Renders the complete application while preserving scroll positions on `[data-preserve-scroll]` containers.
+   * Renders the complete application while preserving scroll positions on `[data-preserve-scroll]` containers
+   * and restoring active input focus and selection ranges.
    */
   render() {
     const scrollMap = new Map();
@@ -9601,6 +9622,31 @@ class CulinaryAppController {
       const key = el.getAttribute("data-preserve-scroll");
       if (key) {
         scrollMap.set(key, { top: el.scrollTop, left: el.scrollLeft });
+      }
+    }
+
+    let focusedElementSelector = null;
+    let selStart = null;
+    let selEnd = null;
+    const active = document.activeElement;
+    if (active && this.root.contains(active)) {
+      if (active.id) {
+        focusedElementSelector = `#${active.id}`;
+      } else if (active.getAttribute("data-action")) {
+        const action = active.getAttribute("data-action");
+        const entryId = active.getAttribute("data-entry-id");
+        const ingId = active.getAttribute("data-ing-id");
+        if (entryId) {
+          focusedElementSelector = `[data-action="${action}"][data-entry-id="${entryId}"]`;
+        } else if (ingId) {
+          focusedElementSelector = `[data-action="${action}"][data-ing-id="${ingId}"]`;
+        } else {
+          focusedElementSelector = `[data-action="${action}"]`;
+        }
+      }
+      if (typeof active.selectionStart === "number") {
+        selStart = active.selectionStart;
+        selEnd = active.selectionEnd;
       }
     }
 
@@ -9655,7 +9701,7 @@ class CulinaryAppController {
             data-action="switch-tab"
             data-tab="home_atelier"
           >
-            <span>0. Home / Atelier</span>
+            <span>Atelier Home</span>
             <span class="tab-count-pill">Start</span>
           </button>
           <button
@@ -9665,7 +9711,7 @@ class CulinaryAppController {
             data-tab="dish_workbench"
           >
             <span>1. Dish Workbench</span>
-            <span class="tab-count-pill">${pluralize(ingCount, "Ing", "Ings")}</span>
+            <span class="tab-count-pill">${pluralize(ingCount, "Ingredient")}</span>
           </button>
           <button
             type="button"
@@ -9673,7 +9719,7 @@ class CulinaryAppController {
             data-action="switch-tab"
             data-tab="recipe_discovery"
           >
-            <span>2. Recipe &amp; Chef Studio</span>
+            <span>2. Recipe Studio</span>
             <span class="tab-count-pill">${pluralize(recCount, "Recipe")}</span>
           </button>
           <button
@@ -9708,7 +9754,7 @@ class CulinaryAppController {
             data-action="switch-tab"
             data-tab="knowledge_provenance"
           >
-            <span>6. Knowledge Catalog</span>
+            <span>6. Knowledge &amp; Provenance</span>
             <span class="tab-count-pill">${this.graph.ingredients.size}</span>
           </button>
         </nav>
@@ -9726,6 +9772,20 @@ class CulinaryAppController {
       if (restoredEl) {
         restoredEl.scrollTop = pos.top;
         restoredEl.scrollLeft = pos.left;
+      }
+    }
+
+    if (focusedElementSelector) {
+      const elToFocus = this.root.querySelector(focusedElementSelector);
+      if (elToFocus) {
+        elToFocus.focus();
+        if (selStart !== null && typeof elToFocus.setSelectionRange === "function") {
+          try {
+            elToFocus.setSelectionRange(selStart, selEnd);
+          } catch {
+            // ignore if unsupported
+          }
+        }
       }
     }
   }
@@ -10415,58 +10475,8 @@ class CulinaryAppController {
       </div>
 
       <div class="workbench-grid">
-        <!-- LEFT COLUMN: Dish Identity, Search & Autocomplete (Above the Fold), Selected Ingredients, Context Chips, Sauces & Sides -->
+        <!-- LEFT COLUMN: Search & Add Ingredients (Above the Fold), Selected Ingredients, Dish Identity, Context Chips, Sauces & Sides -->
         <section class="panel-col" aria-label="Active Dish Construction">
-          <div class="card">
-            <div class="card-header">
-              <h2>Active Dish Configuration</h2>
-              <span class="card-subtitle">${pluralize(dish.ingredients.length, "ingredient")} · ${pluralize(
-      (dish.sauceIds || []).length,
-      "sauce"
-    )} · ${pluralize((dish.sideIds || []).length, "side")}</span>
-            </div>
-            <div class="form-row">
-              <label for="dish-name-input" class="form-label">Dish Name</label>
-              <input
-                id="dish-name-input"
-                type="text"
-                class="form-input"
-                value="${escapeHtml(dish.name)}"
-                placeholder="e.g., Pan-Seared Sea Bass with Fennel &amp; Blood Orange"
-              />
-            </div>
-
-            <div class="form-row-split" style="margin-bottom: 0;">
-              <div>
-                <label for="dish-course-role-select" class="form-label">Default Course Role</label>
-                <select id="dish-course-role-select" class="form-select">
-                  ${STANDARD_COURSE_TYPES.map(
-                    (c) =>
-                      `<option value="${escapeHtml(c.id)}" ${
-                        dish.courseRole === c.id ? "selected" : ""
-                      }>${escapeHtml(c.label)}</option>`
-                  ).join("")}
-                </select>
-              </div>
-              <div class="menu-quick-add-box">
-                <label for="quick-add-course-type" class="form-label">Send Snapshot to Active Menu</label>
-                <div class="inline-action-group">
-                  <select id="quick-add-course-type" class="form-select">
-                    ${STANDARD_COURSE_TYPES.map(
-                      (c) =>
-                        `<option value="${escapeHtml(c.id)}" ${
-                          dish.courseRole === c.id ? "selected" : ""
-                        }>${escapeHtml(c.label)}</option>`
-                    ).join("")}
-                  </select>
-                  <button type="button" class="btn btn-primary" data-action="add-working-dish-to-menu">
-                    + Add to Menu
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-
           <!-- INGREDIENT SEARCH & CONTEXT-AWARE AUTOCOMPLETE (ABOVE THE FOLD) -->
           <div class="card">
             <div class="card-header">
@@ -10654,6 +10664,57 @@ class CulinaryAppController {
                 rows="2"
                 placeholder="Record proportions, plating notes, or technique reminders..."
               >${escapeHtml(dish.notes || "")}</textarea>
+            </div>
+          </div>
+
+          <!-- ACTIVE DISH IDENTITY & QUICK-ADD -->
+          <div class="card">
+            <div class="card-header">
+              <h2>Active Dish Configuration</h2>
+              <span class="card-subtitle">${pluralize(dish.ingredients.length, "ingredient")} · ${pluralize(
+      (dish.sauceIds || []).length,
+      "sauce"
+    )} · ${pluralize((dish.sideIds || []).length, "side")}</span>
+            </div>
+            <div class="form-row">
+              <label for="dish-name-input" class="form-label">Dish Name</label>
+              <input
+                id="dish-name-input"
+                type="text"
+                class="form-input"
+                value="${escapeHtml(dish.name)}"
+                placeholder="e.g., Pan-Seared Sea Bass with Fennel &amp; Blood Orange"
+              />
+            </div>
+
+            <div class="form-row-split" style="margin-bottom: 0;">
+              <div>
+                <label for="dish-course-role-select" class="form-label">Default Course Role</label>
+                <select id="dish-course-role-select" class="form-select">
+                  ${STANDARD_COURSE_TYPES.map(
+                    (c) =>
+                      `<option value="${escapeHtml(c.id)}" ${
+                        dish.courseRole === c.id ? "selected" : ""
+                      }>${escapeHtml(c.label)}</option>`
+                  )}
+                </select>
+              </div>
+              <div class="menu-quick-add-box">
+                <label for="quick-add-course-type" class="form-label">Send Snapshot to Active Menu</label>
+                <div class="inline-action-group">
+                  <select id="quick-add-course-type" class="form-select">
+                    ${STANDARD_COURSE_TYPES.map(
+                      (c) =>
+                        `<option value="${escapeHtml(c.id)}" ${
+                          dish.courseRole === c.id ? "selected" : ""
+                        }>${escapeHtml(c.label)}</option>`
+                    )}
+                  </select>
+                  <button type="button" class="btn btn-primary" data-action="add-working-dish-to-menu">
+                    + Add to Menu
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -11140,7 +11201,14 @@ class CulinaryAppController {
                         <div class="menu-course-card">
                           <div class="menu-course-header">
                             <div>
-                              <span class="badge badge-role">Course ${idx + 1}${entry.customCourseLabel ? ` · ${escapeHtml(entry.customCourseLabel)}` : ""}</span>
+                              <span class="badge badge-role">Course ${idx + 1}</span>
+                              ${
+                                entry.customCourseLabel
+                                  ? `<span class="badge badge-role" style="margin-left: 4px;">${escapeHtml(
+                                      entry.customCourseLabel
+                                    )}</span>`
+                                  : ""
+                              }
                               <strong style="font-size: 15px; margin-left: 6px;">${escapeHtml(
                                 d.name
                               )}</strong>
@@ -11160,7 +11228,7 @@ class CulinaryAppController {
                                 ).join("")}
                               </select>
                               ${
-                                entry.courseType === "custom"
+                                entry.courseType === "custom" || Boolean(entry.customCourseLabel)
                                   ? `<input
                                       type="text"
                                       class="form-input"
@@ -11640,7 +11708,7 @@ class CulinaryAppController {
           </div>
           <p class="rec-mini-desc">${escapeHtml(ing.culinaryNotes)}</p>
           <div class="rec-mini-meta">
-            <span>Categories: ${escapeHtml(ing.categories.map(formatSlug).join(", "))}</span> ·
+            <span>Categories: ${(ing.categories || []).map((c) => `<button type="button" class="tag-pill tag-pill-clickable" data-action="set-knowledge-category" data-cat="${escapeHtml(c)}">${escapeHtml(formatSlug(c))}</button>`).join(" ")}</span> ·
             <span>Roles: ${escapeHtml(ing.defaultRoles.map(formatSlug).join(", "))}</span>
           </div>
         </div>

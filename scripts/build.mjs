@@ -176,6 +176,9 @@ ${standaloneBootstrap}
 const distStandalonePath = path.join(distDir, "culinary_intelligence_app.html");
 fs.writeFileSync(distStandalonePath, standaloneHtml);
 
+const rootStandalonePath = path.join(rootDir, "culinary_intelligence_app.html");
+fs.writeFileSync(rootStandalonePath, standaloneHtml);
+
 const optionalCanvasPath = process.env.STANDALONE_OUT_PATH || "/working_dir/c_c6eac74e7224c867/artifacts/file_generation/ttl=63d/output/culinary_intelligence_app.html";
 let extraCanvasCreated = false;
 try {
