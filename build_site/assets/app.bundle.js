@@ -7977,6 +7977,193 @@ body {
   border: 1px solid #355044;
 }
 
+/* --- PROGRESSIVE DISCLOSURE & LOW-TEXT DENSITY UTILITIES --- */
+.text-clamp-1 {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.text-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.btn-why-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 600;
+  padding: 2px 7px;
+  border-radius: var(--radius-xs);
+  background: var(--color-surface-sunken);
+  color: var(--color-text-muted);
+  border: 1px solid var(--color-border);
+  cursor: pointer;
+  list-style: none;
+  user-select: none;
+  transition: all 120ms var(--ease-out-expo);
+  white-space: nowrap;
+}
+
+.btn-why-toggle:hover {
+  background: var(--color-surface);
+  color: var(--color-text);
+  border-color: var(--color-primary);
+}
+
+.btn-why-toggle::-webkit-details-marker {
+  display: none;
+}
+
+details.card-collapsible {
+  padding: 0;
+  overflow: hidden;
+}
+
+details.card-collapsible > summary {
+  padding: 12px 16px;
+  cursor: pointer;
+  list-style: none;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid transparent;
+  transition: background-color 140ms ease;
+}
+
+details.card-collapsible > summary::-webkit-details-marker {
+  display: none;
+}
+
+details.card-collapsible > summary:hover {
+  background-color: var(--color-surface-sunken);
+}
+
+details.card-collapsible[open] > summary {
+  border-bottom: 1px solid var(--color-border);
+}
+
+.collapsible-content {
+  padding: 16px;
+}
+
+details.rationale-drawer {
+  display: inline-block;
+  margin-top: 4px;
+}
+
+details.rationale-drawer > summary::-webkit-details-marker {
+  display: none;
+}
+
+.rationale-expanded {
+  margin-top: 6px;
+  padding: 8px 10px;
+  font-size: 12px;
+  line-height: 1.45;
+  color: var(--color-text);
+  background-color: var(--color-surface-sunken);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xs);
+}
+
+.feature-pill-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 16px;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  margin-top: 14px;
+}
+
+.feature-pill-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: var(--radius-sm);
+  background-color: var(--color-surface-sunken);
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
+  cursor: pointer;
+  transition: all 120ms ease;
+}
+
+.feature-pill-btn:hover {
+  background-color: var(--color-primary);
+  color: #FAF8F5;
+  border-color: var(--color-primary);
+}
+
+.workbench-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  margin-bottom: 12px;
+}
+
+.workbench-toolbar-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.workbench-toolbar-right {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.presets-drawer-panel {
+  width: 100%;
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px solid var(--color-border);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  align-items: center;
+}
+
+.compact-item-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 6px 10px;
+  border-bottom: 1px solid var(--color-border-subtle);
+  background-color: var(--color-surface);
+  border-radius: var(--radius-xs);
+  font-size: 12.5px;
+}
+
+.compact-item-row:hover {
+  background-color: var(--color-surface-sunken);
+}
+
 /* --- REDUCED MOTION & PRINT KITCHEN SHEET --- */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
@@ -8217,7 +8404,13 @@ class CulinaryAppController {
       checkedShoppingItems: {},
       recipeEditorDraft: null,
       recipeImportText: "",
-      activeTimer: null // { label, remainingSeconds, totalSeconds, running }
+      activeTimer: null, // { label, remainingSeconds, totalSeconds, running }
+      workbenchRightTab: "ingredients",
+      presetsDrawerOpen: false,
+      dishSettingsOpen: false,
+      librarySubTab: "all",
+      knowledgeSubTab: "ingredients",
+      recipeFiltersOpen: false
     };
 
     this._toastTimer = null;
@@ -8313,7 +8506,7 @@ class CulinaryAppController {
     }
     slot.innerHTML = `
       <span id="kitchen-timer-pill" class="timer-pill" role="timer" aria-live="off">
-        <span>⏱ ${escapeHtml(t.label)}: <strong>${this._formatTimerMMSS(t.remainingSeconds)}</strong></span>
+        <span>${escapeHtml(t.label)}: <strong>${this._formatTimerMMSS(t.remainingSeconds)}</strong></span>
         <button type="button" class="search-clear-btn" data-action="toggle-pause-timer">${
           t.running ? "Pause" : "Resume"
         }</button>
@@ -8507,8 +8700,45 @@ class CulinaryAppController {
           });
           this.state.pendingOverrideCandidate = null;
           this.state.activeTab = "dish_workbench";
+          this.state.dishSettingsOpen = true;
           this.triggerAutosave();
           this.showToast("Started a fresh empty dish in the Dish Workbench.");
+          break;
+        }
+
+        case "toggle-presets-drawer": {
+          this.state.presetsDrawerOpen = !this.state.presetsDrawerOpen;
+          this.render();
+          break;
+        }
+
+        case "toggle-dish-settings": {
+          this.state.dishSettingsOpen = !this.state.dishSettingsOpen;
+          this.render();
+          break;
+        }
+
+        case "set-workbench-right-tab": {
+          this.state.workbenchRightTab = target.dataset.wtab || "ingredients";
+          this.render();
+          break;
+        }
+
+        case "set-library-subtab": {
+          this.state.librarySubTab = target.dataset.subtab || "all";
+          this.render();
+          break;
+        }
+
+        case "set-knowledge-subtab": {
+          this.state.knowledgeSubTab = target.dataset.subtab || "ingredients";
+          this.render();
+          break;
+        }
+
+        case "toggle-recipe-filters": {
+          this.state.recipeFiltersOpen = !this.state.recipeFiltersOpen;
+          this.render();
           break;
         }
 
@@ -9666,7 +9896,7 @@ class CulinaryAppController {
           <div class="header-brand">
             <h1 class="app-title">Culinary Intelligence &amp; Menu Composition Workbench</h1>
             <p class="app-subtitle">
-              Deterministic Multi-Ingredient Pairing · Explainable Flavor Balance · Bridge Rescue · Recipe &amp; Menu Architecture
+              Flavor pairing, recipes &amp; menu architecture
             </p>
           </div>
           <div class="header-status">
@@ -9884,10 +10114,8 @@ class CulinaryAppController {
               <span>${this.getAllAvailableRecipes().length} Recipes</span>
             </div>
             <h2 class="atelier-hero-title">
-              Compose Dishes by <em>Molecular &amp; Classical Affinity</em> — Not Guesswork.
-            </h2>
-            <p class="atelier-hero-lead">
-              Start with any single ingredient in your kitchen, test multi-ingredient flavor balance across eight sensory axes, rescue clashing combinations with culinary bridges, or cook from NYT Cooking’s 2025 Top 50 and 14 renowned chef collections using interactive <em>Cooking for Engineers</em> stage matrices.
+              Compose Dishes by <em>Molecular &amp; Classical Affinity</em> — Not Guesswo            <p class="atelier-hero-lead">
+              Pair ingredients by molecular and classical affinity, balance eight sensory axes, and cook with engineering precision.
             </p>
             <div class="atelier-hero-cta-row">
               <button
@@ -9948,7 +10176,7 @@ class CulinaryAppController {
                   Active Specimen Preview
                 </div>
                 <strong>${escapeHtml(spotlightIng.name)}</strong>
-                <span style="color:#BFB8AC;"> · Top Match: ${escapeHtml(topRecs[0]?.name || "Shallot")} (${topRecs[0]?.totalScore || 95})</span>
+                <span style="color:#BFB8AC;"> · Top Match: ${escapeHtml(topRecs[0]?.name || "Shallot")} (${topRecs[0]?.totalScore || 95}%)</span>
               </div>
               <button
                 type="button"
@@ -9990,13 +10218,17 @@ class CulinaryAppController {
                     Preparations: ${escapeHtml((spotlightIng.preparations || []).slice(0, 4).map(formatSlug).join(", "))}
                   </span>
                 </div>
-                <p style="margin:4px 0 10px 0;font-size:13px;color:var(--color-text-muted);">
-                  ${escapeHtml(spotlightIng.culinaryNotes || "versatile culinary anchor with structured aromatic and savory balance.")}
-                </p>
+                <details class="rationale-drawer" style="margin-top: 4px;">
+                  <summary class="btn-why-toggle">Read Culinary Notes ▾</summary>
+                  <p class="rationale-expanded" style="margin: 4px 0 0 0;">
+                    ${escapeHtml(spotlightIng.culinaryNotes || "Versatile culinary anchor with structured aromatic and savory balance.")}
+                  </p>
+                </details>
               </div>
 
               <div class="flavor-meters-grid" style="margin-bottom:12px;">
                 ${sensoryAxes
+                  .slice(0, 4)
                   .map((axis) => {
                     const pct = Math.min(100, Math.round((Number(axis.val || 0) / 4) * 100));
                     return `
@@ -10017,7 +10249,7 @@ class CulinaryAppController {
 
             <div class="inline-action-group" style="justify-content:space-between;padding-top:10px;border-top:1px solid var(--color-border);">
               <span style="font-size:12px;color:var(--color-text-muted);">
-                Classical affinities: <strong>${escapeHtml((spotlightIng.cuisines || []).slice(0, 3).map((cId) => this.graph.cuisines.get(cId)?.name || formatSlug(cId.replace(/^cuisine_/, ""))).join(", ") || "Cross-Regional")}</strong>
+                Affinities: <strong>${escapeHtml((spotlightIng.cuisines || []).slice(0, 3).map((cId) => this.graph.cuisines.get(cId)?.name || formatSlug(cId.replace(/^cuisine_/, ""))).join(", ") || "Cross-Regional")}</strong>
               </span>
               <button
                 type="button"
@@ -10025,7 +10257,7 @@ class CulinaryAppController {
                 data-action="home-launch-spotlight-dish"
                 data-ing-id="${escapeHtml(spotlightIng.id)}"
               >
-                Load Full Composition in Workbench →
+                Load in Workbench →
               </button>
             </div>
           </div>
@@ -10041,33 +10273,30 @@ class CulinaryAppController {
 
             <div class="rec-card-list" style="margin-bottom:12px;">
               ${topRecs
+                .slice(0, 4)
                 .map(
                   (rec) => `
-                <div class="rec-card">
-                  <div class="rec-card-header">
-                    <div>
-                      <strong>${escapeHtml(rec.name)}</strong>
-                      <div class="rec-badges">
-                        <span class="badge badge-strong">Score ${rec.totalScore}/100</span>
-                        <span class="badge badge-role">Role: ${escapeHtml(formatSlug(rec.suggestedRole))}</span>
-                        <span class="badge badge-neutral">Prep: ${escapeHtml(formatSlug(rec.suggestedPreparation))}</span>
-                      </div>
-                    </div>
-                    <button
-                      type="button"
-                      class="btn btn-sm btn-secondary"
-                      data-action="home-launch-pair-with-anchor"
-                      data-anchor-id="${escapeHtml(spotlightIng.id)}"
-                      data-pair-id="${escapeHtml(rec.id)}"
-                      data-role="${escapeHtml(rec.suggestedRole || "supporting_component")}"
-                      data-prep="${escapeHtml(rec.suggestedPreparation || "raw")}"
-                    >
-                      + Pair in Workbench
-                    </button>
+                <div class="compact-item-row" style="margin-bottom: 6px;">
+                  <div style="display: flex; align-items: center; gap: 8px; min-width: 0; flex: 1 1 auto;">
+                    <strong style="white-space: nowrap;">${escapeHtml(rec.name)}</strong>
+                    <span class="badge badge-strong">${rec.totalScore}% Match</span>
+                    <details class="rationale-drawer">
+                      <summary class="btn-why-toggle" data-action="toggle-rationale-detail">Why? ▾</summary>
+                      <div class="rationale-expanded">${escapeHtml(rec.explanation)}</div>
+                    </details>
                   </div>
-                  <p class="rec-explanation" style="margin:6px 0 0 0;">
-                    ${escapeHtml(rec.explanation)}
-                  </p>
+                  <button
+                    type="button"
+                    class="btn btn-sm btn-secondary"
+                    style="white-space: nowrap;"
+                    data-action="home-launch-pair-with-anchor"
+                    data-anchor-id="${escapeHtml(spotlightIng.id)}"
+                    data-pair-id="${escapeHtml(rec.id)}"
+                    data-role="${escapeHtml(rec.suggestedRole || "supporting_component")}"
+                    data-prep="${escapeHtml(rec.suggestedPreparation || "raw")}"
+                  >
+                    + Pair
+                  </button>
                 </div>
               `
                 )
@@ -10082,7 +10311,7 @@ class CulinaryAppController {
                         Top Unifying Sauce (Fit ${topSauce.score})
                       </div>
                       <strong>${escapeHtml(topSauce.name)}</strong>
-                      <div style="font-size:12px;color:var(--color-text-muted);margin-top:2px;">
+                      <div class="text-clamp-1" style="font-size:12px;color:var(--color-text-muted);margin-top:2px;">
                         ${escapeHtml(topSauce.rationale)}
                       </div>
                     </div>`
@@ -10095,7 +10324,7 @@ class CulinaryAppController {
                         Recommended Accompaniment (Fit ${topSide.score})
                       </div>
                       <strong>${escapeHtml(topSide.name)}</strong>
-                      <div style="font-size:12px;color:var(--color-text-muted);margin-top:2px;">
+                      <div class="text-clamp-1" style="font-size:12px;color:var(--color-text-muted);margin-top:2px;">
                         ${escapeHtml(topSide.rationale)}
                       </div>
                     </div>`
@@ -10106,11 +10335,11 @@ class CulinaryAppController {
         </section>
 
         <!-- SECTION 2: EDITORIAL SPREAD — NYT COOKING 2025 MOST POPULAR & 14 RENOWNED CHEF ARCHIVES -->
-        <section class="card" aria-label="Curated Recipe & Chef Collections">
+        <section class="card" aria-label="Curated Recipe &amp; Chef Collections">
           <div class="card-header">
             <div>
               <h2>2. Curated Culinary Archives: NYT Cooking 2025 Top 50 &amp; 14 Renowned Chefs</h2>
-              <span class="card-subtitle">Every recipe includes both narrative Step-by-Step instructions and a <em>Cooking for Engineers</em> tabular process matrix</span>
+              <span class="card-subtitle">Step-by-Step narrative instructions and <em>Cooking for Engineers</em> process matrices</span>
             </div>
             <button
               type="button"
@@ -10120,43 +10349,6 @@ class CulinaryAppController {
             >
               Browse All ${this.getAllAvailableRecipes().length} Recipes →
             </button>
-          </div>
-
-          <div class="chip-group" style="margin-bottom:14px;" aria-label="Quick collection filters">
-            <button
-              type="button"
-              class="chip chip-active"
-              data-action="home-filter-collection"
-              data-collection="nyt_top_50_2025"
-              data-chef="all"
-            >
-              ★ NYT Cooking 2025 Top 50
-            </button>
-            <button
-              type="button"
-              class="chip"
-              data-action="home-filter-collection"
-              data-collection="renowned_chefs"
-              data-chef="all"
-            >
-              All 14 Renowned Chef Signatures
-            </button>
-            ${this.chefCollections
-              .slice(0, 8)
-              .map(
-                (c) => `
-              <button
-                type="button"
-                class="chip"
-                data-action="home-filter-collection"
-                data-collection="all"
-                data-chef="${escapeHtml(c.id)}"
-              >
-                ${escapeHtml(c.name)}
-              </button>
-            `
-              )
-              .join("")}
           </div>
 
           <div class="atelier-editorial-grid">
@@ -10170,16 +10362,16 @@ class CulinaryAppController {
                     />
                     <div class="atelier-featured-recipe-body">
                       <div style="display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:6px;">
-                        <span class="badge badge-strong">NYT Cooking #1 Most Popular of 2025</span>
-                        <span class="badge badge-neutral">${nytHeroRecipe.totalTimeMinutes} min · ${nytHeroRecipe.servings} servings</span>
+                        <span class="badge badge-strong">NYT Cooking #1 of 2025</span>
+                        <span class="badge badge-neutral">${nytHeroRecipe.totalTimeMinutes}m · ${nytHeroRecipe.servings} serv</span>
                       </div>
-                      <h3 style="margin:0 0 6px 0;font-family:var(--font-display);font-size:20px;">
+                      <h3 style="margin:0 0 4px 0;font-family:var(--font-display);font-size:18px;">
                         ${escapeHtml(nytHeroRecipe.title)}
                       </h3>
-                      <div style="font-size:12.5px;color:var(--color-secondary);font-weight:600;margin-bottom:8px;">
+                      <div style="font-size:12px;color:var(--color-secondary);font-weight:600;margin-bottom:6px;">
                         By ${escapeHtml(nytHeroRecipe.author)}
                       </div>
-                      <p style="margin:0 0 12px 0;font-size:13px;color:var(--color-text-muted);">
+                      <p class="text-clamp-2" style="margin:0 0 10px 0;font-size:12.5px;color:var(--color-text-muted);">
                         ${escapeHtml(nytHeroRecipe.headnote)}
                       </p>
                       <div class="inline-action-group">
@@ -10190,7 +10382,7 @@ class CulinaryAppController {
                           data-recipe-id="${escapeHtml(nytHeroRecipe.id)}"
                           data-mode="cooking_for_engineers"
                         >
-                          Open Cooking for Engineers Matrix →
+                          Process Matrix →
                         </button>
                         <button
                           type="button"
@@ -10199,7 +10391,7 @@ class CulinaryAppController {
                           data-recipe-id="${escapeHtml(nytHeroRecipe.id)}"
                           data-mode="step_by_step"
                         >
-                          Step-by-Step View
+                          Step-by-Step
                         </button>
                       </div>
                     </div>
@@ -10214,14 +10406,14 @@ class CulinaryAppController {
                 <div class="atelier-showcase-row">
                   <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px;">
                     <div>
-                      <span class="badge badge-role" style="margin-bottom:4px;">Chef Signature · ${escapeHtml(rec.author)}</span>
-                      <h3 style="margin:0;font-family:var(--font-display);font-size:16px;">
+                      <span class="badge badge-role" style="margin-bottom:2px;">Chef Signature · ${escapeHtml(rec.author)}</span>
+                      <h3 style="margin:0;font-family:var(--font-display);font-size:15px;">
                         ${escapeHtml(rec.title)}
                       </h3>
                     </div>
                     <span class="badge badge-neutral">${rec.totalTimeMinutes} min</span>
                   </div>
-                  <p style="margin:6px 0 10px 0;font-size:12.8px;color:var(--color-text-muted);">
+                  <p class="text-clamp-2" style="margin:4px 0 8px 0;font-size:12px;color:var(--color-text-muted);">
                     ${escapeHtml(rec.headnote)}
                   </p>
                   <div class="inline-action-group">
@@ -10232,16 +10424,7 @@ class CulinaryAppController {
                       data-recipe-id="${escapeHtml(rec.id)}"
                       data-mode="cooking_for_engineers"
                     >
-                      Process Matrix →
-                    </button>
-                    <button
-                      type="button"
-                      class="btn btn-sm btn-secondary"
-                      data-action="home-open-recipe"
-                      data-recipe-id="${escapeHtml(rec.id)}"
-                      data-mode="step_by_step"
-                    >
-                      Step-by-Step
+                      Matrix →
                     </button>
                     <button
                       type="button"
@@ -10249,7 +10432,7 @@ class CulinaryAppController {
                       data-action="load-recipe-into-workbench"
                       data-recipe-id="${escapeHtml(rec.id)}"
                     >
-                      Load in Dish Workbench
+                      Workbench
                     </button>
                   </div>
                 </div>
@@ -10260,143 +10443,44 @@ class CulinaryAppController {
           </div>
         </section>
 
-        <!-- SECTION 3: FOUR-STAGE ARCHITECTURAL WORKFLOW STRIP -->
-        <section class="card" aria-label="Four-Stage Culinary Architecture">
-          <div class="card-header">
+        <!-- SECTION 3: COMPACT FOOTER FEATURE STRIP & FINAL CTA -->
+        <section class="card" aria-label="Platform Architecture Overview">
+          <div class="card-header" style="padding-bottom: 4px;">
             <div>
-              <h2>3. Four-Stage Culinary Architecture</h2>
-              <span class="card-subtitle">Every module operates locally in your browser with deterministic culinary reasoning</span>
+              <h2>Verified Knowledge Graph &amp; Architecture Strip</h2>
+              <span class="card-subtitle">100% deterministic local computation in browser with zero telemetry</span>
             </div>
           </div>
 
-          <div class="atelier-pillars-grid">
-            <div class="atelier-pillar-card">
-              <div>
-                <div class="atelier-pillar-num">STAGE 01 / AFFINITY &amp; ROLES</div>
-                <h3 class="atelier-pillar-title">Multi-Ingredient Dish Workbench</h3>
-                <p class="atelier-pillar-desc">
-                  Combine any number of ingredients and see how every new addition shifts the collective 8-axis sensory balance, classical sauce affinities, and pan-sauce synthesis.
-                </p>
-              </div>
-              <button
-                type="button"
-                class="btn btn-sm btn-secondary"
-                data-action="load-preset"
-                data-preset-id="preset_duck_orange"
-              >
-                Load Duck &amp; Turnips Preset →
-              </button>
-            </div>
-
-            <div class="atelier-pillar-card atelier-pillar-card-accent">
-              <div>
-                <div class="atelier-pillar-num">STAGE 02 / OVERRIDE &amp; BRIDGE</div>
-                <h3 class="atelier-pillar-title">Challenging Pairing Rescue</h3>
-                <p class="atelier-pillar-desc">
-                  Never hit a dead end. Override traditional rules (like Poached Cod + Blue Cheese) and let the engine compute bridging ingredients and preparation shifts that unify the plate.
-                </p>
-              </div>
-              <button
-                type="button"
-                class="btn btn-sm btn-secondary"
-                data-action="load-preset"
-                data-preset-id="preset_conflict_rescue"
-              >
-                Test Cod + Blue Cheese Rescue →
-              </button>
-            </div>
-
-            <div class="atelier-pillar-card">
-              <div>
-                <div class="atelier-pillar-num">STAGE 03 / PROCESS MATRIX</div>
-                <h3 class="atelier-pillar-title">Cooking for Engineers View</h3>
-                <p class="atelier-pillar-desc">
-                  Switch any recipe between narrative steps and a pinned-column stage matrix with 1-click completion checkoffs, live kitchen timers, metric/imperial conversion, and USDA nutrition.
-                </p>
-              </div>
-              <button
-                type="button"
-                class="btn btn-sm btn-secondary"
-                data-action="home-open-recipe"
-                data-recipe-id="rec_nyt2025_01_smashed_beef_kebab"
-                data-mode="cooking_for_engineers"
-              >
-                Inspect Process Matrix →
-              </button>
-            </div>
-
-            <div class="atelier-pillar-card atelier-pillar-card-accent">
-              <div>
-                <div class="atelier-pillar-num">STAGE 04 / MENU &amp; GROCERY</div>
-                <h3 class="atelier-pillar-title">Multi-Course Menus &amp; Aisle Lists</h3>
-                <p class="atelier-pillar-desc">
-                  Sequence appetizers, mains, sides, and desserts with cross-course fat/acid fatigue checks, then aggregate multiple recipes into a normalized grocery list grouped by store aisle.
-                </p>
-              </div>
-              <button
-                type="button"
-                class="btn btn-sm btn-secondary"
-                data-action="switch-tab"
-                data-tab="menu_composer"
-              >
-                Open Multi-Course Menu Builder →
-              </button>
-            </div>
-          </div>
-        </section>
-
-        <!-- SECTION 4: AUTHENTIC DATASET PROVENANCE LEDGER & FINAL CTA -->
-        <section class="card" aria-label="Dataset Provenance & Architecture Ledger">
-          <div class="card-header">
-            <div>
-              <h2>4. Verified Culinary Knowledge Graph &amp; Local Persistence Ledger</h2>
-              <span class="card-subtitle">Zero external API keys, zero accounts, and zero fabricated metrics — 100% locally persistent</span>
-            </div>
-            <button
-              type="button"
-              class="btn btn-sm btn-secondary"
-              data-action="switch-tab"
-              data-tab="knowledge_provenance"
-            >
-              Inspect Full Provenance Catalog →
+          <div class="feature-pill-strip" aria-label="Quick Navigation Feature Strip">
+            <button type="button" class="feature-pill-btn" data-action="switch-tab" data-tab="knowledge_provenance">
+              ${this.graph.ingredients.size} Ingredients
+            </button>
+            <span>·</span>
+            <button type="button" class="feature-pill-btn" data-action="switch-tab" data-tab="knowledge_provenance">
+              ${(this.dataset.pairings || []).length.toLocaleString()} Pairings
+            </button>
+            <span>·</span>
+            <button type="button" class="feature-pill-btn" data-action="switch-tab" data-tab="recipe_discovery">
+              50 NYT Recipes
+            </button>
+            <span>·</span>
+            <button type="button" class="feature-pill-btn" data-action="switch-tab" data-tab="recipe_discovery">
+              14 Chef Archives
+            </button>
+            <span>·</span>
+            <button type="button" class="feature-pill-btn" data-action="switch-tab" data-tab="library_backups">
+              100% Local Storage
             </button>
           </div>
 
-          <div class="atelier-ledger-grid">
-            <div class="atelier-ledger-cell">
-              <div class="atelier-ledger-val">${this.graph.ingredients.size}</div>
-              <div class="atelier-ledger-label">Canonical Ingredients</div>
-              <div class="atelier-ledger-sub">With USDA nutrition &amp; density weights</div>
-            </div>
-            <div class="atelier-ledger-cell">
-              <div class="atelier-ledger-val">${(this.dataset.pairings || []).length.toLocaleString()}</div>
-              <div class="atelier-ledger-label">Explainable Pairings</div>
-              <div class="atelier-ledger-sub">Scored with mechanisms &amp; provenance</div>
-            </div>
-            <div class="atelier-ledger-cell">
-              <div class="atelier-ledger-val">${this.getAllAvailableRecipes().length}</div>
-              <div class="atelier-ledger-label">Structured Recipes</div>
-              <div class="atelier-ledger-sub">50 NYT 2025 + 18 Chef Signatures</div>
-            </div>
-            <div class="atelier-ledger-cell">
-              <div class="atelier-ledger-val">${this.graph.sauces.size} · ${this.graph.sides.size}</div>
-              <div class="atelier-ledger-label">Sauces &amp; Composed Sides</div>
-              <div class="atelier-ledger-sub">Plus dynamic pan-sauce synthesis</div>
-            </div>
-            <div class="atelier-ledger-cell">
-              <div class="atelier-ledger-val">${this.graph.sources.size}</div>
-              <div class="atelier-ledger-label">Primary Culinary Sources</div>
-              <div class="atelier-ledger-sub">USDA, Escoffier, McGee, Culinary Institute</div>
-            </div>
-          </div>
-
-          <div class="atelier-final-cta-banner">
+          <div class="atelier-final-cta-banner" style="margin-top: 14px;">
             <div>
-              <strong style="font-family:var(--font-display);font-size:19px;color:#FAF8F5;">
-                Ready to compose your next dish or multi-course menu?
+              <strong style="font-family:var(--font-display);font-size:17px;color:#FAF8F5;">
+                Compose your next dish or multi-course menu
               </strong>
-              <div style="font-size:13px;color:#D8D3C8;margin-top:2px;">
-                All work saves automatically to your browser’s IndexedDB and can be exported or imported as portable JSON at any time.
+              <div style="font-size:12.5px;color:#D8D3C8;margin-top:2px;">
+                All dish and menu snapshots auto-save to IndexedDB with full JSON export and restore.
               </div>
             </div>
             <div class="inline-action-group">
@@ -10416,7 +10500,7 @@ class CulinaryAppController {
                 data-chef="all"
                 data-subview="shopping"
               >
-                Open Consolidated Grocery List
+                Open Grocery List
               </button>
             </div>
           </div>
@@ -10433,35 +10517,54 @@ class CulinaryAppController {
       (dish.cookingMethods && dish.cookingMethods.length > 0);
     const hasRecFilters = Boolean(this.state.recCategoryFilter || this.state.recRoleFilter);
 
+    // Compute dominant flavor axes
+    const balanceAxes = [
+      { label: "Umami", val: Number(structure.averages.umami || 0), fillClass: "" },
+      { label: "Acidity", val: Number(structure.averages.acidity || 0), fillClass: "meter-fill-acidity" },
+      { label: "Richness", val: Number(structure.averages.perceivedRichness || 0), fillClass: "meter-fill-fat" },
+      { label: "Sweetness", val: Number(structure.averages.sweetness || 0), fillClass: "meter-fill-sweet" },
+      { label: "Bitterness", val: Number(structure.averages.bitterness || 0), fillClass: "" },
+      { label: "Heat", val: Number(structure.averages.heatPungency || 0), fillClass: "meter-fill-heat" },
+      { label: "Herbal", val: Number(structure.averages.herbalCharacter || 0), fillClass: "meter-fill-herbal" },
+      {
+        label: "Earth/Smoke",
+        val: Math.max(Number(structure.averages.smokiness || 0), Number(structure.averages.earthiness || 0)),
+        fillClass: "meter-fill-fat"
+      }
+    ];
+    const sortedAxes = [...balanceAxes].sort((a, b) => b.val - a.val);
+    const top3 = sortedAxes.slice(0, 3);
+    const acidVal = Number(structure.averages.acidity || 0);
+    const richVal = Number(structure.averages.perceivedRichness || 0);
+    let balancePill = "Balanced";
+    if (richVal >= 3.0 && acidVal <= 1.2) {
+      balancePill = "High Richness - Needs Acid";
+    } else if (acidVal >= 3.0 && richVal <= 1.2) {
+      balancePill = "High Acid - Needs Fat/Sweet";
+    } else if (top3[0]?.val >= 2.5) {
+      balancePill = `${top3[0].label} Forward`;
+    }
+
     return `
-      <div class="preset-bar" aria-label="Quick starter dish presets">
-        <div class="preset-group">
-          <span class="preset-label">Presets:</span>
-          ${QUICK_STARTER_PRESETS.map(
-            (p) => `
-              <button type="button" class="btn btn-sm btn-secondary" data-action="load-preset" data-preset-id="${escapeHtml(
-                p.id
-              )}">
-                ${escapeHtml(p.label)}
-              </button>
-            `
-          ).join("")}
+      <!-- COMPACT WORKBENCH TOOLBAR -->
+      <div class="workbench-toolbar" aria-label="Quick starter dish presets and actions">
+        <div class="workbench-toolbar-left">
+          <span class="badge badge-role" style="font-size: 13px; font-weight: 600;">
+            ${escapeHtml(dish.name || "Untitled Dish")}
+          </span>
+          <span class="badge badge-neutral">
+            ${pluralize(dish.ingredients.length, "ingredient")} · ${pluralize((dish.sauceIds || []).length, "sauce")}
+          </span>
         </div>
-        <div class="preset-group">
-          <button type="button" class="btn btn-sm btn-secondary" data-action="new-blank-dish">
-            Clear / New Blank Dish
+        <div class="workbench-toolbar-right">
+          <button type="button" class="btn btn-sm btn-secondary" data-action="toggle-presets-drawer">
+            Quick-Load Presets ▾
           </button>
-          <button type="button" class="btn btn-sm btn-secondary" data-action="duplicate-working-dish">
-            Duplicate Dish
+          <button type="button" class="btn btn-sm btn-secondary" data-action="new-blank-dish">
+            + New Dish
           </button>
           <button type="button" class="btn btn-sm btn-primary" data-action="save-working-dish-explicit">
-            Save Dish to Library
-          </button>
-          <button type="button" class="btn btn-sm btn-secondary" data-action="discover-recipes-from-dish">
-            Match Recipes (${dish.ingredients.length})
-          </button>
-          <button type="button" class="btn btn-sm btn-secondary" data-action="convert-working-dish-to-recipe">
-            Convert to Recipe
+            Save
           </button>
           ${
             this.state.editingMenuEntryId &&
@@ -10472,21 +10575,47 @@ class CulinaryAppController {
               : ""
           }
         </div>
+        ${
+          this.state.presetsDrawerOpen
+            ? `
+            <div class="presets-drawer-panel">
+              <span class="preset-label" style="font-size:12px;font-weight:600;color:var(--color-text-muted);">Starter Presets:</span>
+              ${QUICK_STARTER_PRESETS.map(
+                (p) => `
+                  <button type="button" class="btn btn-sm btn-secondary" data-action="load-preset" data-preset-id="${escapeHtml(
+                    p.id
+                  )}">
+                    ${escapeHtml(p.label)}
+                  </button>
+                `
+              ).join("")}
+              <span style="color:var(--color-border);margin:0 4px;">|</span>
+              <button type="button" class="btn btn-sm btn-secondary" data-action="duplicate-working-dish">
+                Duplicate Dish
+              </button>
+              <button type="button" class="btn btn-sm btn-secondary" data-action="discover-recipes-from-dish">
+                Match Recipes (${dish.ingredients.length})
+              </button>
+              <button type="button" class="btn btn-sm btn-secondary" data-action="convert-working-dish-to-recipe">
+                Convert to Recipe
+              </button>
+            </div>
+          `
+            : ""
+        }
       </div>
 
       <div class="workbench-grid">
-        <!-- LEFT COLUMN: Search & Add Ingredients (Above the Fold), Selected Ingredients, Dish Identity, Context Chips, Sauces & Sides -->
+        <!-- LEFT COLUMN: Search, Selected Ingredients, Collapsible Settings, Compact Flavor Balance -->
         <section class="panel-col" aria-label="Active Dish Construction">
-          <!-- INGREDIENT SEARCH & CONTEXT-AWARE AUTOCOMPLETE (ABOVE THE FOLD) -->
+          <!-- INGREDIENT SEARCH & AUTOCOMPLETE (ABOVE THE FOLD) -->
           <div class="card">
             <div class="card-header">
-              <h2>Search &amp; Add Ingredients (Any Starting Point)</h2>
+              <h2>Search &amp; Add Ingredients</h2>
               <span class="card-subtitle">Start with a protein, vegetable, sauce, starch, herb, or spice</span>
             </div>
             <div class="search-combobox-wrap">
-              <label for="ingredient-search-input" class="form-label">
-                Search by name, alias, or regional term (e.g. "entrecote", "shoyu", "blue cheese", "preserved lemon")
-              </label>
+              <label for="ingredient-search-input" class="form-label sr-only">Search by name or alias</label>
               <div class="search-input-wrap">
                 <input
                   id="ingredient-search-input"
@@ -10548,11 +10677,11 @@ class CulinaryAppController {
           <div class="card">
             <div class="card-header">
               <h2>Selected Dish Ingredients (${dish.ingredients.length})</h2>
-              <span class="card-subtitle">Adjust role or preparation state to recalculate harmony</span>
+              <span class="card-subtitle">Adjust role or preparation to recalculate harmony</span>
             </div>
             ${
               dish.ingredients.length === 0
-                ? `<div class="empty-state">No ingredients selected yet. Search above, pick a sauce or cuisine below, or click any recommended starter on the right.</div>`
+                ? `<div class="empty-state">No ingredients selected yet. Search above, load a preset, or click recommendations on the right.</div>`
                 : `
                 <div class="selected-ingredients-list">
                   ${dish.ingredients
@@ -10594,9 +10723,12 @@ class CulinaryAppController {
                                 .slice(0, 3)
                                 .map((t) => `<span class="tag-pill">${escapeHtml(t)}</span>`)
                                 .join("")}
-                            </div>
-                            <div class="selected-item-notes">
-                              ${escapeHtml(ing?.culinaryNotes || "Preserved user ingredient record.")}
+                              <details class="rationale-drawer" style="display:inline-block;margin-left:4px;">
+                                <summary class="btn-why-toggle">Info ▾</summary>
+                                <div class="rationale-expanded">
+                                  ${escapeHtml(ing?.culinaryNotes || "Preserved user ingredient record.")}
+                                </div>
+                              </details>
                             </div>
                           </div>
                           <div class="selected-item-controls">
@@ -10655,54 +10787,35 @@ class CulinaryAppController {
                 </div>
               `
             }
-
-            <div class="form-row" style="margin-top: 12px; margin-bottom: 0;">
-              <label for="dish-notes-input" class="form-label">Chef Notes &amp; Plating Ideas</label>
-              <textarea
-                id="dish-notes-input"
-                class="form-textarea"
-                rows="2"
-                placeholder="Record proportions, plating notes, or technique reminders..."
-              >${escapeHtml(dish.notes || "")}</textarea>
-            </div>
           </div>
 
-          <!-- ACTIVE DISH IDENTITY & QUICK-ADD -->
-          <div class="card">
-            <div class="card-header">
-              <h2>Active Dish Configuration</h2>
-              <span class="card-subtitle">${pluralize(dish.ingredients.length, "ingredient")} · ${pluralize(
-      (dish.sauceIds || []).length,
-      "sauce"
-    )} · ${pluralize((dish.sideIds || []).length, "side")}</span>
-            </div>
-            <div class="form-row">
-              <label for="dish-name-input" class="form-label">Dish Name</label>
-              <input
-                id="dish-name-input"
-                type="text"
-                class="form-input"
-                value="${escapeHtml(dish.name)}"
-                placeholder="e.g., Pan-Seared Sea Bass with Fennel &amp; Blood Orange"
-              />
-            </div>
-
-            <div class="form-row-split" style="margin-bottom: 0;">
+          <!-- COLLAPSIBLE DISH CONTEXT & SETTINGS -->
+          <details class="card card-collapsible" ${this.state.dishSettingsOpen || dish.ingredients.length === 0 ? "open" : ""}>
+            <summary>
               <div>
-                <label for="dish-course-role-select" class="form-label">Default Course Role</label>
-                <select id="dish-course-role-select" class="form-select">
-                  ${STANDARD_COURSE_TYPES.map(
-                    (c) =>
-                      `<option value="${escapeHtml(c.id)}" ${
-                        dish.courseRole === c.id ? "selected" : ""
-                      }>${escapeHtml(c.label)}</option>`
-                  )}
-                </select>
+                <h2>Dish Context &amp; Settings</h2>
+                <span class="card-subtitle">
+                  ${escapeHtml(dish.name || "Untitled Dish")} · ${(dish.cuisineIds || []).map(formatSlug).join(", ") || "No Cuisine"} · ${(dish.cookingMethods || []).map(formatSlug).join(", ") || "No Method"}
+                </span>
               </div>
-              <div class="menu-quick-add-box">
-                <label for="quick-add-course-type" class="form-label">Send Snapshot to Active Menu</label>
-                <div class="inline-action-group">
-                  <select id="quick-add-course-type" class="form-select">
+              <span class="btn-why-toggle">Edit ▾</span>
+            </summary>
+            <div class="collapsible-content">
+              <div class="form-row">
+                <label for="dish-name-input" class="form-label">Dish Name</label>
+                <input
+                  id="dish-name-input"
+                  type="text"
+                  class="form-input"
+                  value="${escapeHtml(dish.name)}"
+                  placeholder="e.g., Pan-Seared Sea Bass with Fennel &amp; Blood Orange"
+                />
+              </div>
+
+              <div class="form-row-split">
+                <div>
+                  <label for="dish-course-role-select" class="form-label">Default Course Role</label>
+                  <select id="dish-course-role-select" class="form-select">
                     ${STANDARD_COURSE_TYPES.map(
                       (c) =>
                         `<option value="${escapeHtml(c.id)}" ${
@@ -10710,229 +10823,157 @@ class CulinaryAppController {
                         }>${escapeHtml(c.label)}</option>`
                     )}
                   </select>
-                  <button type="button" class="btn btn-primary" data-action="add-working-dish-to-menu">
-                    + Add to Menu
-                  </button>
+                </div>
+                <div class="menu-quick-add-box">
+                  <label for="quick-add-course-type" class="form-label">Send Snapshot to Active Menu</label>
+                  <div class="inline-action-group">
+                    <select id="quick-add-course-type" class="form-select">
+                      ${STANDARD_COURSE_TYPES.map(
+                        (c) =>
+                          `<option value="${escapeHtml(c.id)}" ${
+                            dish.courseRole === c.id ? "selected" : ""
+                          }>${escapeHtml(c.label)}</option>`
+                      )}
+                    </select>
+                    <button type="button" class="btn btn-primary" data-action="add-working-dish-to-menu">
+                      + Add to Menu
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <label for="dish-notes-input" class="form-label">Chef Notes &amp; Plating Ideas</label>
+                <textarea
+                  id="dish-notes-input"
+                  class="form-textarea"
+                  rows="2"
+                  placeholder="Record proportions, plating notes, or technique reminders..."
+                >${escapeHtml(dish.notes || "")}</textarea>
+              </div>
+
+              <div class="form-row">
+                <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
+                  <span class="form-label">Culinary Tradition Preference (${(dish.cuisineIds || []).length} active)</span>
+                  ${
+                    hasContextFilters
+                      ? `<button type="button" class="search-clear-btn" data-action="clear-dish-context-chips">Clear Context ×</button>`
+                      : ""
+                  }
+                </div>
+                <div class="chip-group">
+                  ${Array.from(this.graph.cuisines.values())
+                    .map((c) => {
+                      const active = (dish.cuisineIds || []).includes(c.id);
+                      return `
+                        <button
+                          type="button"
+                          class="chip ${active ? "chip-active" : ""}"
+                          data-action="toggle-cuisine"
+                          data-cuisine-id="${escapeHtml(c.id)}"
+                          aria-pressed="${active}"
+                          title="${escapeHtml(c.description)}"
+                        >
+                          ${escapeHtml(c.name)}
+                        </button>
+                      `;
+                    })
+                    .join("")}
+                </div>
+              </div>
+
+              <div class="form-row" style="margin-bottom: 0;">
+                <span class="form-label">Dish Cooking Techniques (${(dish.cookingMethods || []).length} active)</span>
+                <div class="chip-group">
+                  ${["roasted", "sauteed", "braised", "grilled", "poached", "steamed", "raw", "fried", "smoked", "fermented"]
+                    .map((m) => {
+                      const active = (dish.cookingMethods || []).includes(m);
+                      return `
+                        <button
+                          type="button"
+                          class="chip ${active ? "chip-active" : ""}"
+                          data-action="toggle-cooking-method"
+                          data-method="${escapeHtml(m)}"
+                          aria-pressed="${active}"
+                        >
+                          ${escapeHtml(formatSlug(m))}
+                        </button>
+                      `;
+                    })
+                    .join("")}
                 </div>
               </div>
             </div>
-          </div>
+          </details>
 
-          <!-- OPTIONAL CULINARY TRADITION & COOKING METHOD CONTEXT -->
-          <div class="card">
-            <div class="card-header">
-              <h2>Culinary Tradition &amp; Technique Context</h2>
-              ${
-                hasContextFilters
-                  ? `<button type="button" class="search-clear-btn" data-action="clear-dish-context-chips">Clear Context ×</button>`
-                  : `<span class="card-subtitle">Influences ranking without restricting discovery</span>`
-              }
-            </div>
-            <div class="form-row">
-              <span class="form-label">Culinary Tradition Preference (${(dish.cuisineIds || []).length} active)</span>
-              <div class="chip-group">
-                ${Array.from(this.graph.cuisines.values())
-                  .map((c) => {
-                    const active = (dish.cuisineIds || []).includes(c.id);
-                    return `
-                      <button
-                        type="button"
-                        class="chip ${active ? "chip-active" : ""}"
-                        data-action="toggle-cuisine"
-                        data-cuisine-id="${escapeHtml(c.id)}"
-                        aria-pressed="${active}"
-                        title="${escapeHtml(c.description)}"
-                      >
-                        ${escapeHtml(c.name)}
-                      </button>
-                    `;
-                  })
-                  .join("")}
-              </div>
-            </div>
-
-            <div class="form-row" style="margin-bottom: 0;">
-              <span class="form-label">Dish Cooking Techniques (${(dish.cookingMethods || []).length} active)</span>
-              <div class="chip-group">
-                ${["roasted", "sauteed", "braised", "grilled", "poached", "steamed", "raw", "fried", "smoked", "fermented"]
-                  .map((m) => {
-                    const active = (dish.cookingMethods || []).includes(m);
-                    return `
-                      <button
-                        type="button"
-                        class="chip ${active ? "chip-active" : ""}"
-                        data-action="toggle-cooking-method"
-                        data-method="${escapeHtml(m)}"
-                        aria-pressed="${active}"
-                      >
-                        ${escapeHtml(formatSlug(m))}
-                      </button>
-                    `;
-                  })
-                  .join("")}
-              </div>
-            </div>
-          </div>
-
-          <!-- SAUCES & COMPOSED SIDES -->
-          <div class="card">
-            <div class="card-header">
-              <h2>Sauces &amp; Composed Side Accompaniments</h2>
-              <span class="card-subtitle">Constituent ingredients deduplicate against your dish</span>
-            </div>
-
-            <div class="active-sauces-sides">
+          <!-- COMPACT FLAVOR BALANCE STRIP & ACCORDION -->
+          <details class="card card-collapsible">
+            <summary>
               <div>
-                <strong>Selected Sauces (${(dish.sauceIds || []).length}):</strong>
-                ${
-                  (dish.sauceIds || []).length === 0
-                    ? `<span class="card-subtitle">None selected</span>`
-                    : (dish.sauceIds || [])
-                        .map((id) => {
-                          const s = this.graph.sauces.get(id);
-                          return `<button type="button" class="chip chip-active" data-action="toggle-sauce" data-sauce-id="${escapeHtml(
-                            id
-                          )}">${escapeHtml(s?.name || id)} [×]</button>`;
-                        })
-                        .join(" ")
-                }
+                <h2>Flavor Balance &amp; Structure</h2>
+                <span class="card-subtitle">
+                  ${top3.map((a) => `${a.label} (${a.val.toFixed(1)})`).join(" · ")} — <span class="badge ${balancePill.includes("Needs") ? "badge-warning" : "badge-strong"}">${balancePill}</span>
+                </span>
               </div>
-              <div style="margin-top: 6px;">
-                <strong>Selected Composed Sides (${(dish.sideIds || []).length}):</strong>
-                ${
-                  (dish.sideIds || []).length === 0
-                    ? `<span class="card-subtitle">None selected</span>`
-                    : (dish.sideIds || [])
-                        .map((id) => {
-                          const s = this.graph.sides.get(id);
-                          return `<button type="button" class="chip chip-active" data-action="toggle-side" data-side-id="${escapeHtml(
-                            id
-                          )}">${escapeHtml(s?.name || id)} [×]</button>`;
-                        })
-                        .join(" ")
-                }
+              <span class="btn-why-toggle">All 8 Flavor Axes ▾</span>
+            </summary>
+            <div class="collapsible-content">
+              <div class="flavor-meters-grid">
+                ${balanceAxes
+                  .map((axis) => {
+                    const clamped = Math.min(4.0, axis.val);
+                    const pct = Math.min(100, Math.round((clamped / 4) * 100));
+                    return `
+                      <div class="meter-item">
+                        <div class="meter-label-row">
+                          <span>${escapeHtml(axis.label)}</span>
+                          <span class="mono-num">${clamped.toFixed(1)} / 4.0</span>
+                        </div>
+                        <div class="meter-track">
+                          <div class="meter-fill ${axis.fillClass}" style="width: ${pct}%"></div>
+                        </div>
+                      </div>
+                    `;
+                  })
+                  .join("")}
               </div>
             </div>
-
-            <h3 class="subsection-title">Recommended Sauce Templates</h3>
-            <div class="rec-card-list">
-              ${sauceRecs.templates
-                .map(
-                  (sr) => `
-                  <div class="rec-mini-card">
-                    <div class="rec-mini-top">
-                      <strong>${escapeHtml(sr.name)}</strong>
-                      <span class="badge badge-strong">Fit: ${sr.score}</span>
-                    </div>
-                    <p class="rec-mini-desc">${escapeHtml(sr.rationale)}</p>
-                    <div class="rec-mini-meta">
-                      <span>Technique: ${escapeHtml(sr.technique)}</span>
-                    </div>
-                    <button
-                      type="button"
-                      class="btn btn-sm btn-secondary"
-                      data-action="toggle-sauce"
-                      data-sauce-id="${escapeHtml(sr.id)}"
-                    >
-                      + Add Sauce to Dish
-                    </button>
-                  </div>
-                `
-                )
-                .join("")}
-            </div>
-
-            ${
-              sauceRecs.customComposition
-                ? `
-                <div class="custom-sauce-box">
-                  <strong>Dynamic Pan Sauce Construction: ${escapeHtml(
-                    sauceRecs.customComposition.title
-                  )}</strong>
-                  <p class="rec-mini-desc">${escapeHtml(sauceRecs.customComposition.explanation)}</p>
-                </div>
-              `
-                : ""
-            }
-
-            <h3 class="subsection-title">Recommended Composed Side Dishes</h3>
-            <div class="rec-card-list">
-              ${sideRecs
-                .map(
-                  (side) => `
-                  <div class="rec-mini-card">
-                    <div class="rec-mini-top">
-                      <strong>${escapeHtml(side.name)}</strong>
-                      <span class="badge badge-strong">Fit: ${side.score}</span>
-                    </div>
-                    <p class="rec-mini-desc">${escapeHtml(side.rationale)}</p>
-                    <div class="rec-mini-meta">
-                      <span>Key components: ${escapeHtml(side.constituentNames.join(", "))}</span>
-                    </div>
-                    <button
-                      type="button"
-                      class="btn btn-sm btn-secondary"
-                      data-action="toggle-side"
-                      data-side-id="${escapeHtml(side.id)}"
-                    >
-                      + Add Composed Side
-                    </button>
-                  </div>
-                `
-                )
-                .join("")}
-            </div>
-          </div>
+          </details>
         </section>
 
-        <!-- RIGHT COLUMN: Dish Balance Diagnostics, Warnings, Bridge Rescue, and Multi-Ingredient Recommendations -->
+        <!-- RIGHT COLUMN: Segmented Sub-Views (Ingredients / Sauces & Sides / Harmony & Rescue) -->
         <section class="panel-col" aria-label="Culinary Intelligence & Recommendations">
-          <!-- FLAVOR BALANCE & DIAGNOSTICS -->
-          <div class="card">
-            <div class="card-header">
-              <h2>Multi-Ingredient Balance &amp; Structure Analysis</h2>
-              <span class="card-subtitle">Evaluated across ${pluralize(
-                dish.ingredients.length,
-                "selected ingredient"
-              )} and ${pluralize((dish.sauceIds || []).length, "sauce")}</span>
-            </div>
-            <div class="flavor-meters-grid">
-              ${[
-                ["Umami / Savory", structure.averages.umami, ""],
-                ["Acidity / Brightness", structure.averages.acidity, "meter-fill-acidity"],
-                ["Fat / Richness", structure.averages.perceivedRichness, "meter-fill-fat"],
-                ["Sweetness", structure.averages.sweetness, "meter-fill-sweet"],
-                ["Bitterness", structure.averages.bitterness, ""],
-                ["Heat / Pungency", structure.averages.heatPungency, "meter-fill-heat"],
-                ["Herbal / Aromatic", structure.averages.herbalCharacter, "meter-fill-herbal"],
-                [
-                  "Smokiness / Earth",
-                  Math.max(structure.averages.smokiness || 0, structure.averages.earthiness || 0),
-                  "meter-fill-fat"
-                ]
-              ]
-                .map(([label, val, fillClass]) => {
-                  const clamped = Math.min(4.0, Number(val || 0));
-                  const pct = Math.min(100, Math.round((clamped / 4) * 100));
-                  return `
-                    <div class="meter-item">
-                      <div class="meter-label-row">
-                        <span>${escapeHtml(label)}</span>
-                        <span class="mono-num">${clamped} / 4.0</span>
-                      </div>
-                      <div class="meter-track">
-                        <div class="meter-fill ${fillClass}" style="width: ${pct}%"></div>
-                      </div>
-                    </div>
-                  `;
-                })
-                .join("")}
-            </div>
+          <!-- 3-WAY SEGMENTED VIEW SWITCHER -->
+          <div class="segmented-control segmented-control-full" style="margin-bottom: 12px;" role="tablist" aria-label="Workbench recommendation views">
+            <button
+              type="button"
+              class="seg-btn ${this.state.workbenchRightTab === "ingredients" ? "seg-btn-active" : ""}"
+              data-action="set-workbench-right-tab"
+              data-wtab="ingredients"
+            >
+              Ingredients (${ingredientRecs.recommendations.length})
+            </button>
+            <button
+              type="button"
+              class="seg-btn ${this.state.workbenchRightTab === "sauces_sides" ? "seg-btn-active" : ""}"
+              data-action="set-workbench-right-tab"
+              data-wtab="sauces_sides"
+            >
+              Sauces &amp; Sides (${sauceRecs.templates.length + sideRecs.length})
+            </button>
+            <button
+              type="button"
+              class="seg-btn ${this.state.workbenchRightTab === "harmony_rescue" ? "seg-btn-active" : ""} ${warnings.length > 0 ? "seg-btn-warning" : ""}"
+              data-action="set-workbench-right-tab"
+              data-wtab="harmony_rescue"
+            >
+              Harmony &amp; Rescue (${warnings.length + bridges.length})
+            </button>
           </div>
 
-          <!-- COMPATIBILITY WARNINGS & BRIDGING RESCUE PANEL -->
+          <!-- PROMINENT BRIDGING RESCUE (ALWAYS ACCESSIBLE WHEN BRIDGES EXIST OR SUBTAB ACTIVE) -->
           ${
-            warnings.length > 0 || bridges.length > 0
+            bridges.length > 0 || this.state.workbenchRightTab === "harmony_rescue"
               ? `
               <div class="card card-rescue" role="region" aria-label="Compatibility Warnings and Rescue Bridges">
                 <div class="card-header">
@@ -10988,17 +11029,28 @@ class CulinaryAppController {
                             b.supportLevel
                           )})</span>
                             </div>
-                            <p class="rec-mini-desc">${escapeHtml(b.rationale)}</p>
-                            ${
-                              b.tradeoffNote
-                                ? `<p class="tradeoff-note">Tradeoff note: ${escapeHtml(
+                            <div class="rec-summary-row" style="display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:4px;">
+                              <span class="text-clamp-1" style="font-size:12px;color:var(--color-text-muted);">
+                                ${escapeHtml(b.rationale.slice(0, 75))}${b.rationale.length > 75 ? "..." : ""}
+                              </span>
+                              <details class="rationale-drawer">
+                                <summary class="btn-why-toggle">Why? ▾</summary>
+                                <div class="rationale-expanded">
+                                  <p class="rec-mini-desc" style="margin:4px 0;">${escapeHtml(b.rationale)}</p>
+                                  ${
                                     b.tradeoffNote
-                                  )}</p>`
-                                : ""
-                            }
+                                      ? `<p class="tradeoff-note" style="margin:4px 0;">Tradeoff note: ${escapeHtml(
+                                          b.tradeoffNote
+                                        )}</p>`
+                                      : ""
+                                  }
+                                </div>
+                              </details>
+                            </div>
                             <button
                               type="button"
                               class="btn btn-sm btn-primary"
+                              style="margin-top: 6px;"
                               data-action="apply-bridge-suggestion"
                               data-bridge-type="${escapeHtml(b.type)}"
                               data-cand-id="${escapeHtml(
@@ -11021,98 +11073,255 @@ class CulinaryAppController {
               : ""
           }
 
-          <!-- CONTEXTUAL MULTI-INGREDIENT RECOMMENDATIONS -->
-          <div class="card">
-            <div class="card-header">
-              <h2>Contextual Ingredient Recommendations</h2>
-              <div class="inline-action-group">
-                <span class="card-subtitle">
-                  Ranked across all active selections (${
-                    ingredientRecs.excludedConflictCount
-                  } incompatible items filtered; searchable on left)
-                </span>
+          <!-- SUBTAB 1: INGREDIENTS -->
+          ${
+            this.state.workbenchRightTab === "ingredients"
+              ? `
+              <div class="card">
+                <div class="card-header">
+                  <h2>Contextual Ingredient Recommendations</h2>
+                  <div class="inline-action-group">
+                    <span class="card-subtitle">
+                      ${ingredientRecs.recommendations.length} recommendations (${
+                  ingredientRecs.excludedConflictCount
+                } filtered)
+                    </span>
+                    ${
+                      hasRecFilters
+                        ? `<button type="button" class="search-clear-btn" data-action="reset-rec-filters">Reset Filters ×</button>`
+                        : ""
+                    }
+                  </div>
+                </div>
+
+                <div class="filter-bar">
+                  <div>
+                    <label for="rec-category-filter" class="form-label sr-only">Filter by Category</label>
+                    <select id="rec-category-filter" class="form-select form-select-sm">
+                      <option value="">All Categories</option>
+                      ${INGREDIENT_CATEGORIES.map(
+                        (c) =>
+                          `<option value="${escapeHtml(c)}" ${
+                            this.state.recCategoryFilter === c ? "selected" : ""
+                          }>${escapeHtml(formatSlug(c))}</option>`
+                      ).join("")}
+                    </select>
+                  </div>
+                  <div>
+                    <label for="rec-role-filter" class="form-label sr-only">Filter by Dish Role</label>
+                    <select id="rec-role-filter" class="form-select form-select-sm">
+                      <option value="">All Roles</option>
+                      ${CULINARY_ROLES.map(
+                        (r) =>
+                          `<option value="${escapeHtml(r)}" ${
+                            this.state.recRoleFilter === r ? "selected" : ""
+                          }>${escapeHtml(formatSlug(r))}</option>`
+                      ).join("")}
+                    </select>
+                  </div>
+                </div>
+
                 ${
-                  hasRecFilters
-                    ? `<button type="button" class="search-clear-btn" data-action="reset-rec-filters">Reset Filters ×</button>`
-                    : ""
-                }
-              </div>
-            </div>
-
-            <div class="filter-bar">
-              <div>
-                <label for="rec-category-filter" class="form-label">Filter by Category</label>
-                <select id="rec-category-filter" class="form-select">
-                  <option value="">All Categories</option>
-                  ${INGREDIENT_CATEGORIES.map(
-                    (c) =>
-                      `<option value="${escapeHtml(c)}" ${
-                        this.state.recCategoryFilter === c ? "selected" : ""
-                      }>${escapeHtml(formatSlug(c))}</option>`
-                  ).join("")}
-                </select>
-              </div>
-              <div>
-                <label for="rec-role-filter" class="form-label">Filter by Dish Role</label>
-                <select id="rec-role-filter" class="form-select">
-                  <option value="">All Culinary Roles</option>
-                  ${CULINARY_ROLES.map(
-                    (r) =>
-                      `<option value="${escapeHtml(r)}" ${
-                        this.state.recRoleFilter === r ? "selected" : ""
-                      }>${escapeHtml(formatSlug(r))}</option>`
-                  ).join("")}
-                </select>
-              </div>
-            </div>
-
-            ${
-              ingredientRecs.fallbackMessage
-                ? `<div class="empty-state">${escapeHtml(ingredientRecs.fallbackMessage)}</div>`
-                : `
-                <div class="recommendations-grid">
-                  ${ingredientRecs.recommendations
-                    .map(
-                      (rec) => `
-                      <div class="rec-card">
-                        <div class="rec-card-header">
-                          <div>
-                            <strong class="rec-title">${escapeHtml(rec.name)}</strong>
-                            <div class="rec-badges">
-                              <span class="badge badge-strong">Score: ${rec.totalScore}</span>
-                              <span class="badge badge-role">Role: ${escapeHtml(
-                                formatSlug(rec.suggestedRole)
-                              )}</span>
-                              <span class="badge badge-neutral">Confidence: ${escapeHtml(
-                                rec.confidence
-                              )}</span>
+                  ingredientRecs.fallbackMessage
+                    ? `<div class="empty-state">${escapeHtml(ingredientRecs.fallbackMessage)}</div>`
+                    : `
+                    <div class="recommendations-grid">
+                      ${ingredientRecs.recommendations
+                        .map(
+                          (rec) => `
+                          <div class="rec-card">
+                            <div class="rec-card-header">
+                              <div>
+                                <strong class="rec-title">${escapeHtml(rec.name)}</strong>
+                                <div class="rec-badges">
+                                  <span class="badge badge-strong">${rec.totalScore}% Match</span>
+                                  <span class="badge badge-role">${escapeHtml(
+                                    formatSlug(rec.suggestedRole)
+                                  )}</span>
+                                </div>
+                              </div>
+                              <button
+                                type="button"
+                                class="btn btn-sm btn-primary"
+                                data-action="add-recommended-ingredient"
+                                data-ing-id="${escapeHtml(rec.candidateId)}"
+                                data-role="${escapeHtml(rec.suggestedRole)}"
+                                data-prep="${escapeHtml(rec.suggestedPreparation)}"
+                              >
+                                + Add
+                              </button>
+                            </div>
+                            <div class="rec-summary-row" style="display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:4px;">
+                              <span class="text-clamp-1" style="font-size:12px;color:var(--color-text-muted);">
+                                ${escapeHtml(
+                                  rec.primaryExplanation ? rec.primaryExplanation.slice(0, 75) + (rec.primaryExplanation.length > 75 ? "..." : "") : ""
+                                )}
+                              </span>
+                              <details class="rationale-drawer">
+                                <summary class="btn-why-toggle">Why? ▾</summary>
+                                <div class="rationale-expanded">
+                                  <p class="rec-explanation" style="margin:4px 0;">${escapeHtml(rec.primaryExplanation)}</p>
+                                  <div class="rec-tags-row">
+                                    ${(rec.explanationCategories || [])
+                                      .map((cat) => `<span class="tag-pill">${escapeHtml(cat)}</span>`)
+                                      .join("")}
+                                  </div>
+                                </div>
+                              </details>
                             </div>
                           </div>
-                          <button
-                            type="button"
-                            class="btn btn-sm btn-primary"
-                            data-action="add-recommended-ingredient"
-                            data-ing-id="${escapeHtml(rec.candidateId)}"
-                            data-role="${escapeHtml(rec.suggestedRole)}"
-                            data-prep="${escapeHtml(rec.suggestedPreparation)}"
-                          >
-                            + Add
-                          </button>
+                        `
+                        )
+                        .join("")}
+                    </div>
+                  `
+                }
+              </div>
+            `
+              : ""
+          }
+
+          <!-- SUBTAB 2: SAUCES & SIDES -->
+          ${
+            this.state.workbenchRightTab === "sauces_sides"
+              ? `
+              <div class="card">
+                <div class="card-header">
+                  <h2>Sauces &amp; Composed Side Accompaniments</h2>
+                  <span class="card-subtitle">Constituent ingredients deduplicate against your dish</span>
+                </div>
+
+                <div class="active-sauces-sides">
+                  <div>
+                    <strong>Selected Sauces (${(dish.sauceIds || []).length}):</strong>
+                    ${
+                      (dish.sauceIds || []).length === 0
+                        ? `<span class="card-subtitle">None selected</span>`
+                        : (dish.sauceIds || [])
+                            .map((id) => {
+                              const s = this.graph.sauces.get(id);
+                              return `<button type="button" class="chip chip-active" data-action="toggle-sauce" data-sauce-id="${escapeHtml(
+                                id
+                              )}">${escapeHtml(s?.name || id)} [×]</button>`;
+                            })
+                            .join(" ")
+                    }
+                  </div>
+                  <div style="margin-top: 6px;">
+                    <strong>Selected Composed Sides (${(dish.sideIds || []).length}):</strong>
+                    ${
+                      (dish.sideIds || []).length === 0
+                        ? `<span class="card-subtitle">None selected</span>`
+                        : (dish.sideIds || [])
+                            .map((id) => {
+                              const s = this.graph.sides.get(id);
+                              return `<button type="button" class="chip chip-active" data-action="toggle-side" data-side-id="${escapeHtml(
+                                id
+                              )}">${escapeHtml(s?.name || id)} [×]</button>`;
+                            })
+                            .join(" ")
+                    }
+                  </div>
+                </div>
+
+                <h3 class="subsection-title">Recommended Sauce Templates</h3>
+                <div class="rec-card-list">
+                  ${sauceRecs.templates
+                    .map(
+                      (sr) => `
+                      <div class="rec-mini-card">
+                        <div class="rec-mini-top">
+                          <strong>${escapeHtml(sr.name)}</strong>
+                          <span class="badge badge-strong">Fit: ${sr.score}</span>
                         </div>
-                        <p class="rec-explanation">${escapeHtml(rec.primaryExplanation)}</p>
-                        <div class="rec-tags-row">
-                          ${(rec.explanationCategories || [])
-                            .map((cat) => `<span class="tag-pill">${escapeHtml(cat)}</span>`)
-                            .join("")}
+                        <div class="rec-summary-row" style="display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:4px;">
+                          <span class="text-clamp-1" style="font-size:12px;color:var(--color-text-muted);">
+                            Technique: ${escapeHtml(sr.technique)} · ${escapeHtml(sr.rationale.slice(0, 60))}
+                          </span>
+                          <details class="rationale-drawer">
+                            <summary class="btn-why-toggle">Why? ▾</summary>
+                            <div class="rationale-expanded">
+                              <p class="rec-mini-desc" style="margin:4px 0;">${escapeHtml(sr.rationale)}</p>
+                              <div><strong>Technique:</strong> ${escapeHtml(sr.technique)}</div>
+                            </div>
+                          </details>
                         </div>
+                        <button
+                          type="button"
+                          class="btn btn-sm btn-secondary"
+                          style="margin-top: 6px;"
+                          data-action="toggle-sauce"
+                          data-sauce-id="${escapeHtml(sr.id)}"
+                        >
+                          + Add Sauce to Dish
+                        </button>
                       </div>
                     `
                     )
                     .join("")}
                 </div>
-              `
-            }
-          </div>
+
+                ${
+                  sauceRecs.customComposition
+                    ? `
+                    <div class="custom-sauce-box" style="margin-top: 12px;">
+                      <div style="display:flex;justify-content:space-between;align-items:center;">
+                        <strong>Pan Sauce: ${escapeHtml(sauceRecs.customComposition.title)}</strong>
+                        <details class="rationale-drawer">
+                          <summary class="btn-why-toggle">Formula ▾</summary>
+                          <div class="rationale-expanded">
+                            <p class="rec-mini-desc" style="margin:4px 0;">${escapeHtml(sauceRecs.customComposition.explanation)}</p>
+                          </div>
+                        </details>
+                      </div>
+                      <span class="text-clamp-1" style="font-size:12px;color:var(--color-text-muted);margin-top:4px;">
+                        ${escapeHtml(sauceRecs.customComposition.explanation.slice(0, 80))}...
+                      </span>
+                    </div>
+                  `
+                    : ""
+                }
+
+                <h3 class="subsection-title" style="margin-top: 14px;">Recommended Composed Side Dishes</h3>
+                <div class="rec-card-list">
+                  ${sideRecs
+                    .map(
+                      (side) => `
+                      <div class="rec-mini-card">
+                        <div class="rec-mini-top">
+                          <strong>${escapeHtml(side.name)}</strong>
+                          <span class="badge badge-strong">Fit: ${side.score}</span>
+                        </div>
+                        <div class="rec-summary-row" style="display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:4px;">
+                          <span class="text-clamp-1" style="font-size:12px;color:var(--color-text-muted);">
+                            Components: ${escapeHtml(side.constituentNames.join(", "))}
+                          </span>
+                          <details class="rationale-drawer">
+                            <summary class="btn-why-toggle">Why? ▾</summary>
+                            <div class="rationale-expanded">
+                              <p class="rec-mini-desc" style="margin:4px 0;">${escapeHtml(side.rationale)}</p>
+                              <div><strong>Key components:</strong> ${escapeHtml(side.constituentNames.join(", "))}</div>
+                            </div>
+                          </details>
+                        </div>
+                        <button
+                          type="button"
+                          class="btn btn-sm btn-secondary"
+                          style="margin-top: 6px;"
+                          data-action="toggle-side"
+                          data-side-id="${escapeHtml(side.id)}"
+                        >
+                          + Add Composed Side
+                        </button>
+                      </div>
+                    `
+                    )
+                    .join("")}
+                </div>
+              </div>
+            `
+              : ""
+          }
         </section>
       </div>
     `;
@@ -11126,10 +11335,19 @@ class CulinaryAppController {
     return `
       <div class="workbench-grid">
         <section class="panel-col" aria-label="Menu Configuration and Courses">
-          <div class="card">
-            <div class="card-header">
-              <h2>Active Multi-Course Menu: ${escapeHtml(menu.name)}</h2>
-              <div class="inline-action-group">
+          <!-- COLLAPSIBLE MENU METADATA -->
+          <details class="card card-collapsible" open>
+            <summary>
+              <div>
+                <h2>Active Menu: ${escapeHtml(menu.name)}</h2>
+                <span class="card-subtitle">
+                  ${menu.theme ? escapeHtml(menu.theme) + " · " : ""}${orderedItems.length} courses
+                </span>
+              </div>
+              <span class="btn-why-toggle">Menu Details &amp; Notes ▾</span>
+            </summary>
+            <div class="collapsible-content">
+              <div class="inline-action-group" style="margin-bottom: 12px;">
                 <button type="button" class="btn btn-sm btn-secondary" data-action="new-blank-menu">
                   New Blank Menu
                 </button>
@@ -11140,43 +11358,44 @@ class CulinaryAppController {
                   Print Menu Card
                 </button>
               </div>
-            </div>
 
-            <div class="form-row-split">
-              <div>
-                <label for="menu-name-input" class="form-label">Menu Title</label>
-                <input
-                  id="menu-name-input"
-                  type="text"
-                  class="form-input"
-                  value="${escapeHtml(menu.name)}"
-                />
+              <div class="form-row-split">
+                <div>
+                  <label for="menu-name-input" class="form-label">Menu Title</label>
+                  <input
+                    id="menu-name-input"
+                    type="text"
+                    class="form-input"
+                    value="${escapeHtml(menu.name)}"
+                  />
+                </div>
+                <div>
+                  <label for="menu-theme-input" class="form-label">Optional Culinary Theme / Occasion</label>
+                  <input
+                    id="menu-theme-input"
+                    type="text"
+                    class="form-input"
+                    value="${escapeHtml(menu.theme || "")}"
+                    placeholder="e.g., Autumn Mediterranean Harvest"
+                  />
+                </div>
               </div>
-              <div>
-                <label for="menu-theme-input" class="form-label">Optional Culinary Theme / Occasion</label>
-                <input
-                  id="menu-theme-input"
-                  type="text"
-                  class="form-input"
-                  value="${escapeHtml(menu.theme || "")}"
-                  placeholder="e.g., Autumn Mediterranean Harvest"
-                />
+
+              <div class="form-row" style="margin-bottom: 0;">
+                <label for="menu-notes-input" class="form-label">Menu Service &amp; Pacing Notes</label>
+                <textarea id="menu-notes-input" class="form-textarea" rows="2">${escapeHtml(
+                  menu.notes || ""
+                )}</textarea>
               </div>
             </div>
+          </details>
 
-            <div class="form-row" style="margin-bottom: 0;">
-              <label for="menu-notes-input" class="form-label">Menu Service &amp; Pacing Notes</label>
-              <textarea id="menu-notes-input" class="form-textarea" rows="2">${escapeHtml(
-                menu.notes || ""
-              )}</textarea>
-            </div>
-          </div>
-
+          <!-- COMPACT COURSE CARDS -->
           <div class="card">
             <div class="card-header">
               <h2>Menu Courses (${orderedItems.length})</h2>
               <span class="card-subtitle">
-                Each course stores an isolated dish snapshot so editing a dish in one menu never mutates another menu
+                Isolated dish snapshots preserve your menu architecture
               </span>
             </div>
 
@@ -11198,27 +11417,16 @@ class CulinaryAppController {
                         (id) => this.graph.sides.get(id)?.name || id
                       );
                       return `
-                        <div class="menu-course-card">
+                        <div class="menu-course-card" style="padding: 10px 14px;">
                           <div class="menu-course-header">
-                            <div>
+                            <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
                               <span class="badge badge-role">Course ${idx + 1}</span>
-                              ${
-                                entry.customCourseLabel
-                                  ? `<span class="badge badge-role" style="margin-left: 4px;">${escapeHtml(
-                                      entry.customCourseLabel
-                                    )}</span>`
-                                  : ""
-                              }
-                              <strong style="font-size: 15px; margin-left: 6px;">${escapeHtml(
-                                d.name
-                              )}</strong>
-                            </div>
-                            <div class="inline-action-group">
                               <select
                                 class="form-select form-select-sm"
                                 data-action="change-menu-course-type"
                                 data-entry-id="${escapeHtml(entry.entryId)}"
                                 aria-label="Course type for ${escapeHtml(d.name)}"
+                                style="width:auto;"
                               >
                                 ${STANDARD_COURSE_TYPES.map(
                                   (ct) =>
@@ -11232,7 +11440,7 @@ class CulinaryAppController {
                                   ? `<input
                                       type="text"
                                       class="form-input"
-                                      style="width: 165px; padding: 4px 8px; font-size: 12px;"
+                                      style="width: 140px; padding: 3px 6px; font-size: 12px;"
                                       data-action="edit-menu-custom-course-label"
                                       data-entry-id="${escapeHtml(entry.entryId)}"
                                       value="${escapeHtml(entry.customCourseLabel || "")}"
@@ -11241,6 +11449,10 @@ class CulinaryAppController {
                                     />`
                                   : ""
                               }
+                              <strong style="font-size: 14px;">${escapeHtml(d.name)}</strong>
+                              <span class="card-subtitle">(${ingNames.length} ingredients)</span>
+                            </div>
+                            <div class="inline-action-group">
                               <button
                                 type="button"
                                 class="btn btn-sm btn-secondary"
@@ -11279,25 +11491,14 @@ class CulinaryAppController {
                               </button>
                             </div>
                           </div>
-                          <div class="menu-course-body">
-                            <div><strong>Ingredients:</strong> ${escapeHtml(
-                              ingNames.join(", ") || "None"
-                            )}</div>
-                            ${
-                              sauceNames.length
-                                ? `<div><strong>Sauces:</strong> ${escapeHtml(
-                                    sauceNames.join(", ")
-                                  )}</div>`
-                                : ""
-                            }
-                            ${
-                              sideNames.length
-                                ? `<div><strong>Sides:</strong> ${escapeHtml(
-                                    sideNames.join(", ")
-                                  )}</div>`
-                                : ""
-                            }
-                          </div>
+                          <details class="rationale-drawer" style="margin-top: 6px;">
+                            <summary class="btn-why-toggle">View Ingredients (${ingNames.length}) ▾</summary>
+                            <div class="rationale-expanded menu-course-body" style="margin-top: 4px;">
+                              <div><strong>Ingredients:</strong> ${escapeHtml(ingNames.join(", ") || "None")}</div>
+                              ${sauceNames.length ? `<div><strong>Sauces:</strong> ${escapeHtml(sauceNames.join(", "))}</div>` : ""}
+                              ${sideNames.length ? `<div><strong>Sides:</strong> ${escapeHtml(sideNames.join(", "))}</div>` : ""}
+                            </div>
+                          </details>
                         </div>
                       `;
                     })
@@ -11330,20 +11531,27 @@ class CulinaryAppController {
                       (obs) => `
                       <div class="warning-item warning-${
                         obs.type === "warning" ? "challenging" : "conditional"
-                      }">
-                        <div class="warning-item-header">
-                          <strong>${
-                            obs.type === "warning"
-                              ? "[!] "
-                              : obs.type === "strength"
-                              ? "[✓] "
-                              : "[i] "
-                          }${escapeHtml(obs.title)}</strong>
-                          <span class="badge badge-neutral">${escapeHtml(
-                            formatSlug(obs.type)
-                          )}</span>
+                      }" style="padding: 8px 12px;">
+                        <div class="warning-item-header" style="display:flex;align-items:center;justify-content:space-between;gap:8px;">
+                          <div>
+                            <strong>${
+                              obs.type === "warning"
+                                ? "[!] "
+                                : obs.type === "strength"
+                                ? "[✓] "
+                                : "[i] "
+                            }${escapeHtml(obs.title)}</strong>
+                            <span class="badge badge-neutral" style="margin-left: 6px;">${escapeHtml(
+                              formatSlug(obs.type)
+                            )}</span>
+                          </div>
+                          <details class="rationale-drawer">
+                            <summary class="btn-why-toggle">Explain ▾</summary>
+                            <div class="rationale-expanded" style="margin-top: 4px;">
+                              <p class="warning-item-body" style="margin: 0;">${escapeHtml(obs.explanation)}</p>
+                            </div>
+                          </details>
                         </div>
-                        <p class="warning-item-body">${escapeHtml(obs.explanation)}</p>
                       </div>
                     `
                     )
@@ -11419,168 +11627,263 @@ class CulinaryAppController {
   }
 
   _renderLibraryAndBackups() {
+    const showDishes = this.state.librarySubTab === "all" || this.state.librarySubTab === "dishes";
+    const showMenus = this.state.librarySubTab === "all" || this.state.librarySubTab === "menus";
+    const showBackup = this.state.librarySubTab === "all" || this.state.librarySubTab === "backup";
+
     return `
+      <!-- SUBTAB SWITCHER -->
+      <div class="segmented-control segmented-control-full" style="margin-bottom: 14px;" role="tablist" aria-label="Library and Backups View">
+        <button
+          type="button"
+          class="seg-btn ${this.state.librarySubTab === "all" ? "seg-btn-active" : ""}"
+          data-action="set-library-subtab"
+          data-subtab="all"
+        >
+          All (${this.state.savedDishes.length + this.state.savedMenus.length})
+        </button>
+        <button
+          type="button"
+          class="seg-btn ${this.state.librarySubTab === "dishes" ? "seg-btn-active" : ""}"
+          data-action="set-library-subtab"
+          data-subtab="dishes"
+        >
+          Saved Dishes (${this.state.savedDishes.length})
+        </button>
+        <button
+          type="button"
+          class="seg-btn ${this.state.librarySubTab === "menus" ? "seg-btn-active" : ""}"
+          data-action="set-library-subtab"
+          data-subtab="menus"
+        >
+          Saved Menus (${this.state.savedMenus.length})
+        </button>
+        <button
+          type="button"
+          class="seg-btn ${this.state.librarySubTab === "backup" ? "seg-btn-active" : ""}"
+          data-action="set-library-subtab"
+          data-subtab="backup"
+        >
+          JSON Backup &amp; Restore
+        </button>
+      </div>
+
       <div class="workbench-grid">
-        <section class="panel-col" aria-label="Saved Dishes and Menus">
-          <div class="card">
-            <div class="card-header">
-              <h2>Saved Dishes Library (${this.state.savedDishes.length})</h2>
-            </div>
-            ${
-              this.state.savedDishes.length === 0
-                ? `<div class="empty-state">No saved dishes in storage yet.</div>`
-                : `
-                <div class="rec-card-list">
-                  ${this.state.savedDishes
-                    .map(
-                      (d) => `
-                      <div class="rec-mini-card">
-                        <div class="rec-mini-top">
-                          <strong>${escapeHtml(d.name)}</strong>
-                          <span class="badge badge-neutral">${pluralize(
-                            d.ingredients.length,
-                            "ingredient"
-                          )} · Updated ${new Date(d.updatedAt).toLocaleDateString()}</span>
+        ${
+          showDishes || showMenus
+            ? `
+            <section class="panel-col" aria-label="Saved Dishes and Menus">
+              ${
+                showDishes
+                  ? `
+                  <div class="card">
+                    <div class="card-header">
+                      <h2>Saved Dishes Library (${this.state.savedDishes.length})</h2>
+                    </div>
+                    ${
+                      this.state.savedDishes.length === 0
+                        ? `<div class="empty-state">No saved dishes in storage yet.</div>`
+                        : `
+                        <div class="rec-card-list">
+                          ${this.state.savedDishes
+                            .map(
+                              (d) => `
+                              <div class="rec-mini-card" style="padding: 10px 14px;">
+                                <div class="rec-mini-top">
+                                  <div>
+                                    <strong style="font-size: 14px;">${escapeHtml(d.name)}</strong>
+                                    <span class="badge badge-neutral" style="margin-left: 4px;">
+                                      ${pluralize(d.ingredients.length, "ingredient")}
+                                    </span>
+                                  </div>
+                                  <div class="inline-action-group">
+                                    <button
+                                      type="button"
+                                      class="btn btn-sm btn-primary"
+                                      data-action="open-saved-dish"
+                                      data-dish-id="${escapeHtml(d.id)}"
+                                    >
+                                      Open in Workbench
+                                    </button>
+                                    <button
+                                      type="button"
+                                      class="btn btn-sm btn-danger-outline"
+                                      data-action="delete-saved-dish"
+                                      data-dish-id="${escapeHtml(d.id)}"
+                                    >
+                                      Delete
+                                    </button>
+                                  </div>
+                                </div>
+                                <div class="rec-summary-row" style="display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:4px;">
+                                  <span class="text-clamp-1" style="font-size:12px;color:var(--color-text-muted);">
+                                    ${escapeHtml(
+                                      d.ingredients
+                                        .map(
+                                          (i) =>
+                                            this.graph.ingredients.get(i.ingredientId)?.name ||
+                                            i.fallbackName ||
+                                            i.ingredientId
+                                        )
+                                        .join(", ") || "None"
+                                    )}
+                                  </span>
+                                  <details class="rationale-drawer">
+                                    <summary class="btn-why-toggle">View ▾</summary>
+                                    <div class="rationale-expanded">
+                                      <div><strong>Ingredients:</strong> ${escapeHtml(
+                                        d.ingredients
+                                          .map(
+                                            (i) =>
+                                              this.graph.ingredients.get(i.ingredientId)?.name ||
+                                              i.fallbackName ||
+                                              i.ingredientId
+                                          )
+                                          .join(", ") || "None"
+                                      )}</div>
+                                      <div style="font-size:11px;color:var(--color-text-muted);margin-top:3px;">
+                                        Updated: ${new Date(d.updatedAt).toLocaleDateString()}
+                                      </div>
+                                    </div>
+                                  </details>
+                                </div>
+                              </div>
+                            `
+                            )
+                            .join("")}
                         </div>
-                        <p class="rec-mini-desc">
-                          Ingredients: ${escapeHtml(
-                            d.ingredients
-                              .map(
-                                (i) =>
-                                  this.graph.ingredients.get(i.ingredientId)?.name ||
-                                  i.fallbackName ||
-                                  i.ingredientId
-                              )
-                              .join(", ") || "None"
-                          )}
-                        </p>
-                        <div class="inline-action-group">
-                          <button
-                            type="button"
-                            class="btn btn-sm btn-primary"
-                            data-action="open-saved-dish"
-                            data-dish-id="${escapeHtml(d.id)}"
-                          >
-                            Open in Dish Workbench
-                          </button>
-                          <button
-                            type="button"
-                            class="btn btn-sm btn-danger-outline"
-                            data-action="delete-saved-dish"
-                            data-dish-id="${escapeHtml(d.id)}"
-                          >
-                            Delete
-                          </button>
+                      `
+                    }
+                  </div>
+                `
+                  : ""
+              }
+
+              ${
+                showMenus
+                  ? `
+                  <div class="card">
+                    <div class="card-header">
+                      <h2>Saved Menus Library (${this.state.savedMenus.length})</h2>
+                    </div>
+                    ${
+                      this.state.savedMenus.length === 0
+                        ? `<div class="empty-state">No saved menus in storage yet.</div>`
+                        : `
+                        <div class="rec-card-list">
+                          ${this.state.savedMenus
+                            .map(
+                              (m) => `
+                              <div class="rec-mini-card" style="padding: 10px 14px;">
+                                <div class="rec-mini-top">
+                                  <div>
+                                    <strong style="font-size: 14px;">${escapeHtml(m.name)}</strong>
+                                    <span class="badge badge-neutral" style="margin-left: 4px;">${pluralize(m.items.length, "course")}</span>
+                                  </div>
+                                  <div class="inline-action-group">
+                                    <button
+                                      type="button"
+                                      class="btn btn-sm btn-primary"
+                                      data-action="open-saved-menu"
+                                      data-menu-id="${escapeHtml(m.id)}"
+                                    >
+                                      Open in Menu Builder
+                                    </button>
+                                    <button
+                                      type="button"
+                                      class="btn btn-sm btn-danger-outline"
+                                      data-action="delete-saved-menu"
+                                      data-menu-id="${escapeHtml(m.id)}"
+                                    >
+                                      Delete
+                                    </button>
+                                  </div>
+                                </div>
+                              </div>
+                            `
+                            )
+                            .join("")}
                         </div>
-                      </div>
-                    `
-                    )
-                    .join("")}
+                      `
+                    }
+                  </div>
+                `
+                  : ""
+              }
+            </section>
+          `
+            : ""
+        }
+
+        ${
+          showBackup
+            ? `
+            <section class="panel-col" aria-label="Import Export and Storage Limitations">
+              <div class="card">
+                <div class="card-header">
+                  <h2>Structured JSON Backup — Export &amp; Import</h2>
+                  <span class="card-subtitle">Preserves dishes, menus, explicit overrides, and legacy items</span>
                 </div>
-              `
-            }
-          </div>
 
-          <div class="card">
-            <div class="card-header">
-              <h2>Saved Menus Library (${this.state.savedMenus.length})</h2>
-            </div>
-            ${
-              this.state.savedMenus.length === 0
-                ? `<div class="empty-state">No saved menus in storage yet.</div>`
-                : `
-                <div class="rec-card-list">
-                  ${this.state.savedMenus
-                    .map(
-                      (m) => `
-                      <div class="rec-mini-card">
-                        <div class="rec-mini-top">
-                          <strong>${escapeHtml(m.name)}</strong>
-                          <span class="badge badge-neutral">${pluralize(m.items.length, "course")}</span>
-                        </div>
-                        <div class="inline-action-group" style="margin-top: 6px;">
-                          <button
-                            type="button"
-                            class="btn btn-sm btn-primary"
-                            data-action="open-saved-menu"
-                            data-menu-id="${escapeHtml(m.id)}"
-                          >
-                            Open in Menu Builder
-                          </button>
-                          <button
-                            type="button"
-                            class="btn btn-sm btn-danger-outline"
-                            data-action="delete-saved-menu"
-                            data-menu-id="${escapeHtml(m.id)}"
-                          >
-                            Delete
-                          </button>
-                        </div>
-                      </div>
-                    `
-                    )
-                    .join("")}
+                <!-- COLLAPSIBLE BROWSER STORAGE DISCLOSURE -->
+                <details class="card card-collapsible" style="margin-bottom: 12px;">
+                  <summary>
+                    <span style="font-weight:600;font-size:12.5px;">Browser Storage &amp; Privacy Disclosure</span>
+                    <span class="btn-why-toggle">Read ▾</span>
+                  </summary>
+                  <div class="collapsible-content">
+                    <div class="storage-disclosure-box" style="margin: 0;">
+                      All dishes, menus, and preferences persist locally in your browser via <code>IndexedDB</code> (${escapeHtml(
+                        this.state.storageStatus.backendType
+                      )}). No account, server database, or external telemetry is used. Browser storage can be cleared if you wipe site data or close private windows. Export a JSON backup to keep a permanent disk copy.
+                    </div>
+                  </div>
+                </details>
+
+                <div class="form-row-split">
+                  <div>
+                    <label for="import-conflict-mode-select" class="form-label">Duplicate ID Import Behavior</label>
+                    <select id="import-conflict-mode-select" class="form-select form-select-sm">
+                      <option value="merge" ${
+                        this.state.importConflictMode === "merge" ? "selected" : ""
+                      }>Merge (Update matching IDs, keep existing)</option>
+                      <option value="keep_both" ${
+                        this.state.importConflictMode === "keep_both" ? "selected" : ""
+                      }>Keep Both (Assign new ID to duplicates)</option>
+                      <option value="replace" ${
+                        this.state.importConflictMode === "replace" ? "selected" : ""
+                      }>Replace All Existing Data</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label for="backup-file-input" class="form-label">Load JSON Backup File</label>
+                    <input id="backup-file-input" type="file" accept=".json,application/json" class="form-input form-input-sm" />
+                  </div>
                 </div>
-              `
-            }
-          </div>
-        </section>
 
-        <section class="panel-col" aria-label="Import Export and Storage Limitations">
-          <div class="card">
-            <div class="card-header">
-              <h2>Structured JSON Backup — Export &amp; Import</h2>
-              <span class="card-subtitle">Preserves dishes, menus, explicit compatibility overrides, and legacy ingredient names</span>
-            </div>
+                <div class="inline-action-group" style="margin: 10px 0;">
+                  <button type="button" class="btn btn-primary" data-action="export-json-backup">
+                    Export All Data to JSON
+                  </button>
+                  <button type="button" class="btn btn-secondary" data-action="import-json-backup">
+                    Validate &amp; Import JSON
+                  </button>
+                </div>
 
-            <div class="storage-disclosure-box">
-              <strong>Browser Storage &amp; Privacy Disclosure:</strong>
-              All dishes, menus, and preferences persist locally in your browser via <code>IndexedDB</code> (${escapeHtml(
-                this.state.storageStatus.backendType
-              )}). No account, server database, or external telemetry is used. Browser storage can be cleared if you wipe site data, close a private window, or hit storage limits. Export a JSON backup below to keep a permanent copy.
-            </div>
-
-            <div class="form-row-split" style="margin-top: 12px;">
-              <div>
-                <label for="import-conflict-mode-select" class="form-label">Duplicate ID Import Behavior</label>
-                <select id="import-conflict-mode-select" class="form-select">
-                  <option value="merge" ${
-                    this.state.importConflictMode === "merge" ? "selected" : ""
-                  }>Merge (Update matching IDs, keep existing)</option>
-                  <option value="keep_both" ${
-                    this.state.importConflictMode === "keep_both" ? "selected" : ""
-                  }>Keep Both (Assign new ID to duplicates)</option>
-                  <option value="replace" ${
-                    this.state.importConflictMode === "replace" ? "selected" : ""
-                  }>Replace All Existing Data</option>
-                </select>
+                <div class="form-row" style="margin-bottom: 0;">
+                  <label for="backup-json-textarea" class="form-label">JSON Backup Payload Inspector / Editor</label>
+                  <textarea
+                    id="backup-json-textarea"
+                    class="form-textarea mono-textarea"
+                    rows="10"
+                    placeholder="Click 'Export All Data to JSON' to view or download your structured backup, or paste a backup JSON payload here and click 'Validate & Import JSON'..."
+                  >${escapeHtml(this.state.backupJsonText || "")}</textarea>
+                </div>
               </div>
-              <div>
-                <label for="backup-file-input" class="form-label">Load JSON Backup File from Disk</label>
-                <input id="backup-file-input" type="file" accept=".json,application/json" class="form-input" />
-              </div>
-            </div>
-
-            <div class="inline-action-group" style="margin: 12px 0;">
-              <button type="button" class="btn btn-primary" data-action="export-json-backup">
-                Export All Data to JSON
-              </button>
-              <button type="button" class="btn btn-secondary" data-action="import-json-backup">
-                Validate &amp; Import JSON
-              </button>
-            </div>
-
-            <div class="form-row" style="margin-bottom: 0;">
-              <label for="backup-json-textarea" class="form-label">JSON Backup Payload Inspector / Editor</label>
-              <textarea
-                id="backup-json-textarea"
-                class="form-textarea mono-textarea"
-                rows="12"
-                placeholder="Click 'Export All Data to JSON' to view or download your structured backup, or paste a backup JSON payload here and click 'Validate & Import JSON'..."
-              >${escapeHtml(this.state.backupJsonText || "")}</textarea>
-            </div>
-          </div>
-        </section>
+            </section>
+          `
+            : ""
+        }
       </div>
     `;
   }
@@ -11597,7 +11900,7 @@ class CulinaryAppController {
           <div>
             <h2>Optional External AI Prompt Generator</h2>
             <span class="card-subtitle">
-              Generates a self-contained, structured prompt from your selections for use in ChatGPT, Claude, Gemini, or any external assistant. No data is transmitted automatically.
+              Self-contained, structured prompt for ChatGPT, Claude, Gemini, or any external model
             </span>
           </div>
           <div class="segmented-control">
@@ -11607,7 +11910,7 @@ class CulinaryAppController {
               data-action="set-ai-scope"
               data-scope="dish"
             >
-              Scope: Current Dish
+              Scope: Dish
             </button>
             <button
               type="button"
@@ -11615,7 +11918,7 @@ class CulinaryAppController {
               data-action="set-ai-scope"
               data-scope="menu"
             >
-              Scope: Complete Menu
+              Scope: Menu
             </button>
           </div>
         </div>
@@ -11636,22 +11939,29 @@ class CulinaryAppController {
               Refresh Prompt
             </button>
             <button type="button" class="btn btn-primary" data-action="copy-ai-prompt">
-              Copy Prompt to Clipboard
+              Copy Prompt
             </button>
           </div>
         </div>
 
-        <div class="form-row" style="margin-top: 12px; margin-bottom: 0;">
-          <label for="ai-prompt-output-textarea" class="form-label">
-            ${escapeHtml(promptObj.title)} (${pluralize(promptObj.includedIngredientCount, "ingredient")}, ${pluralize(
-      promptObj.includedOverrideCount,
-      "intentional override"
-    )} included)
+        <!-- 3-PILL METADATA SUMMARY -->
+        <div class="feature-pill-strip" style="margin-top: 12px; margin-bottom: 8px; justify-content: flex-start;">
+          <span class="badge badge-role">Scope: ${escapeHtml(formatSlug(this.state.aiPromptScope))}</span>
+          <span class="badge badge-strong">${pluralize(promptObj.includedIngredientCount, "Ingredient Included")}</span>
+          <span class="badge ${promptObj.includedOverrideCount > 0 ? "badge-warning" : "badge-neutral"}">
+            ${pluralize(promptObj.includedOverrideCount, "Override Preserved")}
+          </span>
+        </div>
+
+        <div class="form-row" style="margin-bottom: 0;">
+          <label for="ai-prompt-output-textarea" class="form-label sr-only">
+            Generated Structured AI Prompt
           </label>
           <textarea
             id="ai-prompt-output-textarea"
             class="form-textarea mono-textarea"
-            rows="20"
+            rows="14"
+            style="max-height: 360px; overflow-y: auto;"
             readonly
           >${escapeHtml(promptObj.promptText)}</textarea>
         </div>
@@ -11692,24 +12002,32 @@ class CulinaryAppController {
       .map((ing) => {
         const inDish = activeDishIds.has(ing.id);
         return `
-        <div class="rec-mini-card">
-          <div class="rec-mini-top">
-            <div>
-              <strong>${escapeHtml(ing.name)}</strong>
-              <span class="badge badge-neutral" style="margin-left: 6px;"><code>${escapeHtml(ing.id)}</code></span>
+        <div class="rec-mini-card" style="padding: 8px 12px;">
+          <div class="rec-mini-top" style="align-items: center;">
+            <div style="display: flex; align-items: center; gap: 6px; flex-wrap: wrap;">
+              <strong style="font-size: 13.5px;">${escapeHtml(ing.name)}</strong>
+              ${(ing.categories || []).slice(0, 2).map((c) => `<span class="tag-pill">${escapeHtml(formatSlug(c))}</span>`).join("")}
+              <span class="badge badge-neutral" style="font-size: 10px;"><code>${escapeHtml(ing.id)}</code></span>
             </div>
-            ${
-              inDish
-                ? `<span class="badge badge-strong">[✓] In Working Dish</span>`
-                : `<button type="button" class="btn btn-sm btn-secondary" data-action="add-catalog-ing-to-dish" data-ing-id="${escapeHtml(
-                    ing.id
-                  )}">+ Add to Dish</button>`
-            }
-          </div>
-          <p class="rec-mini-desc">${escapeHtml(ing.culinaryNotes)}</p>
-          <div class="rec-mini-meta">
-            <span>Categories: ${(ing.categories || []).map((c) => `<button type="button" class="tag-pill tag-pill-clickable" data-action="set-knowledge-category" data-cat="${escapeHtml(c)}">${escapeHtml(formatSlug(c))}</button>`).join(" ")}</span> ·
-            <span>Roles: ${escapeHtml(ing.defaultRoles.map(formatSlug).join(", "))}</span>
+            <div style="display: flex; align-items: center; gap: 6px;">
+              ${
+                inDish
+                  ? `<span class="badge badge-strong">[✓] In Dish</span>`
+                  : `<button type="button" class="btn btn-sm btn-secondary" data-action="add-catalog-ing-to-dish" data-ing-id="${escapeHtml(
+                      ing.id
+                    )}">+ Add to Dish</button>`
+              }
+              <details class="rationale-drawer">
+                <summary class="btn-why-toggle">Details ▾</summary>
+                <div class="rationale-expanded" style="margin-top: 4px;">
+                  <p class="rec-mini-desc" style="margin: 0 0 4px 0;">${escapeHtml(ing.culinaryNotes)}</p>
+                  <div class="rec-mini-meta">
+                    <span>Categories: ${(ing.categories || []).map((c) => `<button type="button" class="tag-pill tag-pill-clickable" data-action="set-knowledge-category" data-cat="${escapeHtml(c)}">${escapeHtml(formatSlug(c))}</button>`).join(" ")}</span> ·
+                    <span>Roles: ${escapeHtml(ing.defaultRoles.map(formatSlug).join(", "))}</span>
+                  </div>
+                </div>
+              </details>
+            </div>
           </div>
         </div>
       `;
@@ -11736,81 +12054,145 @@ class CulinaryAppController {
       ["fermented", "Ferments"]
     ];
 
-    return `
-      <div class="workbench-grid">
-        <section class="panel-col">
-          <div class="card">
-            <div class="card-header">
-              <h2>Source Provenance &amp; Licensing Registry</h2>
-              <span class="card-subtitle">Zero unauthorized copyrighted compilation data; 100% documented provenance</span>
-            </div>
-            <div class="rec-card-list">
-              ${Array.from(this.graph.sources.values())
-                .map(
-                  (src) => `
-                  <div class="rec-mini-card">
-                    <div class="rec-mini-top">
-                      <strong>${escapeHtml(src.title)}</strong>
-                      <span class="badge badge-strong">${escapeHtml(src.license)}</span>
-                    </div>
-                    <p class="rec-mini-desc">
-                      <strong>Publisher:</strong> ${escapeHtml(src.publisher)} · <strong>Tier:</strong> <code>${escapeHtml(
-                    src.tier
-                  )}</code>
-                    </p>
-                    <p class="rec-mini-desc">${escapeHtml(src.attribution)}</p>
-                  </div>
-                `
-                )
-                .join("")}
-            </div>
-          </div>
-        </section>
+    const showIngs = this.state.knowledgeSubTab === "ingredients";
+    const showProv = this.state.knowledgeSubTab === "provenance";
 
-        <section class="panel-col">
-          <div class="card">
-            <div class="card-header">
-              <h2>Canonical Ingredient Catalog Explorer (${allIngs.length} Ingredients)</h2>
-              <span class="card-subtitle">Click "+ Add to Dish" to send any catalog item directly to the Workbench</span>
-            </div>
-            <div class="form-row">
-              <label for="knowledge-catalog-search" class="form-label">Filter Catalog by Name, Alias, or Category</label>
-              <div class="search-input-wrap">
-                <input
-                  id="knowledge-catalog-search"
-                  type="text"
-                  class="form-input"
-                  value="${escapeHtml(this.state.knowledgeSearchQuery)}"
-                  placeholder="Filter 491 canonical ingredients (press / to focus)..."
-                />
-                <div class="search-input-accessory">
-                  ${
-                    this.state.knowledgeSearchQuery || this.state.knowledgeCategoryFilter
-                      ? `<button type="button" class="search-clear-btn" data-action="clear-knowledge-search">Clear ×</button>`
-                      : `<kbd class="kbd-hint">/</kbd>`
-                  }
+    return `
+      <!-- SUBTAB SWITCHER -->
+      <div class="segmented-control segmented-control-full" style="margin-bottom: 14px;" role="tablist" aria-label="Knowledge Base View">
+        <button
+          type="button"
+          class="seg-btn ${showIngs ? "seg-btn-active" : ""}"
+          data-action="set-knowledge-subtab"
+          data-subtab="ingredients"
+        >
+          Ingredient Encyclopedia (${allIngs.length})
+        </button>
+        <button
+          type="button"
+          class="seg-btn ${showProv ? "seg-btn-active" : ""}"
+          data-action="set-knowledge-subtab"
+          data-subtab="provenance"
+        >
+          Cuisines &amp; Provenance (${this.graph.cuisines.size} Cuisines · ${this.graph.sources.size} Sources)
+        </button>
+      </div>
+
+      <div class="workbench-grid">
+        ${
+          showIngs
+            ? `
+            <section class="panel-col" style="grid-column: 1 / -1;">
+              <div class="card">
+                <div class="card-header">
+                  <h2>Canonical Ingredient Catalog Explorer (${allIngs.length} Ingredients)</h2>
+                  <span class="card-subtitle">Click "+ Add to Dish" to send any catalog item directly to the Workbench</span>
+                </div>
+                <div class="form-row">
+                  <label for="knowledge-catalog-search" class="form-label sr-only">Filter Catalog by Name, Alias, or Category</label>
+                  <div class="search-input-wrap">
+                    <input
+                      id="knowledge-catalog-search"
+                      type="text"
+                      class="form-input"
+                      value="${escapeHtml(this.state.knowledgeSearchQuery)}"
+                      placeholder="Filter 491 canonical ingredients (press / to focus)..."
+                    />
+                    <div class="search-input-accessory">
+                      ${
+                        this.state.knowledgeSearchQuery || this.state.knowledgeCategoryFilter
+                          ? `<button type="button" class="search-clear-btn" data-action="clear-knowledge-search">Clear ×</button>`
+                          : `<kbd class="kbd-hint">/</kbd>`
+                      }
+                    </div>
+                  </div>
+                </div>
+                <div class="chip-group" style="margin-bottom: 12px;">
+                  ${quickCats
+                    .map(
+                      ([catId, label]) => `
+                      <button
+                        type="button"
+                        class="chip ${this.state.knowledgeCategoryFilter === catId ? "chip-active" : ""}"
+                        data-action="set-knowledge-category"
+                        data-cat="${escapeHtml(catId)}"
+                      >${escapeHtml(label)}</button>
+                    `
+                    )
+                    .join("")}
+                </div>
+                <div id="knowledge-catalog-results-slot" class="rec-card-list" data-preserve-scroll="kb-catalog">
+                  ${this._buildKnowledgeCatalogListHtml()}
                 </div>
               </div>
-            </div>
-            <div class="chip-group" style="margin-bottom: 12px;">
-              ${quickCats
-                .map(
-                  ([catId, label]) => `
-                  <button
-                    type="button"
-                    class="chip ${this.state.knowledgeCategoryFilter === catId ? "chip-active" : ""}"
-                    data-action="set-knowledge-category"
-                    data-cat="${escapeHtml(catId)}"
-                  >${escapeHtml(label)}</button>
-                `
-                )
-                .join("")}
-            </div>
-            <div id="knowledge-catalog-results-slot" class="rec-card-list" data-preserve-scroll="kb-catalog">
-              ${this._buildKnowledgeCatalogListHtml()}
-            </div>
-          </div>
-        </section>
+            </section>
+          `
+            : ""
+        }
+
+        ${
+          showProv
+            ? `
+            <section class="panel-col">
+              <div class="card">
+                <div class="card-header">
+                  <h2>Source Provenance &amp; Licensing Registry</h2>
+                  <span class="card-subtitle">Zero unauthorized copyrighted compilation data; 100% documented provenance</span>
+                </div>
+                <div class="rec-card-list">
+                  ${Array.from(this.graph.sources.values())
+                    .map(
+                      (src) => `
+                      <div class="rec-mini-card" style="padding: 10px 14px;">
+                        <div class="rec-mini-top">
+                          <strong>${escapeHtml(src.title)}</strong>
+                          <span class="badge badge-strong">${escapeHtml(src.license)}</span>
+                        </div>
+                        <div class="rec-summary-row" style="display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:4px;">
+                          <span class="text-clamp-1" style="font-size:12px;color:var(--color-text-muted);">
+                            <strong>Publisher:</strong> ${escapeHtml(src.publisher)} · <strong>Tier:</strong> <code>${escapeHtml(src.tier)}</code>
+                          </span>
+                          <details class="rationale-drawer">
+                            <summary class="btn-why-toggle">Attribution ▾</summary>
+                            <div class="rationale-expanded">
+                              <p class="rec-mini-desc" style="margin: 0;">${escapeHtml(src.attribution)}</p>
+                            </div>
+                          </details>
+                        </div>
+                      </div>
+                    `
+                    )
+                    .join("")}
+                </div>
+              </div>
+            </section>
+
+            <section class="panel-col">
+              <div class="card">
+                <div class="card-header">
+                  <h2>Culinary Traditions &amp; Regional Flavor Profiles (${this.graph.cuisines.size})</h2>
+                  <span class="card-subtitle">Established flavor profiles and core aromatic bases</span>
+                </div>
+                <div class="rec-card-list">
+                  ${Array.from(this.graph.cuisines.values())
+                    .map(
+                      (c) => `
+                      <div class="rec-mini-card" style="padding: 10px 14px;">
+                        <div class="rec-mini-top">
+                          <strong>${escapeHtml(c.name)}</strong>
+                          <span class="badge badge-role">Region: ${escapeHtml(c.region || "Global")}</span>
+                        </div>
+                        <p class="rec-mini-desc" style="margin: 4px 0 0 0;">${escapeHtml(c.description)}</p>
+                      </div>
+                    `
+                    )
+                    .join("")}
+                </div>
+              </div>
+            </section>
+          `
+            : ""
+        }
       </div>
     `;
   }
@@ -11858,7 +12240,7 @@ class CulinaryAppController {
   _buildRecipeListHtml() {
     const evaluated = this._getEvaluatedRecipes();
     if (evaluated.length === 0) {
-      return `<div class="empty-state">No recipes match the current filters. Try switching "Missing Ingredient Filter" to "All Recipes" or clearing the search box.</div>`;
+      return `<div class="empty-state">No recipes match current filters.</div>`;
     }
 
     return evaluated
@@ -11866,10 +12248,10 @@ class CulinaryAppController {
         const r = item.recipe;
         const isActive = r.id === this.state.activeRecipeId;
         const rankBadge = r.rank
-          ? `<span class="badge badge-strong">NYT #${r.rank} of 2025</span>`
+          ? `<span class="badge badge-strong">NYT #${r.rank}</span>`
           : r.isCustom
-          ? `<span class="badge badge-warning">Custom / Personalized</span>`
-          : `<span class="badge badge-role">Chef Signature</span>`;
+          ? `<span class="badge badge-warning">Custom</span>`
+          : `<span class="badge badge-role">Chef</span>`;
 
         const matchBadgeClass =
           item.matchTier === "ready_to_cook" || item.matchTier === "almost_there"
@@ -11883,37 +12265,25 @@ class CulinaryAppController {
             class="recipe-card-item ${isActive ? "recipe-card-active" : ""}"
             data-action="select-recipe-card"
             data-recipe-id="${escapeHtml(r.id)}"
+            style="padding: 8px 12px;"
           >
             <div class="rec-card-header">
               <div>
                 ${rankBadge}
-                <strong style="font-size: 14px; margin-left: 4px;">${escapeHtml(r.title)}</strong>
+                <strong style="font-size: 13.5px; margin-left: 4px;">${escapeHtml(r.title)}</strong>
               </div>
               <span class="badge ${matchBadgeClass}">${escapeHtml(item.matchLabel)}</span>
             </div>
-            <div class="rec-mini-meta" style="margin-top: 4px;">
+            <div class="rec-mini-meta" style="margin-top: 3px; font-size: 11.5px;">
               <span>By <strong>${escapeHtml(r.author)}</strong></span> ·
-              <span>${r.totalTimeMinutes} min (${r.prepTimeMinutes}m prep / ${r.cookTimeMinutes}m cook)</span> ·
+              <span>${r.totalTimeMinutes} min</span> ·
               <span>Serves ${r.servings}</span>
+              ${
+                item.matchedIngredients.length > 0
+                  ? ` · <span style="color: var(--color-success);">[✓] ${item.matchedIngredients.length} in dish</span>`
+                  : ""
+              }
             </div>
-            ${
-              item.matchedIngredients.length > 0
-                ? `<div style="font-size: 12px; color: var(--color-success); margin-top: 3px;">
-                    <strong>[✓] Uses your ingredients (${item.matchedIngredients.length}):</strong> ${escapeHtml(
-                    item.matchedIngredients.map((i) => i.name).join(", ")
-                  )}
-                  </div>`
-                : ""
-            }
-            ${
-              item.missingEssentialIngredients.length > 0 && item.missingEssentialIngredients.length <= 5
-                ? `<div style="font-size: 12px; color: var(--color-text-muted); margin-top: 2px;">
-                    <strong>[+] Additional needed (${item.missingEssentialIngredients.length}):</strong> ${escapeHtml(
-                    item.missingEssentialIngredients.map((i) => i.name).join(", ")
-                  )}
-                  </div>`
-                : ""
-            }
           </div>
         `;
       })
@@ -12011,21 +12381,21 @@ class CulinaryAppController {
         <section class="panel-col" aria-label="Recipe Discovery Catalog">
           <div class="card">
             <div class="card-header">
-              <h2>Recipe Discovery &amp; Missing-Ingredient Matcher</h2>
+              <h2>Recipe Discovery</h2>
               <span class="card-subtitle">
-                NYT Cooking's 50 Most Popular Recipes of 2025 + Renowned Chef Signature Dishes
+                NYT Cooking Top 50 of 2025 &amp; Renowned Chef Classics
               </span>
             </div>
 
             <div class="form-row">
-              <label for="recipe-discovery-search" class="form-label">Search by Title, Chef, Ingredient, or Tag</label>
+              <label for="recipe-discovery-search" class="form-label sr-only">Search recipes</label>
               <div class="search-input-wrap">
                 <input
                   id="recipe-discovery-search"
                   type="text"
                   class="form-input"
                   value="${escapeHtml(this.state.recipeSearchQuery)}"
-                  placeholder="e.g., Smashed Beef Kebab, Miso Salmon, Hummus Pasta, Kenji, Ottolenghi..."
+                  placeholder="Search recipes, chefs, ingredients..."
                 />
                 <div class="search-input-accessory">
                   ${
@@ -12037,57 +12407,71 @@ class CulinaryAppController {
               </div>
             </div>
 
-            <div class="recipe-filter-grid">
-              <div>
-                <label for="recipe-collection-filter" class="form-label">Collection</label>
-                <select id="recipe-collection-filter" class="form-select">
-                  <option value="all" ${this.state.recipeCollectionFilter === "all" ? "selected" : ""}>All Collections (${this.getAllAvailableRecipes().length})</option>
-                  <option value="nyt_top_50_2025" ${this.state.recipeCollectionFilter === "nyt_top_50_2025" ? "selected" : ""}>NYT Cooking 50 Most Popular of 2025 (50)</option>
-                  <option value="renowned_chefs" ${this.state.recipeCollectionFilter === "renowned_chefs" ? "selected" : ""}>Renowned Chef Signature Canon</option>
-                  <option value="user_custom" ${this.state.recipeCollectionFilter === "user_custom" ? "selected" : ""}>My Personalized / Imported Recipes (${this.state.savedRecipes.length})</option>
-                </select>
-              </div>
+            <!-- COLLAPSIBLE FILTERS & PANTRY MATCH DRAWER -->
+            <details class="card card-collapsible" ${this.state.recipeFiltersOpen ? "open" : ""} style="margin-bottom: 10px;">
+              <summary>
+                <div>
+                  <span style="font-weight:600;font-size:13px;">Filters &amp; Pantry Match</span>
+                  <span class="card-subtitle" style="margin-left: 6px;">
+                    ${this.state.recipeCollectionFilter !== "all" ? formatSlug(this.state.recipeCollectionFilter) : "All Collections"}
+                  </span>
+                </div>
+                <span class="btn-why-toggle">Filters ▾</span>
+              </summary>
+              <div class="collapsible-content">
+                <div class="recipe-filter-grid">
+                  <div>
+                    <label for="recipe-collection-filter" class="form-label">Collection</label>
+                    <select id="recipe-collection-filter" class="form-select form-select-sm">
+                      <option value="all" ${this.state.recipeCollectionFilter === "all" ? "selected" : ""}>All Collections (${this.getAllAvailableRecipes().length})</option>
+                      <option value="nyt_top_50_2025" ${this.state.recipeCollectionFilter === "nyt_top_50_2025" ? "selected" : ""}>NYT Cooking 50 Most Popular of 2025 (50)</option>
+                      <option value="renowned_chefs" ${this.state.recipeCollectionFilter === "renowned_chefs" ? "selected" : ""}>Renowned Chef Signature Canon</option>
+                      <option value="user_custom" ${this.state.recipeCollectionFilter === "user_custom" ? "selected" : ""}>My Personalized / Imported Recipes (${this.state.savedRecipes.length})</option>
+                    </select>
+                  </div>
 
-              <div>
-                <label for="recipe-chef-filter" class="form-label">Chef / Author</label>
-                <select id="recipe-chef-filter" class="form-select">
-                  <option value="all" ${this.state.recipeChefFilter === "all" ? "selected" : ""}>All Chefs &amp; Authors</option>
-                  ${this.chefCollections
-                    .map(
-                      (c) =>
-                        `<option value="${escapeHtml(c.id)}" ${
-                          this.state.recipeChefFilter === c.id ? "selected" : ""
-                        }>${escapeHtml(c.name)} (${c.recipeIds?.length || 0})</option>`
-                    )
-                    .join("")}
-                </select>
-              </div>
+                  <div>
+                    <label for="recipe-chef-filter" class="form-label">Chef / Author</label>
+                    <select id="recipe-chef-filter" class="form-select form-select-sm">
+                      <option value="all" ${this.state.recipeChefFilter === "all" ? "selected" : ""}>All Chefs &amp; Authors</option>
+                      ${this.chefCollections
+                        .map(
+                          (c) =>
+                            `<option value="${escapeHtml(c.id)}" ${
+                              this.state.recipeChefFilter === c.id ? "selected" : ""
+                            }>${escapeHtml(c.name)} (${c.recipeIds?.length || 0})</option>`
+                        )
+                        .join("")}
+                    </select>
+                  </div>
 
-              <div>
-                <label for="recipe-match-filter" class="form-label">Missing Ingredient Filter</label>
-                <select id="recipe-match-filter" class="form-select">
-                  <option value="all" ${this.state.recipeMatchFilter === "all" ? "selected" : ""}>All Recipes</option>
-                  <option value="ready_or_almost" ${this.state.recipeMatchFilter === "ready_or_almost" ? "selected" : ""}>Ready or Almost There (0–2 Missing)</option>
-                  <option value="up_to_4_missing" ${this.state.recipeMatchFilter === "up_to_4_missing" ? "selected" : ""}>Few Additional (≤ 4 Missing)</option>
-                  <option value="uses_selected" ${this.state.recipeMatchFilter === "uses_selected" ? "selected" : ""}>Uses Any Selected Ingredient</option>
-                </select>
-              </div>
+                  <div>
+                    <label for="recipe-match-filter" class="form-label">Missing Ingredient Filter</label>
+                    <select id="recipe-match-filter" class="form-select form-select-sm">
+                      <option value="all" ${this.state.recipeMatchFilter === "all" ? "selected" : ""}>All Recipes</option>
+                      <option value="ready_or_almost" ${this.state.recipeMatchFilter === "ready_or_almost" ? "selected" : ""}>Ready or Almost (0–2 Missing)</option>
+                      <option value="up_to_4_missing" ${this.state.recipeMatchFilter === "up_to_4_missing" ? "selected" : ""}>Few Additional (≤ 4 Missing)</option>
+                      <option value="uses_selected" ${this.state.recipeMatchFilter === "uses_selected" ? "selected" : ""}>Uses Any Dish Ingredient</option>
+                    </select>
+                  </div>
 
-              <div>
-                <label for="recipe-course-filter" class="form-label">Course / Dish Type</label>
-                <select id="recipe-course-filter" class="form-select">
-                  <option value="all" ${this.state.recipeCourseFilter === "all" ? "selected" : ""}>All Course Types</option>
-                  <option value="main_course" ${this.state.recipeCourseFilter === "main_course" ? "selected" : ""}>Main Courses</option>
-                  <option value="pasta_grain" ${this.state.recipeCourseFilter === "pasta_grain" ? "selected" : ""}>Pasta, Noodles &amp; Grains</option>
-                  <option value="soup" ${this.state.recipeCourseFilter === "soup" ? "selected" : ""}>Soups &amp; Stews</option>
-                  <option value="salad_vegetable" ${this.state.recipeCourseFilter === "salad_vegetable" ? "selected" : ""}>Salads &amp; Vegetable Mains</option>
-                  <option value="side_dish" ${this.state.recipeCourseFilter === "side_dish" ? "selected" : ""}>Side Dishes</option>
-                  <option value="starter" ${this.state.recipeCourseFilter === "starter" ? "selected" : ""}>Starters</option>
-                  <option value="dessert" ${this.state.recipeCourseFilter === "dessert" ? "selected" : ""}>Desserts &amp; Baking</option>
-                  <option value="beverage" ${this.state.recipeCourseFilter === "beverage" ? "selected" : ""}>Beverages</option>
-                </select>
+                  <div>
+                    <label for="recipe-course-filter" class="form-label">Course / Dish Type</label>
+                    <select id="recipe-course-filter" class="form-select form-select-sm">
+                      <option value="all" ${this.state.recipeCourseFilter === "all" ? "selected" : ""}>All Course Types</option>
+                      <option value="main_course" ${this.state.recipeCourseFilter === "main_course" ? "selected" : ""}>Main Courses</option>
+                      <option value="pasta_grain" ${this.state.recipeCourseFilter === "pasta_grain" ? "selected" : ""}>Pasta &amp; Grains</option>
+                      <option value="soup" ${this.state.recipeCourseFilter === "soup" ? "selected" : ""}>Soups &amp; Stews</option>
+                      <option value="salad_vegetable" ${this.state.recipeCourseFilter === "salad_vegetable" ? "selected" : ""}>Salads &amp; Vegetables</option>
+                      <option value="side_dish" ${this.state.recipeCourseFilter === "side_dish" ? "selected" : ""}>Side Dishes</option>
+                      <option value="starter" ${this.state.recipeCourseFilter === "starter" ? "selected" : ""}>Starters</option>
+                      <option value="dessert" ${this.state.recipeCourseFilter === "dessert" ? "selected" : ""}>Desserts</option>
+                      <option value="beverage" ${this.state.recipeCourseFilter === "beverage" ? "selected" : ""}>Beverages</option>
+                    </select>
+                  </div>
+                </div>
               </div>
-            </div>
+            </details>
 
             <div id="recipe-discovery-results-slot" class="recipe-list-scroll" data-preserve-scroll="recipe-list">
               ${this._buildRecipeListHtml()}
@@ -12127,9 +12511,17 @@ class CulinaryAppController {
                   </div>
                 </div>
 
-                <p style="margin: 0 0 12px 0; font-size: 13px; color: var(--color-text); background: #F4F1EA; padding: 10px 12px; border-radius: var(--radius-sm); border-left: 3px solid var(--color-secondary);">
-                  <strong>Culinary Architecture &amp; Why It Works:</strong> ${escapeHtml(activeRec.headnote)}
-                </p>
+                <div class="recipe-headnote-bar" style="margin: 0 0 12px 0; font-size: 13px; color: var(--color-text); background: #F4F1EA; padding: 8px 12px; border-radius: var(--radius-sm); border-left: 3px solid var(--color-secondary); display:flex; align-items:center; justify-content:space-between; gap:8px;">
+                  <span class="text-clamp-1" style="flex:1 1 auto;">
+                    <strong>Why It Works:</strong> ${escapeHtml(activeRec.headnote ? activeRec.headnote.slice(0, 75) + (activeRec.headnote.length > 75 ? "..." : "") : "")}
+                  </span>
+                  <details class="rationale-drawer">
+                    <summary class="btn-why-toggle">Read Story ▾</summary>
+                    <div class="rationale-expanded">
+                      <p style="margin: 4px 0 0 0; font-size: 12.5px; line-height: 1.5;">${escapeHtml(activeRec.headnote)}</p>
+                    </div>
+                  </details>
+                </div>
 
                 <!-- 1-Click Integration Actions -->
                 <div class="inline-action-group" style="margin-bottom: 12px; padding-bottom: 10px; border-bottom: 1px solid var(--color-border);">
