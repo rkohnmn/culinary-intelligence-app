@@ -1,0 +1,421 @@
+[
+  {
+    "id": "chef_kenji_lopez_alt",
+    "name": "J. Kenji López-Alt",
+    "title": "The Food Lab & Wok Science",
+    "culinaryTraditions": [
+      "cuisine_french",
+      "cuisine_japanese",
+      "cuisine_chinese_cantonese",
+      "cuisine_mexican"
+    ],
+    "philosophy": "Empirical food science applied to home cooking: alkaline pectin modification for ultra-crispy potatoes, dry-surface Maillard maximization, and multi-source glutamate-inosinate umami stacking.",
+    "signaturePairings": [
+      {
+        "ingredientA": "ing_potato_yukon",
+        "ingredientB": "ing_duck_fat_lard",
+        "rationale": "Alkaline-parboiled starch slurry crisps into glass-like blisters in rendered duck fat."
+      },
+      {
+        "ingredientA": "ing_garlic",
+        "ingredientB": "ing_fish_sauce",
+        "rationale": "Sautéed allium sweetness rounded by fermented marine glutamates and Parmigiano."
+      }
+    ],
+    "sourceUrl": "https://www.seriouseats.com/j-kenji-lopez-alt-5118720",
+    "recipeIds": [
+      "rec_nyt2025_04_honey_garlic_shrimp",
+      "rec_nyt2025_22_easy_chicken_tacos",
+      "rec_nyt2025_29_microwave_sticky_toffee_pudding",
+      "rec_nyt2025_38_pickle_lemonade",
+      "rec_nyt2025_47_san_francisco_garlic_noodles",
+      "rec_nyt2025_48_peruvian_roast_chicken_green_sauce",
+      "rec_chef_kenji_crispy_roast_potatoes",
+      "rec_chef_kenji_smashed_onion_burger"
+    ]
+  },
+  {
+    "id": "chef_samin_nosrat",
+    "title": "Salt, Fat, Acid, Heat & California-Mediterranean Balance",
+    "name": "Samin Nosrat",
+    "culinaryTraditions": [
+      "cuisine_italian",
+      "cuisine_spanish_med",
+      "cuisine_middle_eastern",
+      "cuisine_french"
+    ],
+    "philosophy": "Structural equilibrium across the four cardinal elements of cooking: early diffusion salting, lactic buttermilk tenderization, cold-rinsed macerated alliums, and bright finishing acids.",
+    "signaturePairings": [
+      {
+        "ingredientA": "ing_chicken_whole_roast",
+        "ingredientB": "ing_buttermilk",
+        "rationale": "Lactic acid tenderizes poultry fibers while milk sugars caramelize into a russet crust."
+      },
+      {
+        "ingredientA": "ing_shallot",
+        "ingredientB": "ing_vinegar_sherry",
+        "rationale": "Rinsing and macerating diced shallots in aged vinegar tames raw pungent thiosulfinates."
+      }
+    ],
+    "sourceUrl": "https://www.saltfatacidheat.com/",
+    "recipeIds": [
+      "rec_nyt2025_03_chicken_red_lentil_soup",
+      "rec_nyt2025_07_chicken_chickpea_tray_bake",
+      "rec_nyt2025_08_fresh_lemon_chile_pasta",
+      "rec_nyt2025_10_house_dressing_herby_salad",
+      "rec_nyt2025_17_spicy_cashew_chicken_salad",
+      "rec_nyt2025_25_brothy_meatballs_with_greens",
+      "rec_nyt2025_26_crispy_chicken_melty_leeks_peas",
+      "rec_nyt2025_27_extra_green_miso_pasta_salad",
+      "rec_nyt2025_37_brothy_thai_curry_silken_tofu",
+      "rec_nyt2025_46_pepper_steak_celery_stir_fry",
+      "rec_nyt2025_49_lemony_orzo_feta_dill_soup",
+      "rec_chef_samin_buttermilk_roast_chicken",
+      "rec_chef_samin_slow_roasted_citrus_salmon"
+    ]
+  },
+  {
+    "id": "chef_yotam_ottolenghi",
+    "name": "Yotam Ottolenghi",
+    "title": "Plenty, Jerusalem & Modern Levantine Vegetable Architecture",
+    "culinaryTraditions": [
+      "cuisine_middle_eastern",
+      "cuisine_north_african",
+      "cuisine_spanish_med"
+    ],
+    "philosophy": "High-contrast vegetable cookery pairing deeply charred or roasted vegetables with cool whipped tahini or labneh, bright acids (sumac, pomegranate, preserved lemon), toasted nuts, and abundant fresh herbs.",
+    "signaturePairings": [
+      {
+        "ingredientA": "ing_eggplant",
+        "ingredientB": "ing_tahini",
+        "rationale": "Smoky roasted aubergine flesh balanced by nutty sesame emulsion and ruby pomegranate."
+      },
+      {
+        "ingredientA": "ing_lentil_brown_puy",
+        "ingredientB": "ing_cumin_seed",
+        "rationale": "Earthy legumes lifted by warm toasted cumin, coriander, and deeply fried sweet onions."
+      }
+    ],
+    "sourceUrl": "https://ottolenghi.co.uk/pages/recipes",
+    "recipeIds": [
+      "rec_nyt2025_19_porcini_ragu",
+      "rec_nyt2025_31_harissa_apricot_chicken",
+      "rec_nyt2025_34_crispy_halloumi_tomatoes_white_beans",
+      "rec_nyt2025_39_olive_oil_chile_fried_eggs",
+      "rec_nyt2025_44_crispy_rice_dill_runny_eggs",
+      "rec_chef_ottolenghi_roasted_eggplant_tahini_pomegranate",
+      "rec_chef_ottolenghi_mujadara_crispy_onions"
+    ]
+  },
+  {
+    "id": "chef_thomas_keller",
+    "name": "Thomas Keller",
+    "title": "The French Laundry & Bouchon Precision Technique",
+    "culinaryTraditions": [
+      "cuisine_french"
+    ],
+    "philosophy": "Relentless technical precision: zero-moisture high-heat roasting for shatteringly crisp poultry skin, thermal-controlled beurre monté poaching, and paper-thin concentric vegetable confit.",
+    "signaturePairings": [
+      {
+        "ingredientA": "ing_lobster",
+        "ingredientB": "ing_butter_unsalted",
+        "rationale": "Emulsified beurre monté held at 170°F conducts heat gently without toughening shellfish."
+      },
+      {
+        "ingredientA": "ing_chicken_whole_roast",
+        "ingredientB": "ing_thyme_fresh",
+        "rationale": "Dry-cured trussing and aromatics yield pure roasted schmaltz and thyme jus."
+      }
+    ],
+    "sourceUrl": "https://www.thomaskeller.com/",
+    "recipeIds": [
+      "rec_chef_keller_bouchon_roast_chicken",
+      "rec_chef_keller_butter_poached_lobster",
+      "rec_chef_keller_confit_byaldi"
+    ]
+  },
+  {
+    "id": "chef_marcella_hazan",
+    "name": "Marcella Hazan",
+    "title": "Essentials of Classic Regional Italian Cooking",
+    "culinaryTraditions": [
+      "cuisine_italian"
+    ],
+    "philosophy": "Uncluttered Italian regional purity where slow evaporation, sweet butter emulsions, and protective milk reductions coax deep flavor from minimal ingredients.",
+    "signaturePairings": [
+      {
+        "ingredientA": "ing_tomato_san_marzano",
+        "ingredientB": "ing_butter_unsalted",
+        "rationale": "Sweet dairy fat emulsifies with acidic San Marzano pectins over a 45-minute simmer."
+      },
+      {
+        "ingredientA": "ing_beef_ground",
+        "ingredientB": "ing_nutmeg_mace",
+        "rationale": "Simmering meat in milk and nutmeg before wine and tomato keeps ragù silky."
+      }
+    ],
+    "sourceUrl": "https://cooking.nytimes.com/68861692-nyt-cooking/2705775-marcella-hazans-essential-recipes",
+    "recipeIds": [
+      "rec_nyt2025_15_roman_chicken_cacciatore_potatoes",
+      "rec_chef_hazan_tomato_butter_onion_sauce",
+      "rec_chef_hazan_bolognese_ragu"
+    ]
+  },
+  {
+    "id": "chef_david_chang",
+    "name": "David Chang",
+    "title": "Momofuku Umami & Fermented Korean-American Flavor",
+    "culinaryTraditions": [
+      "cuisine_korean",
+      "cuisine_japanese",
+      "cuisine_vietnamese"
+    ],
+    "philosophy": "Bold fermented umami, equilibrium salt-sugar dry cures, punchy raw ginger-scallion oil, and fish-sauce vinaigrettes over charred meats and crucifers.",
+    "signaturePairings": [
+      {
+        "ingredientA": "ing_pork_shoulder",
+        "ingredientB": "ing_ginger_fresh",
+        "rationale": "Rich rendered pork fat cut by raw grated ginger and sliced scallions in neutral oil."
+      },
+      {
+        "ingredientA": "ing_brussels_sprout",
+        "ingredientB": "ing_fish_sauce",
+        "rationale": "Sulfurous charred crucifers balanced by sweet-tart fish sauce and fresh mint."
+      }
+    ],
+    "sourceUrl": "https://momofuku.com/",
+    "recipeIds": [
+      "rec_nyt2025_16_red_curry_beef_bolognese",
+      "rec_chef_chang_momofuku_bo_ssam",
+      "rec_chef_chang_brussels_sprouts_fish_sauce"
+    ]
+  },
+  {
+    "id": "chef_jacques_pepin",
+    "name": "Jacques Pépin",
+    "title": "La Technique & Classic French Bistro Mastery",
+    "culinaryTraditions": [
+      "cuisine_french"
+    ],
+    "philosophy": "Foundational French knife skills, pan agitation, and rapid pan reductions with Cognac, white wine, crème fraîche, and fines herbes.",
+    "signaturePairings": [
+      {
+        "ingredientA": "ing_egg_whole",
+        "ingredientB": "ing_herb_fines_herbes",
+        "rationale": "Delicate micro-curd omelet perfumed with raw parsley, chervil, chives, and tarragon."
+      },
+      {
+        "ingredientA": "ing_chicken_thigh",
+        "ingredientB": "ing_mushroom_cremini_button",
+        "rationale": "Browned poultry fond deglazed with white wine and bound with crème fraîche."
+      }
+    ],
+    "sourceUrl": "https://jp.foundation/recipes/",
+    "recipeIds": [
+      "rec_nyt2025_23_lemon_pepper_chicken_breasts",
+      "rec_chef_pepin_poulet_a_la_creme",
+      "rec_chef_pepin_french_omelet_fines_herbes"
+    ]
+  },
+  {
+    "id": "chef_massimo_bottura",
+    "name": "Massimo Bottura",
+    "title": "Osteria Francescana & Contemporary Emilian Synthesis",
+    "culinaryTraditions": [
+      "cuisine_italian"
+    ],
+    "philosophy": "Distilling iconic Italian ingredients like aged Parmigiano-Reggiano into pure broths, emulsions, and textures while honoring classical pasta and risotto structure.",
+    "signaturePairings": [
+      {
+        "ingredientA": "ing_rice_arborio_bomba",
+        "ingredientB": "ing_parmigiano_reggiano",
+        "rationale": "Carnaroli starch hydrated in warm extracted Parmigiano broth for pure umami mantecatura."
+      }
+    ],
+    "sourceUrl": "https://osteriafrancescana.it/",
+    "recipeIds": [
+      "rec_chef_bottura_risotto_cacio_e_pepe"
+    ]
+  },
+  {
+    "id": "chef_alice_waters",
+    "name": "Alice Waters",
+    "title": "Chez Panisse & Seasonal California-Provençal Table",
+    "culinaryTraditions": [
+      "cuisine_french",
+      "cuisine_italian",
+      "cuisine_spanish_med"
+    ],
+    "philosophy": "Letting peak-season produce, fruity extra-virgin olive oil, farmstead chèvre, and fragrant Provençal herbs speak with gentle thermal handling.",
+    "signaturePairings": [
+      {
+        "ingredientA": "ing_goat_cheese_feta",
+        "ingredientB": "ing_thyme_fresh",
+        "rationale": "Warm sourdough-crumbed chèvre scented with thyme over crisp vinaigrette-dressed greens."
+      },
+      {
+        "ingredientA": "ing_cod_halibut",
+        "ingredientB": "ing_saffron",
+        "rationale": "Delicate white fish poached in fennel-tomato-saffron fumet with garlic rouille."
+      }
+    ],
+    "sourceUrl": "https://www.chezpanisse.com/",
+    "recipeIds": [
+      "rec_nyt2025_13_french_lentil_salad_radicchio",
+      "rec_nyt2025_42_caramelized_shallot_white_bean_stew",
+      "rec_nyt2025_50_blood_orange_olive_oil_cake",
+      "rec_chef_waters_baked_goat_cheese_salad",
+      "rec_chef_waters_provencal_fish_soup_rouille"
+    ]
+  },
+  {
+    "id": "chef_eric_kim",
+    "name": "Eric Kim",
+    "title": "Korean American & NYT Cooking Skillet Innovation",
+    "culinaryTraditions": [
+      "cuisine_korean",
+      "cuisine_french",
+      "cuisine_italian"
+    ],
+    "philosophy": "Bridging Korean pantry staples (gochujang, toasted sesame, white miso) with Western skillet emulsions, bottom-up poultry rendering, and brown-butter baking.",
+    "signaturePairings": [
+      {
+        "ingredientA": "ing_chicken_thigh",
+        "ingredientB": "ing_lime_fresh",
+        "rationale": "Untouched bottom-up rendered chicken skin paired with maple-lime beurre monté."
+      },
+      {
+        "ingredientA": "ing_butter_unsalted",
+        "ingredientB": "ing_gochujang",
+        "rationale": "Fermented chili paste caramelized in butter for savory-sweet pasta and cookies."
+      }
+    ],
+    "sourceUrl": "https://cooking.nytimes.com/68861692-nyt-cooking/37429918-eric-kim-recipes",
+    "recipeIds": [
+      "rec_nyt2025_06_marry_me_salmon",
+      "rec_nyt2025_18_one_pot_miso_turmeric_salmon_rice",
+      "rec_nyt2025_24_crispy_chicken_lime_butter",
+      "rec_nyt2025_36_sticky_miso_salmon_bowl",
+      "rec_nyt2025_40_gochujang_buttered_noodles",
+      "rec_nyt2025_45_gochujang_caramel_cookies"
+    ]
+  },
+  {
+    "id": "chef_hetty_mckinnon",
+    "name": "Hetty Lui McKinnon",
+    "title": "Tenderheart & Vegetable-Forward Asian-Mediterranean Cookery",
+    "culinaryTraditions": [
+      "cuisine_chinese_cantonese",
+      "cuisine_chinese_sichuan",
+      "cuisine_spanish_med"
+    ],
+    "philosophy": "Inventive vegetable-centric meals using quick-pickling, torn craggy tofu textures, and savory hoisin, miso, and sesame dressings.",
+    "signaturePairings": [
+      {
+        "ingredientA": "ing_celery",
+        "ingredientB": "ing_goat_cheese_feta",
+        "rationale": "Quick-pickled cumin celery and salty feta brighten creamy white beans."
+      },
+      {
+        "ingredientA": "ing_garlic",
+        "ingredientB": "ing_hoisin_sauce",
+        "rationale": "Seven cloves of sizzled garlic balanced by sweet-savory hoisin and toasted sesame."
+      }
+    ],
+    "sourceUrl": "https://cooking.nytimes.com/68861692-nyt-cooking/29845123-hetty-lui-mckinnon-recipes",
+    "recipeIds": [
+      "rec_nyt2025_05_hoisin_garlic_noodles",
+      "rec_nyt2025_21_fragrant_coconut_chicken_sweet_potato",
+      "rec_nyt2025_41_crispy_tofu_chili_crisp_green_beans",
+      "rec_nyt2025_43_white_bean_feta_pickled_celery_salad"
+    ]
+  },
+  {
+    "id": "chef_dan_pelosi",
+    "name": "Dan Pelosi",
+    "title": "Let's Eat & Cozy Italian-American One-Pan Classics",
+    "culinaryTraditions": [
+      "cuisine_italian",
+      "cuisine_french"
+    ],
+    "philosophy": "Generous, foolproof one-pan comfort food using clever emulsion stabilizers (mascarpone/cream cheese in Florentine sauce) and apple-cider vinegar deglazing in rich stews.",
+    "signaturePairings": [
+      {
+        "ingredientA": "ing_chicken_breast",
+        "ingredientB": "ing_spinach",
+        "rationale": "Parmesan-crusted cutlets in white-wine cream stabilized with mascarpone and wilted spinach."
+      },
+      {
+        "ingredientA": "ing_chicken_thigh",
+        "ingredientB": "ing_vinegar_apple_cider",
+        "rationale": "Apple cider vinegar cuts through creamy herb-and-potato chicken stew."
+      }
+    ],
+    "sourceUrl": "https://cooking.nytimes.com/",
+    "recipeIds": [
+      "rec_nyt2025_09_cottage_pie",
+      "rec_nyt2025_11_chicken_florentine",
+      "rec_nyt2025_12_slow_cooker_garlic_butter_chicken",
+      "rec_nyt2025_20_creamy_chicken_stew"
+    ]
+  },
+  {
+    "id": "chef_ali_slagle",
+    "name": "Ali Slagle",
+    "title": "I Dream of Dinner & Minimal-Ingredient Technique",
+    "culinaryTraditions": [
+      "cuisine_italian",
+      "cuisine_french",
+      "cuisine_japanese"
+    ],
+    "philosophy": "Maximum flavor payoff from minimal pantry ingredients via smart technique: pan-searing dry gnocchi, colander-wilting red onions under boiling tortellini, and one-pot grain-bean-green layering.",
+    "signaturePairings": [
+      {
+        "ingredientA": "ing_gnocchi_potato",
+        "ingredientB": "ing_miso_white",
+        "rationale": "Dry-seared blistered potato gnocchi glazed in white miso-lemon butter."
+      },
+      {
+        "ingredientA": "ing_chicken_thigh",
+        "ingredientB": "ing_grapefruit_pink",
+        "rationale": "Bitter-tart ruby grapefruit juice deglazes caramelized miso-butter roast chicken."
+      }
+    ],
+    "sourceUrl": "https://cooking.nytimes.com/",
+    "recipeIds": [
+      "rec_nyt2025_02_one_pot_greens_beans_grains",
+      "rec_nyt2025_14_skillet_gnocchi_miso_butter",
+      "rec_nyt2025_28_hummus_pasta",
+      "rec_nyt2025_30_tortellini_pasta_salad",
+      "rec_nyt2025_33_microwave_chocolate_hazelnut_mug_cake",
+      "rec_nyt2025_35_miso_butter_chicken_grapefruit"
+    ]
+  },
+  {
+    "id": "chef_zainab_issa",
+    "name": "Zainab Issa",
+    "title": "South Asian, Levantine & East African High-Heat Skillet Cookery",
+    "culinaryTraditions": [
+      "cuisine_middle_eastern",
+      "cuisine_indian_north"
+    ],
+    "philosophy": "Translating charcoal-grilled kebabs and tandoori malai marinades to high-heat cast-iron skillets and sheet pans with chilled yogurt and pan-cream contrasts.",
+    "signaturePairings": [
+      {
+        "ingredientA": "ing_beef_ground",
+        "ingredientB": "ing_yogurt_plain",
+        "rationale": "Smashed turmeric-pepper beef kebabs over cold cucumber-mint yogurt with walnuts and barberries."
+      },
+      {
+        "ingredientA": "ing_chicken_thigh",
+        "ingredientB": "ing_garam_masala",
+        "rationale": "Green chile-cilantro-yogurt roasted chicken finished with heavy cream and lemon in the hot sheet pan."
+      }
+    ],
+    "sourceUrl": "https://cooking.nytimes.com/",
+    "recipeIds": [
+      "rec_nyt2025_01_smashed_beef_kebab",
+      "rec_nyt2025_32_sheet_pan_malai_chicken_potatoes"
+    ]
+  }
+]

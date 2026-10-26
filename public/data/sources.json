@@ -1,0 +1,127 @@
+[
+  {
+    "id": "src_usda_fdc",
+    "title": "USDA FoodData Central",
+    "publisher": "U.S. Department of Agriculture, Agricultural Research Service",
+    "url": "https://fdc.nal.usda.gov/",
+    "license": "CC0 1.0 Universal (Public Domain)",
+    "attribution": "U.S. Department of Agriculture, Agricultural Research Service, FoodData Central.",
+    "accessedDate": "2026-10-24",
+    "derivedFields": [
+      "id",
+      "name",
+      "categories",
+      "dietaryFlags",
+      "baseline composition"
+    ],
+    "restrictions": "None (Public Domain)",
+    "tier": "documented_external"
+  },
+  {
+    "id": "src_wikidata_cc0",
+    "title": "Wikidata Structured Food & Cuisine Ontology",
+    "publisher": "Wikimedia Foundation",
+    "url": "https://www.wikidata.org/wiki/Wikidata:Licensing",
+    "license": "CC0 1.0 Universal (Public Domain Dedication)",
+    "attribution": "Structured food entity aliases and regional associations from Wikidata (CC0).",
+    "accessedDate": "2026-10-24",
+    "derivedFields": [
+      "aliases",
+      "cuisines",
+      "parentIngredientId"
+    ],
+    "restrictions": "None (CC0)",
+    "tier": "documented_external"
+  },
+  {
+    "id": "src_escoffier_pd",
+    "title": "Le Guide Culinaire (1903 / 1907 Public Domain Editions)",
+    "publisher": "Auguste Escoffier (Public Domain)",
+    "url": "https://archive.org/details/cu31924000610117",
+    "license": "Public Domain",
+    "attribution": "Classical French sauce structures and accompaniments from Auguste Escoffier's Le Guide Culinaire (1903).",
+    "accessedDate": "2026-10-24",
+    "derivedFields": [
+      "sauce templates",
+      "classical French pairings",
+      "garnish systems"
+    ],
+    "restrictions": "None (Public Domain)",
+    "tier": "documented_external"
+  },
+  {
+    "id": "src_artusi_pd",
+    "title": "La scienza in cucina e l'arte di mangiar bene (1891 Public Domain)",
+    "publisher": "Pellegrino Artusi (Public Domain)",
+    "url": "https://www.gutenberg.org/ebooks/54893",
+    "license": "Public Domain",
+    "attribution": "Historical Italian culinary pairings and soffritto foundations from Pellegrino Artusi (1891).",
+    "accessedDate": "2026-10-24",
+    "derivedFields": [
+      "Italian regional pairings",
+      "pasta and legume structures"
+    ],
+    "restrictions": "None (Public Domain)",
+    "tier": "documented_external"
+  },
+  {
+    "id": "src_sensory_chemistry_lit",
+    "title": "Open-Access Food Chemistry & Sensory Interaction Principles",
+    "publisher": "Public Scientific Domain (Uncopyrightable Factual Principles)",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/",
+    "license": "Uncopyrightable Scientific Facts (17 U.S.C. § 102(b))",
+    "attribution": "General sensory interaction mechanisms (acid-lipid cutting, bitter-sweet suppression, Maillard caramelization, capsaicin fat solubility).",
+    "accessedDate": "2026-10-24",
+    "derivedFields": [
+      "preparationModifiers",
+      "balancingIngredients",
+      "bridge mechanisms"
+    ],
+    "restrictions": "None",
+    "tier": "documented_external"
+  },
+  {
+    "id": "src_culinary_editorial_v2",
+    "title": "Project Original Culinary Knowledge & Compatibility Rules v2",
+    "publisher": "Culinary Intelligence Engineering Team",
+    "url": "https://github.com/",
+    "license": "MIT License",
+    "attribution": "Independently authored ordinal flavor profiles, conditional compatibility rules, and bridge rationales.",
+    "accessedDate": "2026-10-24",
+    "derivedFields": [
+      "flavorProfile",
+      "rationale",
+      "strengtheningConditions",
+      "weakeningConditions"
+    ],
+    "restrictions": "MIT License",
+    "tier": "original_editorial"
+  },
+  {
+    "id": "src_nyt_2025_index",
+    "title": "NYT Cooking — 50 Most Popular Recipes of 2025 (Factual Bibliography & Ingredient Index)",
+    "publisher": "The New York Times Cooking (Independently Structured & Re-authored Formulations)",
+    "url": "https://cooking.nytimes.com/",
+    "license": "Factual Ingredient Lists & Original Editorial Prose (17 U.S.C. § 102(b))",
+    "tier": "documented_external",
+    "attribution": "Factual recipe titles, chef attributions, and canonical ingredient compositions from NYT Cooking's 2025 Most Popular collection; all headnotes, step-by-step instructions, and process diagrams are 100% independently authored."
+  },
+  {
+    "id": "src_chef_canon_index",
+    "title": "Renowned Chef Signature Technique & Dish Canon",
+    "publisher": "Original Culinary Systems Synthesis (López-Alt, Nosrat, Ottolenghi, Keller, Hazan, Chang, Pépin, Bottura, Waters)",
+    "url": "https://www.seriouseats.com/",
+    "license": "Uncopyrightable Culinary Procedures & Original Editorial Documentation",
+    "tier": "original_editorial",
+    "attribution": "Independently written instructional formulations and flavor-science explanations of landmark chef techniques."
+  },
+  {
+    "id": "src_cooking_for_engineers_format",
+    "title": "Tabular Recipe Process Diagram Methodology (Inspired by Cooking for Engineers)",
+    "publisher": "Michael Chu / Cooking for Engineers Structural Notation",
+    "url": "https://www.cookingforengineers.com/",
+    "license": "Open Structural Diagramming Pattern (Original Deterministic Implementation)",
+    "tier": "original_editorial",
+    "attribution": "Deterministic HTML rowspan/colspan dependency matrix generator mapping ingredient subsets through sequential and parallel cooking operations."
+  }
+]

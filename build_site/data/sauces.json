@@ -1,0 +1,2037 @@
+[
+  {
+    "id": "sauce_beurre_blanc",
+    "name": "Beurre Blanc (Shallot & White Wine Butter Emulsion)",
+    "category": "emulsified_butter",
+    "mainIngredients": [
+      "ing_butter_unsalted",
+      "ing_shallot",
+      "ing_wine_dry_white",
+      "ing_vinegar_wine_red_white",
+      "ing_lemon_fresh"
+    ],
+    "flavorProfile": {
+      "sweetness": 1,
+      "acidity": 3,
+      "saltiness": 1,
+      "bitterness": 0,
+      "umami": 1,
+      "fatRichness": 4,
+      "heatPungency": 0,
+      "herbalCharacter": 0,
+      "floralCharacter": 0,
+      "earthiness": 0,
+      "smokiness": 0,
+      "aromaticIntensity": 3,
+      "perceivedRichness": 4,
+      "textures": [
+        "velvety_emulsion"
+      ],
+      "isEditorialApproximation": true
+    },
+    "typicalApplications": [
+      "fish",
+      "shellfish",
+      "vegetables",
+      "poultry"
+    ],
+    "cuisines": [
+      "cuisine_french"
+    ],
+    "compatibleIngredients": [
+      "ing_salmon",
+      "ing_cod_halibut",
+      "ing_sea_bass",
+      "ing_scallop_sea",
+      "ing_lobster",
+      "ing_asparagus",
+      "ing_leek",
+      "ing_chives",
+      "ing_tarragon_fresh"
+    ],
+    "challengingIngredients": [
+      "ing_chile_habanero_scotch",
+      "ing_doubanjiang",
+      "ing_blue_cheese"
+    ],
+    "technique": "Reduce minced shallots with dry white wine and white wine vinegar until nearly dry (au sec), then whisk in cold cubed butter off-heat to form a stable water-in-fat emulsion.",
+    "preparationNotes": "Provides both luxurious dairy fat and sharp wine-vinegar acidity in one unified sauce; ideal for lean white fish, seared scallops, or spring vegetables.",
+    "provenanceId": "src_escoffier_pd"
+  },
+  {
+    "id": "sauce_bordelaise",
+    "name": "Sauce Bordelaise (Red Wine, Shallot & Bone Marrow Reduction)",
+    "category": "pan_reduction",
+    "mainIngredients": [
+      "ing_wine_red",
+      "ing_shallot",
+      "ing_stock_chicken_beef",
+      "ing_thyme_fresh",
+      "ing_butter_unsalted",
+      "ing_beef_marrow"
+    ],
+    "flavorProfile": {
+      "sweetness": 1,
+      "acidity": 2,
+      "saltiness": 2,
+      "bitterness": 1,
+      "umami": 4,
+      "fatRichness": 3,
+      "heatPungency": 0,
+      "herbalCharacter": 0,
+      "floralCharacter": 0,
+      "earthiness": 2,
+      "smokiness": 0,
+      "aromaticIntensity": 4,
+      "perceivedRichness": 4,
+      "textures": [
+        "glossy_reduction"
+      ],
+      "isEditorialApproximation": true
+    },
+    "typicalApplications": [
+      "meat",
+      "fungi"
+    ],
+    "cuisines": [
+      "cuisine_french"
+    ],
+    "compatibleIngredients": [
+      "ing_beef_ribeye",
+      "ing_beef_short_rib",
+      "ing_beef_tenderloin",
+      "ing_lamb_rack_loin",
+      "ing_duck_breast",
+      "ing_mushroom_chanterelle",
+      "ing_mushroom_cremini_button",
+      "ing_potato_yukon"
+    ],
+    "challengingIngredients": [
+      "ing_cod_halibut",
+      "ing_crab_meat",
+      "ing_fish_turbot_sole"
+    ],
+    "technique": "Simmer dry red Bordeaux wine with shallots, thyme, bay leaf, and black pepper; add rich veal/beef demi-glace, reduce to nappe consistency, and finish with butter and poached bone marrow.",
+    "preparationNotes": "Tannic red wine and gelatinous stock amplify charred red meat and earthy mushrooms; typically overpowers delicate white fish or sweet crab.",
+    "provenanceId": "src_escoffier_pd"
+  },
+  {
+    "id": "sauce_bearnaise",
+    "name": "Sauce Béarnaise (Tarragon & Shallot Egg-Butter Emulsion)",
+    "category": "emulsified_butter",
+    "mainIngredients": [
+      "ing_egg_whole",
+      "ing_butter_unsalted",
+      "ing_tarragon_fresh",
+      "ing_shallot",
+      "ing_vinegar_wine_red_white",
+      "ing_chervil"
+    ],
+    "flavorProfile": {
+      "sweetness": 1,
+      "acidity": 3,
+      "saltiness": 0,
+      "bitterness": 0,
+      "umami": 0,
+      "fatRichness": 4,
+      "heatPungency": 0,
+      "herbalCharacter": 4,
+      "floralCharacter": 2,
+      "earthiness": 0,
+      "smokiness": 0,
+      "aromaticIntensity": 3,
+      "perceivedRichness": 4,
+      "textures": [
+        "thick_emulsion"
+      ],
+      "isEditorialApproximation": true
+    },
+    "typicalApplications": [
+      "meat",
+      "fish",
+      "vegetables",
+      "eggs"
+    ],
+    "cuisines": [
+      "cuisine_french"
+    ],
+    "compatibleIngredients": [
+      "ing_beef_tenderloin",
+      "ing_beef_ribeye",
+      "ing_salmon",
+      "ing_trout",
+      "ing_asparagus",
+      "ing_chicken_breast",
+      "ing_mushroom_chanterelle"
+    ],
+    "challengingIngredients": [
+      "ing_soy_sauce_shoyu",
+      "ing_coconut_milk",
+      "ing_gochujang"
+    ],
+    "technique": "Reduce tarragon, shallots, cracked pepper, and white wine vinegar; whisk warm reduction with egg yolks over gentle heat and slowly emulsify warm clarified butter.",
+    "preparationNotes": "Anise-scented tarragon and vinegar cut the dense richness of egg yolk and clarified butter; classic partner for grilled steak, roast beef tenderloin, poached salmon, and asparagus.",
+    "provenanceId": "src_escoffier_pd"
+  },
+  {
+    "id": "sauce_veloute",
+    "name": "Sauce Suprême / Velouté (Stock, Roux, Cream & Mushroom Essence)",
+    "category": "mother_sauce",
+    "mainIngredients": [
+      "ing_stock_chicken_beef",
+      "ing_butter_unsalted",
+      "ing_heavy_cream",
+      "ing_mushroom_cremini_button",
+      "ing_lemon_fresh"
+    ],
+    "flavorProfile": {
+      "sweetness": 1,
+      "acidity": 1,
+      "saltiness": 2,
+      "bitterness": 0,
+      "umami": 3,
+      "fatRichness": 3,
+      "heatPungency": 0,
+      "herbalCharacter": 0,
+      "floralCharacter": 0,
+      "earthiness": 0,
+      "smokiness": 0,
+      "aromaticIntensity": 2,
+      "perceivedRichness": 3,
+      "textures": [
+        "velvety"
+      ],
+      "isEditorialApproximation": true
+    },
+    "typicalApplications": [
+      "poultry",
+      "fish",
+      "vegetables"
+    ],
+    "cuisines": [
+      "cuisine_french"
+    ],
+    "compatibleIngredients": [
+      "ing_chicken_breast",
+      "ing_chicken_thigh",
+      "ing_veal_cutlet",
+      "ing_cod_halibut",
+      "ing_mushroom_morel",
+      "ing_asparagus",
+      "ing_leek",
+      "ing_tarragon_fresh"
+    ],
+    "challengingIngredients": [
+      "ing_chile_thai_bird",
+      "ing_tamarind_paste"
+    ],
+    "technique": "Thicken blond butter-flour roux with rich poultry or fish stock, simmer with mushroom trimmings, enrich with heavy cream, and brighten with a few drops of lemon juice.",
+    "preparationNotes": "Silky, comforting classical French blank canvas for poached poultry, veal, Dover sole, and spring vegetables.",
+    "provenanceId": "src_escoffier_pd"
+  },
+  {
+    "id": "sauce_vinaigrette_dijon",
+    "name": "Classic French Dijon-Shallot Vinaigrette",
+    "category": "vinaigrette",
+    "mainIngredients": [
+      "ing_olive_oil_evoo",
+      "ing_vinegar_wine_red_white",
+      "ing_dijon_mustard",
+      "ing_shallot",
+      "ing_parsley_flat"
+    ],
+    "flavorProfile": {
+      "sweetness": 0,
+      "acidity": 4,
+      "saltiness": 2,
+      "bitterness": 0,
+      "umami": 0,
+      "fatRichness": 3,
+      "heatPungency": 1,
+      "herbalCharacter": 2,
+      "floralCharacter": 0,
+      "earthiness": 0,
+      "smokiness": 0,
+      "aromaticIntensity": 3,
+      "perceivedRichness": 2,
+      "textures": [
+        "emulsified_dressing"
+      ],
+      "isEditorialApproximation": true
+    },
+    "typicalApplications": [
+      "vegetables",
+      "legumes",
+      "fish",
+      "poultry"
+    ],
+    "cuisines": [
+      "cuisine_french",
+      "cuisine_italian"
+    ],
+    "compatibleIngredients": [
+      "ing_arugula_endive",
+      "ing_leek",
+      "ing_lentil_brown_puy",
+      "ing_potato_fingerling_new",
+      "ing_duck_confit",
+      "ing_goat_cheese_feta",
+      "ing_beetroot",
+      "ing_asparagus"
+    ],
+    "challengingIngredients": [],
+    "technique": "Macerate finely minced shallot in wine vinegar for 10 minutes to mellow sharpness, whisk in Dijon mustard for mucilage emulsification, and stream in extra-virgin olive oil.",
+    "preparationNotes": "High-acid, mustard-stabilized emulsion that cuts rich duck confit, warm lentils, poached leeks, and bitter chicory salads.",
+    "provenanceId": "src_culinary_editorial_v2"
+  },
+  {
+    "id": "sauce_marinara_pomodoro",
+    "name": "Sugo di Pomodoro (Classic Italian Tomato, Garlic & Basil Sauce)",
+    "category": "vegetable_sauce",
+    "mainIngredients": [
+      "ing_tomato_san_marzano",
+      "ing_olive_oil_evoo",
+      "ing_garlic",
+      "ing_basil_sweet",
+      "ing_onion_yellow"
+    ],
+    "flavorProfile": {
+      "sweetness": 3,
+      "acidity": 3,
+      "saltiness": 2,
+      "bitterness": 0,
+      "umami": 3,
+      "fatRichness": 2,
+      "heatPungency": 0,
+      "herbalCharacter": 2,
+      "floralCharacter": 0,
+      "earthiness": 0,
+      "smokiness": 0,
+      "aromaticIntensity": 3,
+      "perceivedRichness": 2,
+      "textures": [
+        "saucy"
+      ],
+      "isEditorialApproximation": true
+    },
+    "typicalApplications": [
+      "pasta",
+      "vegetables",
+      "meat",
+      "fish"
+    ],
+    "cuisines": [
+      "cuisine_italian"
+    ],
+    "compatibleIngredients": [
+      "ing_pasta_wheat",
+      "ing_eggplant",
+      "ing_mozzarella_burrata",
+      "ing_parmigiano_reggiano",
+      "ing_pork_sausage_italian",
+      "ing_beef_ground",
+      "ing_shrimp_prawn",
+      "ing_cod_halibut"
+    ],
+    "challengingIngredients": [
+      "ing_coconut_milk",
+      "ing_miso_white"
+    ],
+    "technique": "Gently sweat golden garlic in extra-virgin olive oil, crush whole San Marzano tomatoes, simmer 25 minutes until oil and pectin emulsify, and steep fresh sweet basil at the finish.",
+    "preparationNotes": "Balanced glutamate-and-citric-acid foundation for pasta, eggplant Parmigiana, braised meatballs, and Mediterranean fish.",
+    "provenanceId": "src_artusi_pd"
+  },
+  {
+    "id": "sauce_pesto_genovese",
+    "name": "Pesto alla Genovese (Basil, Pine Nut, Garlic & Parmigiano-Pecorino)",
+    "category": "herb_condiment",
+    "mainIngredients": [
+      "ing_basil_sweet",
+      "ing_olive_oil_evoo",
+      "ing_pine_nut",
+      "ing_parmigiano_reggiano",
+      "ing_pecorino_romano",
+      "ing_garlic"
+    ],
+    "flavorProfile": {
+      "sweetness": 0,
+      "acidity": 0,
+      "saltiness": 3,
+      "bitterness": 0,
+      "umami": 3,
+      "fatRichness": 4,
+      "heatPungency": 0,
+      "herbalCharacter": 4,
+      "floralCharacter": 2,
+      "earthiness": 0,
+      "smokiness": 0,
+      "aromaticIntensity": 4,
+      "perceivedRichness": 3,
+      "textures": [
+        "creamy_coarse_paste"
+      ],
+      "isEditorialApproximation": true
+    },
+    "typicalApplications": [
+      "pasta",
+      "vegetables",
+      "fish",
+      "poultry"
+    ],
+    "cuisines": [
+      "cuisine_italian"
+    ],
+    "compatibleIngredients": [
+      "ing_pasta_wheat",
+      "ing_gnocchi_potato",
+      "ing_potato_yukon",
+      "ing_green_bean",
+      "ing_tomato_fresh",
+      "ing_mozzarella_burrata",
+      "ing_chicken_breast",
+      "ing_shrimp_prawn",
+      "ing_sea_bass"
+    ],
+    "challengingIngredients": [
+      "ing_vinegar_chinkiang",
+      "ing_star_anise",
+      "ing_doubanjiang"
+    ],
+    "technique": "Pound or pulse raw garlic and pine nuts with coarse salt, bruise sweet basil leaves to preserve bright green chlorophyll, and emulsify with olive oil and grated Parmigiano/Pecorino without heating.",
+    "preparationNotes": "Uncooked aromatic herb-nut-cheese emulsion; traditionally tossed with pasta, boiled potatoes, and haricots verts loosened with starchy cooking water.",
+    "provenanceId": "src_artusi_pd"
+  },
+  {
+    "id": "sauce_salsa_verde_it",
+    "name": "Italian Salsa Verde / Argentinian Chimichurri (Herb, Capers, Garlic & Vinegar)",
+    "category": "herb_condiment",
+    "mainIngredients": [
+      "ing_parsley_flat",
+      "ing_olive_oil_evoo",
+      "ing_caper",
+      "ing_anchovy_fillet",
+      "ing_garlic",
+      "ing_vinegar_wine_red_white",
+      "ing_lemon_fresh"
+    ],
+    "flavorProfile": {
+      "sweetness": 0,
+      "acidity": 4,
+      "saltiness": 3,
+      "bitterness": 0,
+      "umami": 3,
+      "fatRichness": 3,
+      "heatPungency": 2,
+      "herbalCharacter": 4,
+      "floralCharacter": 0,
+      "earthiness": 0,
+      "smokiness": 0,
+      "aromaticIntensity": 4,
+      "perceivedRichness": 2,
+      "textures": [
+        "rustic_herb_oil"
+      ],
+      "isEditorialApproximation": true
+    },
+    "typicalApplications": [
+      "meat",
+      "fish",
+      "vegetables",
+      "poultry"
+    ],
+    "cuisines": [
+      "cuisine_italian",
+      "cuisine_spanish_med",
+      "cuisine_french"
+    ],
+    "compatibleIngredients": [
+      "ing_beef_ribeye",
+      "ing_beef_flank_skirt",
+      "ing_lamb_rack_loin",
+      "ing_lamb_shoulder",
+      "ing_pork_shoulder",
+      "ing_sea_bass",
+      "ing_swordfish",
+      "ing_cauliflower",
+      "ing_potato_fingerling_new",
+      "ing_beef_marrow"
+    ],
+    "challengingIngredients": [],
+    "technique": "Finely hand-chop flat-leaf parsley, capers, garlic, and anchovy fillets; dress with red wine vinegar, lemon juice, and extra-virgin olive oil.",
+    "preparationNotes": "High-impact acid-brine-herb condiment that slices through the heaviest grilled steaks, braised meats, bone marrow, and oily fish.",
+    "provenanceId": "src_artusi_pd"
+  },
+  {
+    "id": "sauce_aglione_butter_sage",
+    "name": "Burro e Salvia (Brown Butter, Crispy Sage & Parmigiano)",
+    "category": "emulsified_butter",
+    "mainIngredients": [
+      "ing_butter_unsalted",
+      "ing_sage_fresh",
+      "ing_parmigiano_reggiano",
+      "ing_black_pepper"
+    ],
+    "flavorProfile": {
+      "sweetness": 2,
+      "acidity": 0,
+      "saltiness": 2,
+      "bitterness": 0,
+      "umami": 3,
+      "fatRichness": 4,
+      "heatPungency": 0,
+      "herbalCharacter": 3,
+      "floralCharacter": 0,
+      "earthiness": 2,
+      "smokiness": 0,
+      "aromaticIntensity": 3,
+      "perceivedRichness": 4,
+      "textures": [
+        "foamy_emulsion"
+      ],
+      "isEditorialApproximation": true
+    },
+    "typicalApplications": [
+      "pasta",
+      "vegetables",
+      "poultry",
+      "meat"
+    ],
+    "cuisines": [
+      "cuisine_italian",
+      "cuisine_french"
+    ],
+    "compatibleIngredients": [
+      "ing_butternut_squash",
+      "ing_gnocchi_potato",
+      "ing_pasta_wheat",
+      "ing_veal_cutlet",
+      "ing_pork_loin",
+      "ing_chicken_thigh",
+      "ing_mushroom_chanterelle",
+      "ing_hazelnut",
+      "ing_chestnut"
+    ],
+    "challengingIngredients": [
+      "ing_fish_sauce",
+      "ing_chile_habanero_scotch"
+    ],
+    "technique": "Cook unsalted butter until milk solids toast to hazelnut-brown and whole sage leaves crisp; emulsify with starchy cooking water and grated Parmigiano.",
+    "preparationNotes": "Nutty Maillard butter and musky sage complement sweet autumn squash, potato gnocchi, veal, pork, and roasted hazelnuts.",
+    "provenanceId": "src_artusi_pd"
+  },
+  {
+    "id": "sauce_puttanesca_base",
+    "name": "Sugo alla Puttanesca / Livornese (Tomato, Olive, Caper, Anchovy & Chili)",
+    "category": "vegetable_sauce",
+    "mainIngredients": [
+      "ing_tomato_san_marzano",
+      "ing_olive_green",
+      "ing_caper",
+      "ing_anchovy_fillet",
+      "ing_garlic",
+      "ing_chile_thai_bird",
+      "ing_olive_oil_evoo",
+      "ing_parsley_flat"
+    ],
+    "flavorProfile": {
+      "sweetness": 2,
+      "acidity": 3,
+      "saltiness": 4,
+      "bitterness": 1,
+      "umami": 4,
+      "fatRichness": 3,
+      "heatPungency": 2,
+      "herbalCharacter": 0,
+      "floralCharacter": 0,
+      "earthiness": 0,
+      "smokiness": 0,
+      "aromaticIntensity": 4,
+      "perceivedRichness": 2,
+      "textures": [
+        "chunky_sauce"
+      ],
+      "isEditorialApproximation": true
+    },
+    "typicalApplications": [
+      "pasta",
+      "fish",
+      "shellfish",
+      "vegetables"
+    ],
+    "cuisines": [
+      "cuisine_italian",
+      "cuisine_spanish_med"
+    ],
+    "compatibleIngredients": [
+      "ing_pasta_wheat",
+      "ing_cod_halibut",
+      "ing_swordfish",
+      "ing_snapper_red",
+      "ing_squid_octopus",
+      "ing_eggplant",
+      "ing_chickpea",
+      "ing_chicken_thigh"
+    ],
+    "challengingIngredients": [
+      "ing_blue_cheese",
+      "ing_heavy_cream"
+    ],
+    "technique": "Dissolve anchovies in garlic-chili olive oil, add crushed tomatoes, briny olives, and capers, simmer briefly for a punchy pantry sauce.",
+    "preparationNotes": "Pantry powerhouse delivering massive glutamate, brine, and acidity to firm white fish (Baccalà/Snapper), squid, eggplant, and spaghetti.",
+    "provenanceId": "src_culinary_editorial_v2"
+  },
+  {
+    "id": "sauce_romesco",
+    "name": "Romesco (Catalan Roasted Pepper, Toasted Almond, Garlic & Sherry Vinegar Sauce)",
+    "category": "nut_pepper_emulsion",
+    "mainIngredients": [
+      "ing_bell_pepper_red",
+      "ing_almond",
+      "ing_hazelnut",
+      "ing_tomato_fresh",
+      "ing_garlic_roasted",
+      "ing_vinegar_sherry",
+      "ing_paprika_smoked",
+      "ing_olive_oil_evoo",
+      "ing_bread_sourdough"
+    ],
+    "flavorProfile": {
+      "sweetness": 3,
+      "acidity": 3,
+      "saltiness": 2,
+      "bitterness": 0,
+      "umami": 2,
+      "fatRichness": 3,
+      "heatPungency": 0,
+      "herbalCharacter": 0,
+      "floralCharacter": 0,
+      "earthiness": 2,
+      "smokiness": 3,
+      "aromaticIntensity": 4,
+      "perceivedRichness": 3,
+      "textures": [
+        "textured_thick_emulsion"
+      ],
+      "isEditorialApproximation": true
+    },
+    "typicalApplications": [
+      "vegetables",
+      "fish",
+      "shellfish",
+      "poultry",
+      "meat"
+    ],
+    "cuisines": [
+      "cuisine_spanish_med"
+    ],
+    "compatibleIngredients": [
+      "ing_onion_spring_charred",
+      "ing_leek",
+      "ing_asparagus",
+      "ing_cauliflower",
+      "ing_cod_halibut",
+      "ing_sea_bass",
+      "ing_shrimp_prawn",
+      "ing_squid_octopus",
+      "ing_chicken_thigh",
+      "ing_pork_loin"
+    ],
+    "challengingIngredients": [],
+    "technique": "Char tomatoes, red peppers, and garlic; blend with toasted almonds/hazelnuts, olive-oil fried bread, smoked paprika, and sherry vinegar while streaming in olive oil.",
+    "preparationNotes": "Smoky, nutty, sweet-tart Spanish sauce that elevates charred vegetables (leeks, asparagus, cauliflower), grilled seafood, and roast meats.",
+    "provenanceId": "src_culinary_editorial_v2"
+  },
+  {
+    "id": "sauce_aioli_garlic",
+    "name": "Saffron or Roasted Garlic Allioli",
+    "category": "emulsified_oil",
+    "mainIngredients": [
+      "ing_olive_oil_evoo",
+      "ing_garlic",
+      "ing_egg_whole",
+      "ing_lemon_fresh",
+      "ing_saffron"
+    ],
+    "flavorProfile": {
+      "sweetness": 0,
+      "acidity": 2,
+      "saltiness": 2,
+      "bitterness": 0,
+      "umami": 2,
+      "fatRichness": 4,
+      "heatPungency": 2,
+      "herbalCharacter": 0,
+      "floralCharacter": 2,
+      "earthiness": 0,
+      "smokiness": 0,
+      "aromaticIntensity": 4,
+      "perceivedRichness": 4,
+      "textures": [
+        "thick_emulsion"
+      ],
+      "isEditorialApproximation": true
+    },
+    "typicalApplications": [
+      "fish",
+      "shellfish",
+      "vegetables",
+      "starch"
+    ],
+    "cuisines": [
+      "cuisine_spanish_med",
+      "cuisine_french",
+      "cuisine_italian"
+    ],
+    "compatibleIngredients": [
+      "ing_potato_yukon",
+      "ing_cod_halibut",
+      "ing_fish_cod_salted",
+      "ing_shrimp_prawn",
+      "ing_squid_octopus",
+      "ing_clam_mussel",
+      "ing_artichoke",
+      "ing_fennel_bulb",
+      "ing_rice_arborio_bomba"
+    ],
+    "challengingIngredients": [],
+    "technique": "Pound garlic with salt into a smooth paste, emulsify with egg yolk, lemon juice, warm saffron infusion, and olive oil.",
+    "preparationNotes": "Rich Mediterranean garlic-saffron emulsion that enriches fish stews (bouillabaisse), salt cod, crispy potatoes, and grilled shellfish.",
+    "provenanceId": "src_culinary_editorial_v2"
+  },
+  {
+    "id": "sauce_picada",
+    "name": "Catalan Picada (Almond, Garlic, Parsley, Saffron & Fried Bread Liaison)",
+    "category": "nut_pepper_emulsion",
+    "mainIngredients": [
+      "ing_almond",
+      "ing_garlic",
+      "ing_parsley_flat",
+      "ing_saffron",
+      "ing_bread_sourdough",
+      "ing_olive_oil_evoo"
+    ],
+    "flavorProfile": {
+      "sweetness": 1,
+      "acidity": 0,
+      "saltiness": 2,
+      "bitterness": 0,
+      "umami": 2,
+      "fatRichness": 3,
+      "heatPungency": 0,
+      "herbalCharacter": 3,
+      "floralCharacter": 3,
+      "earthiness": 2,
+      "smokiness": 0,
+      "aromaticIntensity": 3,
+      "perceivedRichness": 3,
+      "textures": [
+        "thickening_paste"
+      ],
+      "isEditorialApproximation": true
+    },
+    "typicalApplications": [
+      "fish",
+      "shellfish",
+      "poultry",
+      "meat",
+      "legumes"
+    ],
+    "cuisines": [
+      "cuisine_spanish_med"
+    ],
+    "compatibleIngredients": [
+      "ing_chicken_thigh",
+      "ing_rabbit",
+      "ing_monkfish",
+      "ing_cod_halibut",
+      "ing_clam_mussel",
+      "ing_shrimp_prawn",
+      "ing_chickpea",
+      "ing_white_bean"
+    ],
+    "challengingIngredients": [],
+    "technique": "Pound toasted almonds/hazelnuts, fried bread, garlic, parsley, and saffron in a mortar; stir into simmering braises or seafood stews during the final 5 minutes to thicken and perfume.",
+    "preparationNotes": "Traditional Catalan finishing thickener that binds brothy seafood zarzuelas, chicken braises, and bean stews with nutty aroma.",
+    "provenanceId": "src_culinary_editorial_v2"
+  },
+  {
+    "id": "sauce_sherry_pan_glaze",
+    "name": "Sherry Vinegar, Honey & Thyme Pan Glaze (Gastroc-Style)",
+    "category": "pan_reduction",
+    "mainIngredients": [
+      "ing_vinegar_sherry",
+      "ing_honey",
+      "ing_stock_chicken_beef",
+      "ing_thyme_fresh",
+      "ing_butter_unsalted"
+    ],
+    "flavorProfile": {
+      "sweetness": 3,
+      "acidity": 4,
+      "saltiness": 2,
+      "bitterness": 0,
+      "umami": 3,
+      "fatRichness": 2,
+      "heatPungency": 0,
+      "herbalCharacter": 0,
+      "floralCharacter": 0,
+      "earthiness": 2,
+      "smokiness": 0,
+      "aromaticIntensity": 4,
+      "perceivedRichness": 3,
+      "textures": [
+        "syrupy_glaze"
+      ],
+      "isEditorialApproximation": true
+    },
+    "typicalApplications": [
+      "poultry",
+      "meat",
+      "vegetables"
+    ],
+    "cuisines": [
+      "cuisine_spanish_med",
+      "cuisine_french"
+    ],
+    "compatibleIngredients": [
+      "ing_duck_breast",
+      "ing_pork_loin",
+      "ing_chicken_thigh",
+      "ing_chicken_liver",
+      "ing_brussels_sprout",
+      "ing_carrot",
+      "ing_turnip_parsnip",
+      "ing_fig_fresh_dried"
+    ],
+    "challengingIngredients": [],
+    "technique": "Caramelize honey lightly in the searing pan, deglaze with aged sherry vinegar and stock, infuse with thyme, and swirl in a knob of cold butter.",
+    "preparationNotes": "Sweet-sour-savory gastrique that cuts fatty duck breast, pork loin, chicken livers, and roasted Brussels sprouts or root vegetables.",
+    "provenanceId": "src_culinary_editorial_v2"
+  },
+  {
+    "id": "sauce_salsa_verde_mex",
+    "name": "Mexican Charred Tomatillo, Serrano & Cilantro Salsa Verde",
+    "category": "vegetable_sauce",
+    "mainIngredients": [
+      "ing_tomatillo",
+      "ing_chile_jalapeno",
+      "ing_cilantro_fresh",
+      "ing_onion_yellow",
+      "ing_garlic",
+      "ing_lime_fresh"
+    ],
+    "flavorProfile": {
+      "sweetness": 1,
+      "acidity": 4,
+      "saltiness": 2,
+      "bitterness": 0,
+      "umami": 0,
+      "fatRichness": 0,
+      "heatPungency": 3,
+      "herbalCharacter": 3,
+      "floralCharacter": 0,
+      "earthiness": 0,
+      "smokiness": 2,
+      "aromaticIntensity": 4,
+      "perceivedRichness": 1,
+      "textures": [
+        "bright_saucy"
+      ],
+      "isEditorialApproximation": true
+    },
+    "typicalApplications": [
+      "meat",
+      "poultry",
+      "fish",
+      "vegetables",
+      "legumes"
+    ],
+    "cuisines": [
+      "cuisine_mexican"
+    ],
+    "compatibleIngredients": [
+      "ing_pork_shoulder",
+      "ing_pork_belly",
+      "ing_duck_breast",
+      "ing_chicken_thigh",
+      "ing_avocado",
+      "ing_black_bean",
+      "ing_white_bean",
+      "ing_tortilla_corn",
+      "ing_egg_whole",
+      "ing_sea_bass"
+    ],
+    "challengingIngredients": [
+      "ing_truffle_oil_paste",
+      "ing_blue_cheese"
+    ],
+    "technique": "Broil or dry-char husked tomatillos, serrano/jalapeño chiles, onion, and unpeeled garlic until blistered; pulse with fresh cilantro and lime juice.",
+    "preparationNotes": "High-pectin, smoky-tart green salsa that slices through rich braised pork carnitas, duck, chilaquiles, and creamy avocado.",
+    "provenanceId": "src_culinary_editorial_v2"
+  },
+  {
+    "id": "sauce_mole_negro_style",
+    "name": "Mole Coloradito / Oaxacan Spiced Chile, Seed & Cacao Sauce",
+    "category": "spiced_gravy",
+    "mainIngredients": [
+      "ing_chile_ancho",
+      "ing_chile_pasilla",
+      "ing_tomato_fresh",
+      "ing_tomatillo",
+      "ing_sesame_seed",
+      "ing_almond",
+      "ing_cacao_dark",
+      "ing_cinnamon_ground",
+      "ing_plantain",
+      "ing_stock_chicken_beef"
+    ],
+    "flavorProfile": {
+      "sweetness": 3,
+      "acidity": 2,
+      "saltiness": 2,
+      "bitterness": 2,
+      "umami": 3,
+      "fatRichness": 3,
+      "heatPungency": 2,
+      "herbalCharacter": 0,
+      "floralCharacter": 0,
+      "earthiness": 4,
+      "smokiness": 2,
+      "aromaticIntensity": 4,
+      "perceivedRichness": 4,
+      "textures": [
+        "velvety_complex"
+      ],
+      "isEditorialApproximation": true
+    },
+    "typicalApplications": [
+      "poultry",
+      "meat",
+      "vegetables"
+    ],
+    "cuisines": [
+      "cuisine_mexican"
+    ],
+    "compatibleIngredients": [
+      "ing_turkey_breast",
+      "ing_chicken_thigh",
+      "ing_duck_breast",
+      "ing_pork_shoulder",
+      "ing_beef_short_rib",
+      "ing_sweet_potato",
+      "ing_plantain",
+      "ing_butternut_squash",
+      "ing_black_bean",
+      "ing_rice_jasmine_short"
+    ],
+    "challengingIngredients": [
+      "ing_cod_halibut",
+      "ing_crab_meat",
+      "ing_oyster"
+    ],
+    "technique": "Toast and rehydrate ancho, guajillo, and pasilla chiles; blend with roasted tomatoes, tomatillos, fried plantain, toasted sesame seeds, almonds, Mexican cinnamon, cloves, and dark cacao; simmer in stock until velvety.",
+    "preparationNotes": "Masterwork of balanced bitter-sweet-earthy-spicy complexity for turkey, chicken, duck, pork, or roasted winter squash.",
+    "provenanceId": "src_culinary_editorial_v2"
+  },
+  {
+    "id": "sauce_adobo_chipotle",
+    "name": "Smoky Chipotle, Ancho, Orange & Vinegar Adobo",
+    "category": "spiced_gravy",
+    "mainIngredients": [
+      "ing_chile_chipotle",
+      "ing_chile_ancho",
+      "ing_orange_sweet",
+      "ing_vinegar_apple_cider",
+      "ing_garlic",
+      "ing_cumin_seed",
+      "ing_oregano_marjoram"
+    ],
+    "flavorProfile": {
+      "sweetness": 2,
+      "acidity": 3,
+      "saltiness": 2,
+      "bitterness": 0,
+      "umami": 2,
+      "fatRichness": 0,
+      "heatPungency": 3,
+      "herbalCharacter": 0,
+      "floralCharacter": 0,
+      "earthiness": 3,
+      "smokiness": 4,
+      "aromaticIntensity": 4,
+      "perceivedRichness": 2,
+      "textures": [
+        "pureed_marinade_glaze"
+      ],
+      "isEditorialApproximation": true
+    },
+    "typicalApplications": [
+      "meat",
+      "poultry",
+      "vegetables",
+      "shellfish"
+    ],
+    "cuisines": [
+      "cuisine_mexican"
+    ],
+    "compatibleIngredients": [
+      "ing_beef_short_rib",
+      "ing_beef_brisket_smoked",
+      "ing_pork_shoulder",
+      "ing_chicken_thigh",
+      "ing_shrimp_prawn",
+      "ing_sweet_potato",
+      "ing_black_bean",
+      "ing_cauliflower",
+      "ing_mango_pineapple"
+    ],
+    "challengingIngredients": [
+      "ing_fish_turbot_sole"
+    ],
+    "technique": "Blend rehydrated ancho chiles and canned chipotles in adobo with bitter/sweet orange juice, apple cider vinegar, roasted garlic, toasted cumin, and Mexican oregano.",
+    "preparationNotes": "Combines wood smoke, dried chile fruitiness, and citrus-vinegar tang for braising beef, pork, chicken, or glazing shrimp and sweet potatoes.",
+    "provenanceId": "src_culinary_editorial_v2"
+  },
+  {
+    "id": "sauce_ponzu",
+    "name": "Aged Yuzu Ponzu (Citrus, Shoyu, Mirin & Dashi Dressing)",
+    "category": "fermented_glaze",
+    "mainIngredients": [
+      "ing_soy_sauce_shoyu",
+      "ing_yuzu_juice",
+      "ing_lemon_fresh",
+      "ing_mirin",
+      "ing_kombu_kelp",
+      "ing_bonito_flakes"
+    ],
+    "flavorProfile": {
+      "sweetness": 1,
+      "acidity": 4,
+      "saltiness": 3,
+      "bitterness": 0,
+      "umami": 4,
+      "fatRichness": 0,
+      "heatPungency": 0,
+      "herbalCharacter": 0,
+      "floralCharacter": 3,
+      "earthiness": 0,
+      "smokiness": 0,
+      "aromaticIntensity": 4,
+      "perceivedRichness": 1,
+      "textures": [
+        "light_liquid"
+      ],
+      "isEditorialApproximation": true
+    },
+    "typicalApplications": [
+      "fish",
+      "shellfish",
+      "meat",
+      "vegetables",
+      "fungi"
+    ],
+    "cuisines": [
+      "cuisine_japanese"
+    ],
+    "compatibleIngredients": [
+      "ing_tuna_ahi",
+      "ing_salmon",
+      "ing_fish_hamachi_yellowtail",
+      "ing_scallop_sea",
+      "ing_oyster",
+      "ing_beef_ribeye",
+      "ing_beef_tenderloin",
+      "ing_tofu_firm",
+      "ing_mushroom_shiitake",
+      "ing_daikon_radish",
+      "ing_scallion"
+    ],
+    "challengingIngredients": [
+      "ing_heavy_cream",
+      "ing_blue_cheese"
+    ],
+    "technique": "Steep soy sauce, fresh yuzu/citrus juice, boiled-off mirin, kombu kelp, and bonito flakes in the refrigerator to marry citrus aroma with synergistic umami.",
+    "preparationNotes": "High-umami, zero-fat acidic sauce that refreshes fatty raw fish, seared beef tataki, crispy tofu, and steamed vegetables.",
+    "provenanceId": "src_culinary_editorial_v2"
+  },
+  {
+    "id": "sauce_teriyaki_glaze",
+    "name": "Tare / Classical Teriyaki Glaze (Shoyu, Mirin, Sake & Ginger)",
+    "category": "fermented_glaze",
+    "mainIngredients": [
+      "ing_soy_sauce_shoyu",
+      "ing_mirin",
+      "ing_wine_shaoxing",
+      "ing_maple_syrup",
+      "ing_ginger_fresh"
+    ],
+    "flavorProfile": {
+      "sweetness": 3,
+      "acidity": 0,
+      "saltiness": 3,
+      "bitterness": 0,
+      "umami": 4,
+      "fatRichness": 0,
+      "heatPungency": 0,
+      "herbalCharacter": 0,
+      "floralCharacter": 1,
+      "earthiness": 0,
+      "smokiness": 0,
+      "aromaticIntensity": 3,
+      "perceivedRichness": 3,
+      "textures": [
+        "glossy_lacquer"
+      ],
+      "isEditorialApproximation": true
+    },
+    "typicalApplications": [
+      "fish",
+      "poultry",
+      "meat",
+      "vegetables",
+      "fungi"
+    ],
+    "cuisines": [
+      "cuisine_japanese"
+    ],
+    "compatibleIngredients": [
+      "ing_salmon",
+      "ing_fish_eel_unagi",
+      "ing_chicken_thigh",
+      "ing_duck_breast",
+      "ing_pork_belly",
+      "ing_mushroom_shiitake",
+      "ing_mushroom_enoki_oyster",
+      "ing_eggplant",
+      "ing_tofu_firm",
+      "ing_scallion"
+    ],
+    "challengingIngredients": [
+      "ing_goat_cheese_feta",
+      "ing_blue_cheese"
+    ],
+    "technique": "Simmer equal parts shoyu, mirin, and sake with a touch of sugar and sliced fresh ginger until reduced to a glossy syrup that coats broiled fish or grilled poultry.",
+    "preparationNotes": "Mirin sugars create lustrous Maillard shine (teri) while shoyu glutamates deepen grilled proteins and mushrooms.",
+    "provenanceId": "src_culinary_editorial_v2"
+  },
+  {
+    "id": "sauce_miso_dengaku",
+    "name": "Saikyo / Dengaku Miso Glaze (White Miso, Mirin & Sake)",
+    "category": "fermented_glaze",
+    "mainIngredients": [
+      "ing_miso_white",
+      "ing_mirin",
+      "ing_sake_dashi",
+      "ing_sesame_oil_toasted"
+    ],
+    "flavorProfile": {
+      "sweetness": 3,
+      "acidity": 0,
+      "saltiness": 3,
+      "bitterness": 0,
+      "umami": 4,
+      "fatRichness": 1,
+      "heatPungency": 0,
+      "herbalCharacter": 0,
+      "floralCharacter": 0,
+      "earthiness": 2,
+      "smokiness": 0,
+      "aromaticIntensity": 3,
+      "perceivedRichness": 3,
+      "textures": [
+        "creamy_glaze"
+      ],
+      "isEditorialApproximation": true
+    },
+    "typicalApplications": [
+      "fish",
+      "vegetables",
+      "fungi",
+      "poultry",
+      "legumes"
+    ],
+    "cuisines": [
+      "cuisine_japanese"
+    ],
+    "compatibleIngredients": [
+      "ing_cod_black_sablefish",
+      "ing_salmon",
+      "ing_cod_halibut",
+      "ing_eggplant",
+      "ing_daikon_radish",
+      "ing_tofu_firm",
+      "ing_sweet_potato",
+      "ing_butternut_squash",
+      "ing_mushroom_enoki_oyster",
+      "ing_scallop_sea"
+    ],
+    "challengingIngredients": [],
+    "technique": "Whisk sweet white miso with mirin and sake over low heat until glossy and thickened; spread over roasted eggplant, broiled black cod/salmon, or grilled tofu and caramelize under heat.",
+    "preparationNotes": "Fermented koji sweetness and umami blister under the broiler into a savory-sweet crust.",
+    "provenanceId": "src_culinary_editorial_v2"
+  },
+  {
+    "id": "sauce_goma_sesame",
+    "name": "Goma-dare (Toasted Sesame, Dashi, Shoyu & Rice Vinegar Emulsion)",
+    "category": "nut_pepper_emulsion",
+    "mainIngredients": [
+      "ing_tahini",
+      "ing_sesame_seed",
+      "ing_soy_sauce_shoyu",
+      "ing_vinegar_rice",
+      "ing_mirin",
+      "ing_kombu_kelp",
+      "ing_sesame_oil_toasted"
+    ],
+    "flavorProfile": {
+      "sweetness": 2,
+      "acidity": 2,
+      "saltiness": 3,
+      "bitterness": 0,
+      "umami": 3,
+      "fatRichness": 3,
+      "heatPungency": 0,
+      "herbalCharacter": 0,
+      "floralCharacter": 0,
+      "earthiness": 3,
+      "smokiness": 0,
+      "aromaticIntensity": 3,
+      "perceivedRichness": 3,
+      "textures": [
+        "creamy_dressing"
+      ],
+      "isEditorialApproximation": true
+    },
+    "typicalApplications": [
+      "vegetables",
+      "meat",
+      "poultry",
+      "pasta"
+    ],
+    "cuisines": [
+      "cuisine_japanese",
+      "cuisine_chinese_sichuan"
+    ],
+    "compatibleIngredients": [
+      "ing_spinach",
+      "ing_green_bean",
+      "ing_asparagus",
+      "ing_broccoli_broccolini",
+      "ing_pork_loin",
+      "ing_beef_ribeye",
+      "ing_chicken_breast",
+      "ing_tofu_firm",
+      "ing_rice_noodle",
+      "ing_soba_buckwheat_noodle"
+    ],
+    "challengingIngredients": [],
+    "technique": "Grind toasted sesame seeds in a suribachi mortar and emulsify with dashi, shoyu, mirin, and rice vinegar.",
+    "preparationNotes": "Nutty, savory-sweet sesame emulsion that dresses blanched spinach (goma-ae), cold noodles, and poached pork or chicken.",
+    "provenanceId": "src_culinary_editorial_v2"
+  },
+  {
+    "id": "sauce_mala_chili_oil",
+    "name": "Sichuan Mala Strange-Flavor & Chili Oil Dressing (Guai Wei / Hong You)",
+    "category": "fermented_glaze",
+    "mainIngredients": [
+      "ing_sichuan_chili_bean_oil",
+      "ing_sichuan_peppercorn",
+      "ing_soy_sauce_shoyu",
+      "ing_vinegar_chinkiang",
+      "ing_sesame_paste_chinese",
+      "ing_garlic",
+      "ing_scallion",
+      "ing_maple_syrup"
+    ],
+    "flavorProfile": {
+      "sweetness": 2,
+      "acidity": 3,
+      "saltiness": 3,
+      "bitterness": 0,
+      "umami": 4,
+      "fatRichness": 4,
+      "heatPungency": 4,
+      "herbalCharacter": 0,
+      "floralCharacter": 4,
+      "earthiness": 3,
+      "smokiness": 2,
+      "aromaticIntensity": 4,
+      "perceivedRichness": 3,
+      "textures": [
+        "layered_oil_emulsion"
+      ],
+      "isEditorialApproximation": true
+    },
+    "typicalApplications": [
+      "poultry",
+      "meat",
+      "legumes",
+      "pasta",
+      "vegetables"
+    ],
+    "cuisines": [
+      "cuisine_chinese_sichuan"
+    ],
+    "compatibleIngredients": [
+      "ing_chicken_poached_hainanese",
+      "ing_chicken_thigh",
+      "ing_pork_belly",
+      "ing_beef_flank_skirt",
+      "ing_tofu_firm",
+      "ing_eggplant",
+      "ing_cucumber",
+      "ing_rice_noodle",
+      "ing_peanut"
+    ],
+    "challengingIngredients": [
+      "ing_fish_turbot_sole",
+      "ing_crab_meat",
+      "ing_blue_cheese"
+    ],
+    "technique": "Combine aromatic Sichuan red chili oil, ground toasted Sichuan peppercorns, Chinkiang black vinegar, sweet soy, grated garlic, and toasted sesame paste.",
+    "preparationNotes": "Simultaneously numbing, spicy, savory, nutty, tangy, and sweet; iconic on cold poached chicken (Bang Bang / Mouthwatering Chicken), dan dan noodles, and smashed cucumbers.",
+    "provenanceId": "src_culinary_editorial_v2"
+  },
+  {
+    "id": "sauce_yuxiang_garlic",
+    "name": "Sichuan Yu Xiang ('Fish-Fragrant' Garlic, Ginger, Pickled Chili & Black Vinegar Sauce)",
+    "category": "pan_reduction",
+    "mainIngredients": [
+      "ing_doubanjiang",
+      "ing_vinegar_chinkiang",
+      "ing_soy_sauce_shoyu",
+      "ing_maple_syrup",
+      "ing_garlic",
+      "ing_ginger_fresh",
+      "ing_scallion"
+    ],
+    "flavorProfile": {
+      "sweetness": 3,
+      "acidity": 3,
+      "saltiness": 3,
+      "bitterness": 0,
+      "umami": 4,
+      "fatRichness": 0,
+      "heatPungency": 3,
+      "herbalCharacter": 0,
+      "floralCharacter": 0,
+      "earthiness": 0,
+      "smokiness": 0,
+      "aromaticIntensity": 4,
+      "perceivedRichness": 2,
+      "textures": [
+        "glossy_sauce"
+      ],
+      "isEditorialApproximation": true
+    },
+    "typicalApplications": [
+      "vegetables",
+      "meat",
+      "poultry",
+      "fungi",
+      "legumes"
+    ],
+    "cuisines": [
+      "cuisine_chinese_sichuan"
+    ],
+    "compatibleIngredients": [
+      "ing_eggplant",
+      "ing_pork_loin",
+      "ing_pork_belly",
+      "ing_chicken_thigh",
+      "ing_tofu_firm",
+      "ing_mushroom_wood_ear",
+      "ing_bamboo_shoot",
+      "ing_shrimp_prawn"
+    ],
+    "challengingIngredients": [
+      "ing_parmigiano_reggiano",
+      "ing_heavy_cream"
+    ],
+    "technique": "Fry fermented chili paste (doubanjiang/pickled chiles) in oil with generous minced garlic, ginger, and white scallion until fragrant; deglaze with balanced sugar, Chinkiang black vinegar, and soy sauce.",
+    "preparationNotes": "Contains no fish, yet uses traditional Sichuan fish-seasoning aromatics to create a deeply addictive sweet-sour-garlicky-spicy glaze for eggplant, pork, or tofu.",
+    "provenanceId": "src_culinary_editorial_v2"
+  },
+  {
+    "id": "sauce_ginger_scallion_oil",
+    "name": "Cantonese Sizzling Ginger-Scallion Oil",
+    "category": "herb_condiment",
+    "mainIngredients": [
+      "ing_scallion",
+      "ing_ginger_fresh",
+      "ing_mustard_oil_neutral",
+      "ing_sesame_oil_toasted",
+      "ing_soy_sauce_shoyu"
+    ],
+    "flavorProfile": {
+      "sweetness": 1,
+      "acidity": 0,
+      "saltiness": 3,
+      "bitterness": 0,
+      "umami": 3,
+      "fatRichness": 3,
+      "heatPungency": 2,
+      "herbalCharacter": 3,
+      "floralCharacter": 0,
+      "earthiness": 0,
+      "smokiness": 0,
+      "aromaticIntensity": 4,
+      "perceivedRichness": 2,
+      "textures": [
+        "aromatic_oil_mince"
+      ],
+      "isEditorialApproximation": true
+    },
+    "typicalApplications": [
+      "poultry",
+      "fish",
+      "shellfish",
+      "vegetables",
+      "pasta",
+      "rice"
+    ],
+    "cuisines": [
+      "cuisine_chinese_cantonese"
+    ],
+    "compatibleIngredients": [
+      "ing_chicken_poached_hainanese",
+      "ing_chicken_breast",
+      "ing_chicken_thigh",
+      "ing_sea_bass",
+      "ing_cod_halibut",
+      "ing_cod_black_sablefish",
+      "ing_shrimp_prawn",
+      "ing_scallop_sea",
+      "ing_tofu_soft",
+      "ing_bok_choy",
+      "ing_rice_jasmine_short",
+      "ing_rice_noodle"
+    ],
+    "challengingIngredients": [],
+    "technique": "Finely mince fresh ginger and green onions with salt; pour smoking-hot neutral oil over the aromatics to flash-bloom their volatile essential oils without browning, then finish with a splash of light soy and sesame oil.",
+    "preparationNotes": "Clean, fragrant condiment that elevates poached chicken, steamed whole fish, silky tofu, and noodles.",
+    "provenanceId": "src_culinary_editorial_v2"
+  },
+  {
+    "id": "sauce_ssamjang",
+    "name": "Korean Ssamjang & Gochujang-Sesame Marinade/Dipping Sauce",
+    "category": "fermented_glaze",
+    "mainIngredients": [
+      "ing_doenjang",
+      "ing_gochujang",
+      "ing_garlic",
+      "ing_scallion",
+      "ing_sesame_oil_toasted",
+      "ing_honey",
+      "ing_sesame_seed"
+    ],
+    "flavorProfile": {
+      "sweetness": 3,
+      "acidity": 0,
+      "saltiness": 3,
+      "bitterness": 0,
+      "umami": 4,
+      "fatRichness": 2,
+      "heatPungency": 3,
+      "herbalCharacter": 0,
+      "floralCharacter": 0,
+      "earthiness": 3,
+      "smokiness": 0,
+      "aromaticIntensity": 4,
+      "perceivedRichness": 3,
+      "textures": [
+        "thick_paste"
+      ],
+      "isEditorialApproximation": true
+    },
+    "typicalApplications": [
+      "meat",
+      "poultry",
+      "vegetables",
+      "fish"
+    ],
+    "cuisines": [
+      "cuisine_korean"
+    ],
+    "compatibleIngredients": [
+      "ing_pork_belly",
+      "ing_beef_short_rib",
+      "ing_beef_ribeye",
+      "ing_chicken_thigh",
+      "ing_lettuce_gem_romaine",
+      "ing_kimchi_napa",
+      "ing_cucumber",
+      "ing_tofu_firm",
+      "ing_squid_octopus"
+    ],
+    "challengingIngredients": [],
+    "technique": "Mix earthy fermented doenjang and sweet-spicy gochujang with minced garlic, scallion, honey, toasted sesame oil, and crushed sesame seeds.",
+    "preparationNotes": "Balances savory fermented soybean depth with chili warmth and honey-sesame richness for grilled meats and crisp vegetable wraps.",
+    "provenanceId": "src_culinary_editorial_v2"
+  },
+  {
+    "id": "sauce_makhani_spiced_tomato",
+    "name": "North Indian Makhani / Spiced Tomato, Cashew, Ginger & Fenugreek Gravy",
+    "category": "spiced_gravy",
+    "mainIngredients": [
+      "ing_tomato_fresh",
+      "ing_ghee",
+      "ing_butter_unsalted",
+      "ing_heavy_cream",
+      "ing_cashew_raw_roasted",
+      "ing_ginger_fresh",
+      "ing_garlic",
+      "ing_garam_masala",
+      "ing_fenugreek_leaf",
+      "ing_cardamom_green"
+    ],
+    "flavorProfile": {
+      "sweetness": 3,
+      "acidity": 2,
+      "saltiness": 2,
+      "bitterness": 0,
+      "umami": 3,
+      "fatRichness": 4,
+      "heatPungency": 2,
+      "herbalCharacter": 2,
+      "floralCharacter": 3,
+      "earthiness": 2,
+      "smokiness": 0,
+      "aromaticIntensity": 4,
+      "perceivedRichness": 4,
+      "textures": [
+        "velvety_gravy"
+      ],
+      "isEditorialApproximation": true
+    },
+    "typicalApplications": [
+      "poultry",
+      "vegetables",
+      "legumes",
+      "dairy"
+    ],
+    "cuisines": [
+      "cuisine_indian_north"
+    ],
+    "compatibleIngredients": [
+      "ing_chicken_thigh",
+      "ing_paneer",
+      "ing_cauliflower",
+      "ing_chickpea",
+      "ing_lentil_brown_puy",
+      "ing_potato_yukon",
+      "ing_pea_green",
+      "ing_rice_basmati",
+      "ing_shrimp_prawn"
+    ],
+    "challengingIngredients": [
+      "ing_oyster",
+      "ing_tuna_ahi"
+    ],
+    "technique": "Simmer ripe tomatoes with ginger, garlic, green cardamom, and cashews; puree until satin-smooth, strain, mount with butter/cream, and finish with crushed toasted kasuri methi (dried fenugreek leaves).",
+    "preparationNotes": "Tangy-sweet tomato acidity cushioned by cashew-butter emulsion and perfumed with aromatic cardamom and maple-like fenugreek.",
+    "provenanceId": "src_culinary_editorial_v2"
+  },
+  {
+    "id": "sauce_mint_cilantro_chutney",
+    "name": "Green Cilantro, Mint, Ginger, Green Chile & Lime Chutney",
+    "category": "herb_condiment",
+    "mainIngredients": [
+      "ing_cilantro_fresh",
+      "ing_mint_fresh",
+      "ing_chile_green_serrano",
+      "ing_ginger_fresh",
+      "ing_lime_fresh",
+      "ing_cumin_seed",
+      "ing_yogurt_plain"
+    ],
+    "flavorProfile": {
+      "sweetness": 1,
+      "acidity": 4,
+      "saltiness": 2,
+      "bitterness": 0,
+      "umami": 0,
+      "fatRichness": 0,
+      "heatPungency": 3,
+      "herbalCharacter": 4,
+      "floralCharacter": 0,
+      "earthiness": 1,
+      "smokiness": 0,
+      "aromaticIntensity": 4,
+      "perceivedRichness": 1,
+      "textures": [
+        "smooth_chutney"
+      ],
+      "isEditorialApproximation": true
+    },
+    "typicalApplications": [
+      "meat",
+      "poultry",
+      "vegetables",
+      "legumes",
+      "dairy"
+    ],
+    "cuisines": [
+      "cuisine_indian_north",
+      "cuisine_indian_south",
+      "cuisine_middle_eastern"
+    ],
+    "compatibleIngredients": [
+      "ing_lamb_rack_loin",
+      "ing_lamb_ground_kofta",
+      "ing_chicken_thigh",
+      "ing_paneer",
+      "ing_potato_yukon",
+      "ing_sweet_potato",
+      "ing_chickpea",
+      "ing_cauliflower",
+      "ing_eggplant"
+    ],
+    "challengingIngredients": [],
+    "technique": "Blend fresh cilantro leaves and tender stems, mint leaves, ginger, green chiles, roasted cumin, black salt, and lime juice (optionally swirled with yogurt).",
+    "preparationNotes": "Electric herbal-citrus-chile brightness that cuts rich tandoori/grilled meats, fried snacks, paneer, and spiced potatoes.",
+    "provenanceId": "src_culinary_editorial_v2"
+  },
+  {
+    "id": "sauce_coconut_curry_leaf",
+    "name": "South Indian / Thai Coconut, Curry Leaf, Tamarind & Lemongrass Simmer Sauce",
+    "category": "spiced_gravy",
+    "mainIngredients": [
+      "ing_coconut_milk",
+      "ing_curry_leaf",
+      "ing_mustard_seed_black",
+      "ing_tamarind_paste",
+      "ing_turmeric_ground",
+      "ing_ginger_fresh",
+      "ing_chile_green_serrano",
+      "ing_lemongrass",
+      "ing_lime_fresh"
+    ],
+    "flavorProfile": {
+      "sweetness": 2,
+      "acidity": 3,
+      "saltiness": 2,
+      "bitterness": 0,
+      "umami": 2,
+      "fatRichness": 4,
+      "heatPungency": 3,
+      "herbalCharacter": 3,
+      "floralCharacter": 2,
+      "earthiness": 2,
+      "smokiness": 0,
+      "aromaticIntensity": 4,
+      "perceivedRichness": 3,
+      "textures": [
+        "silky_broth"
+      ],
+      "isEditorialApproximation": true
+    },
+    "typicalApplications": [
+      "fish",
+      "shellfish",
+      "vegetables",
+      "legumes",
+      "poultry"
+    ],
+    "cuisines": [
+      "cuisine_indian_south",
+      "cuisine_thai"
+    ],
+    "compatibleIngredients": [
+      "ing_shrimp_prawn",
+      "ing_cod_halibut",
+      "ing_sea_bass",
+      "ing_clam_mussel",
+      "ing_chicken_thigh",
+      "ing_sweet_potato",
+      "ing_butternut_squash",
+      "ing_spinach",
+      "ing_chickpea",
+      "ing_lentil_red",
+      "ing_rice_jasmine_short",
+      "ing_rice_basmati"
+    ],
+    "challengingIngredients": [
+      "ing_blue_cheese",
+      "ing_parmigiano_reggiano"
+    ],
+    "technique": "Temper black mustard seeds, curry leaves, ginger, and green chiles in coconut oil; add turmeric, tamarind extract, and creamy coconut milk and simmer gently without boiling hard.",
+    "preparationNotes": "Balances rich, cooling coconut lipids with sharp tamarind/lime sourness and aromatic curry leaves; superb with coastal seafood, squash, and lentils.",
+    "provenanceId": "src_culinary_editorial_v2"
+  },
+  {
+    "id": "sauce_nam_jim_seafood",
+    "name": "Thai Nam Jim / Vietnamese Nuoc Cham (Fish Sauce, Lime, Palm Sugar, Garlic & Bird's Eye Chile)",
+    "category": "vinaigrette",
+    "mainIngredients": [
+      "ing_fish_sauce",
+      "ing_lime_fresh",
+      "ing_sugar_palm_brown",
+      "ing_garlic",
+      "ing_chile_thai_bird",
+      "ing_cilantro_roots_stems"
+    ],
+    "flavorProfile": {
+      "sweetness": 3,
+      "acidity": 4,
+      "saltiness": 4,
+      "bitterness": 0,
+      "umami": 4,
+      "fatRichness": 0,
+      "heatPungency": 4,
+      "herbalCharacter": 3,
+      "floralCharacter": 0,
+      "earthiness": 0,
+      "smokiness": 0,
+      "aromaticIntensity": 4,
+      "perceivedRichness": 1,
+      "textures": [
+        "bright_dressing"
+      ],
+      "isEditorialApproximation": true
+    },
+    "typicalApplications": [
+      "shellfish",
+      "fish",
+      "meat",
+      "poultry",
+      "vegetables"
+    ],
+    "cuisines": [
+      "cuisine_thai",
+      "cuisine_vietnamese"
+    ],
+    "compatibleIngredients": [
+      "ing_shrimp_prawn",
+      "ing_squid_octopus",
+      "ing_sea_bass",
+      "ing_crab_meat",
+      "ing_beef_flank_skirt",
+      "ing_pork_belly",
+      "ing_pork_shoulder",
+      "ing_chicken_thigh",
+      "ing_cucumber",
+      "ing_papaya_green",
+      "ing_mango_pineapple",
+      "ing_rice_noodle",
+      "ing_mint_fresh"
+    ],
+    "challengingIngredients": [
+      "ing_heavy_cream",
+      "ing_gruyere_comte",
+      "ing_blue_cheese"
+    ],
+    "technique": "Pound garlic, cilantro roots/stems, and Thai bird's eye chiles in a mortar; dissolve palm sugar in fresh lime juice and balance with first-press fish sauce.",
+    "preparationNotes": "High-voltage four-corner balance (sour, salty-umami, sweet, spicy) that awakens grilled seafood, charred steak, crispy pork belly, and herb salads.",
+    "provenanceId": "src_culinary_editorial_v2"
+  },
+  {
+    "id": "sauce_peanut_satay",
+    "name": "Spiced Roasted Peanut, Coconut, Tamarind & Red Curry Sauce",
+    "category": "nut_pepper_emulsion",
+    "mainIngredients": [
+      "ing_peanut",
+      "ing_coconut_milk",
+      "ing_tamarind_paste",
+      "ing_sugar_palm_brown",
+      "ing_fish_sauce",
+      "ing_lemongrass",
+      "ing_galangal",
+      "ing_garlic",
+      "ing_chile_dried_red"
+    ],
+    "flavorProfile": {
+      "sweetness": 3,
+      "acidity": 2,
+      "saltiness": 3,
+      "bitterness": 0,
+      "umami": 3,
+      "fatRichness": 4,
+      "heatPungency": 2,
+      "herbalCharacter": 0,
+      "floralCharacter": 0,
+      "earthiness": 3,
+      "smokiness": 0,
+      "aromaticIntensity": 3,
+      "perceivedRichness": 4,
+      "textures": [
+        "creamy_crunchy_sauce"
+      ],
+      "isEditorialApproximation": true
+    },
+    "typicalApplications": [
+      "poultry",
+      "meat",
+      "shellfish",
+      "vegetables",
+      "legumes"
+    ],
+    "cuisines": [
+      "cuisine_thai",
+      "cuisine_vietnamese",
+      "cuisine_west_african_caribbean"
+    ],
+    "compatibleIngredients": [
+      "ing_chicken_thigh",
+      "ing_chicken_breast",
+      "ing_beef_flank_skirt",
+      "ing_pork_loin",
+      "ing_shrimp_prawn",
+      "ing_tofu_firm",
+      "ing_tempeh",
+      "ing_sweet_potato",
+      "ing_cucumber",
+      "ing_cabbage_napa_green",
+      "ing_rice_noodle"
+    ],
+    "challengingIngredients": [
+      "ing_parmigiano_reggiano",
+      "ing_oyster"
+    ],
+    "technique": "Fry aromatic lemongrass-shallot-chili paste in cracked coconut cream, stir in roasted crushed peanuts, coconut milk, palm sugar, fish sauce, and sour tamarind.",
+    "preparationNotes": "Rich, nutty-sweet-savory emulsion lifted by tamarind and lemongrass; bridges charred skewers, crispy tofu, sweet potatoes, and crunchy slaws.",
+    "provenanceId": "src_culinary_editorial_v2"
+  },
+  {
+    "id": "sauce_tahini_lemon",
+    "name": "Levantine Tarator (Whipped Tahini, Lemon, Garlic & Parsley Sauce)",
+    "category": "nut_pepper_emulsion",
+    "mainIngredients": [
+      "ing_tahini",
+      "ing_lemon_fresh",
+      "ing_garlic",
+      "ing_parsley_flat",
+      "ing_cumin_seed",
+      "ing_olive_oil_evoo"
+    ],
+    "flavorProfile": {
+      "sweetness": 0,
+      "acidity": 3,
+      "saltiness": 2,
+      "bitterness": 1,
+      "umami": 2,
+      "fatRichness": 4,
+      "heatPungency": 0,
+      "herbalCharacter": 0,
+      "floralCharacter": 0,
+      "earthiness": 3,
+      "smokiness": 0,
+      "aromaticIntensity": 3,
+      "perceivedRichness": 3,
+      "textures": [
+        "velvety_ribbon"
+      ],
+      "isEditorialApproximation": true
+    },
+    "typicalApplications": [
+      "vegetables",
+      "meat",
+      "fish",
+      "legumes"
+    ],
+    "cuisines": [
+      "cuisine_middle_eastern",
+      "cuisine_north_african"
+    ],
+    "compatibleIngredients": [
+      "ing_eggplant",
+      "ing_cauliflower",
+      "ing_carrot",
+      "ing_sweet_potato",
+      "ing_chickpea",
+      "ing_lamb_ground_kofta",
+      "ing_lamb_shoulder",
+      "ing_sea_bass",
+      "ing_beetroot",
+      "ing_pomegranate_molasses",
+      "ing_sumac"
+    ],
+    "challengingIngredients": [],
+    "technique": "Macerate mashed garlic in fresh lemon juice to remove harshness, whisk into hulled sesame tahini (which first seizes, then loosens into an ivory cream with ice water), and season with cumin and parsley.",
+    "preparationNotes": "Nutty, creamy dairy-free emulsion with bright lemon acidity; essential partner for roasted cauliflower, charred eggplant, falafel/chickpeas, spiced fish, and lamb.",
+    "provenanceId": "src_culinary_editorial_v2"
+  },
+  {
+    "id": "sauce_chermoula",
+    "name": "Moroccan Chermoula & Preserved Lemon Marinade/Sauce",
+    "category": "herb_condiment",
+    "mainIngredients": [
+      "ing_cilantro_fresh",
+      "ing_parsley_flat",
+      "ing_lemon_preserved",
+      "ing_lemon_fresh",
+      "ing_garlic",
+      "ing_cumin_seed",
+      "ing_coriander_seed",
+      "ing_paprika_smoked",
+      "ing_olive_oil_evoo",
+      "ing_saffron"
+    ],
+    "flavorProfile": {
+      "sweetness": 0,
+      "acidity": 3,
+      "saltiness": 3,
+      "bitterness": 0,
+      "umami": 2,
+      "fatRichness": 3,
+      "heatPungency": 2,
+      "herbalCharacter": 4,
+      "floralCharacter": 3,
+      "earthiness": 3,
+      "smokiness": 0,
+      "aromaticIntensity": 4,
+      "perceivedRichness": 2,
+      "textures": [
+        "vibrant_paste"
+      ],
+      "isEditorialApproximation": true
+    },
+    "typicalApplications": [
+      "fish",
+      "shellfish",
+      "vegetables",
+      "poultry",
+      "meat"
+    ],
+    "cuisines": [
+      "cuisine_north_african",
+      "cuisine_middle_eastern"
+    ],
+    "compatibleIngredients": [
+      "ing_sea_bass",
+      "ing_cod_halibut",
+      "ing_mackerel_sardine",
+      "ing_swordfish",
+      "ing_shrimp_prawn",
+      "ing_carrot",
+      "ing_cauliflower",
+      "ing_eggplant",
+      "ing_chickpea",
+      "ing_lamb_shoulder",
+      "ing_chicken_thigh",
+      "ing_couscous"
+    ],
+    "challengingIngredients": [],
+    "technique": "Pound fresh cilantro, flat-leaf parsley, garlic, finely minced preserved lemon rind, toasted cumin, coriander, smoked paprika, cayenne/harissa, and olive oil.",
+    "preparationNotes": "Combines fresh herb brightness, warm toasted earthiness, and floral preserved-lemon salinity; extraordinary with whole roasted fish, carrots, and tagines.",
+    "provenanceId": "src_culinary_editorial_v2"
+  },
+  {
+    "id": "sauce_pomegranate_walnut",
+    "name": "Pomegranate Molasses, Toasted Walnut & Warm Spice Reduction (Fesenjan / Muhammara Profile)",
+    "category": "nut_pepper_emulsion",
+    "mainIngredients": [
+      "ing_pomegranate_molasses",
+      "ing_walnut_pecan",
+      "ing_bell_pepper_red",
+      "ing_olive_oil_evoo",
+      "ing_cumin_seed",
+      "ing_cinnamon_ground",
+      "ing_chili_aleppo_urfa"
+    ],
+    "flavorProfile": {
+      "sweetness": 3,
+      "acidity": 4,
+      "saltiness": 0,
+      "bitterness": 1,
+      "umami": 2,
+      "fatRichness": 3,
+      "heatPungency": 1,
+      "herbalCharacter": 0,
+      "floralCharacter": 0,
+      "earthiness": 4,
+      "smokiness": 0,
+      "aromaticIntensity": 4,
+      "perceivedRichness": 4,
+      "textures": [
+        "rich_velvety"
+      ],
+      "isEditorialApproximation": true
+    },
+    "typicalApplications": [
+      "poultry",
+      "meat",
+      "vegetables"
+    ],
+    "cuisines": [
+      "cuisine_middle_eastern"
+    ],
+    "compatibleIngredients": [
+      "ing_duck_breast",
+      "ing_chicken_thigh",
+      "ing_lamb_shoulder",
+      "ing_lamb_rack_loin",
+      "ing_eggplant",
+      "ing_butternut_squash",
+      "ing_cauliflower",
+      "ing_goat_cheese_feta",
+      "ing_rice_basmati"
+    ],
+    "challengingIngredients": [
+      "ing_fish_turbot_sole"
+    ],
+    "technique": "Toast walnuts deeply until fragrant, grind finely, and simmer with tangy pomegranate molasses, roasted red pepper or caramelized onion, olive oil, Aleppo pepper, and warm spices.",
+    "preparationNotes": "Deep earthy-tannic walnut richness balanced by sharp ruby pomegranate tartness; classic with duck, chicken, lamb, and roasted squash or eggplant.",
+    "provenanceId": "src_culinary_editorial_v2"
+  },
+  {
+    "id": "sauce_mafe_peanut_tomato",
+    "name": "West African Mafé (Spiced Groundnut, Tomato, Ginger & Scotch Bonnet Stew Sauce)",
+    "category": "spiced_gravy",
+    "mainIngredients": [
+      "ing_peanut",
+      "ing_tomato_paste",
+      "ing_onion_yellow",
+      "ing_garlic",
+      "ing_ginger_fresh",
+      "ing_chile_habanero_scotch",
+      "ing_thyme_fresh",
+      "ing_stock_chicken_beef"
+    ],
+    "flavorProfile": {
+      "sweetness": 2,
+      "acidity": 2,
+      "saltiness": 2,
+      "bitterness": 0,
+      "umami": 4,
+      "fatRichness": 4,
+      "heatPungency": 3,
+      "herbalCharacter": 0,
+      "floralCharacter": 0,
+      "earthiness": 3,
+      "smokiness": 0,
+      "aromaticIntensity": 4,
+      "perceivedRichness": 4,
+      "textures": [
+        "velvety_stew_sauce"
+      ],
+      "isEditorialApproximation": true
+    },
+    "typicalApplications": [
+      "meat",
+      "poultry",
+      "vegetables",
+      "starch"
+    ],
+    "cuisines": [
+      "cuisine_west_african_caribbean"
+    ],
+    "compatibleIngredients": [
+      "ing_beef_short_rib",
+      "ing_lamb_shoulder",
+      "ing_chicken_thigh",
+      "ing_sweet_potato",
+      "ing_plantain",
+      "ing_kale_chard",
+      "ing_cabbage_napa_green",
+      "ing_okra",
+      "ing_rice_jasmine_short"
+    ],
+    "challengingIngredients": [
+      "ing_blue_cheese"
+    ],
+    "technique": "Caramelize tomato paste with onions, ginger, garlic, and Scotch bonnet; whisk in smooth roasted peanut paste and stock, simmering until scarlet peanut oil rises to the surface.",
+    "preparationNotes": "Caramelized tomato glutamates and fiery ginger-habanero heat wrapped in velvety roasted peanut richness.",
+    "provenanceId": "src_culinary_editorial_v2"
+  }
+]

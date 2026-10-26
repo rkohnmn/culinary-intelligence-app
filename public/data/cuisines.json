@@ -1,0 +1,512 @@
+[
+  {
+    "id": "cuisine_french",
+    "name": "French (Classical & Bistro)",
+    "region": "Western Europe",
+    "description": "Emphasizes mirepoix aromatics, cultured butter and cream emulsions, wine and stock reductions, fine herbs (tarragon, chervil, thyme, parsley), and structured acid-fat balance.",
+    "signatureIngredients": [
+      "ing_butter_unsalted",
+      "ing_shallot",
+      "ing_garlic",
+      "ing_thyme_fresh",
+      "ing_tarragon_fresh",
+      "ing_wine_dry_white",
+      "ing_wine_red",
+      "ing_dijon_mustard",
+      "ing_creme_fraiche",
+      "ing_leek",
+      "ing_duck_breast",
+      "ing_mushroom_chanterelle"
+    ],
+    "signatureSauces": [
+      "sauce_beurre_blanc",
+      "sauce_bordelaise",
+      "sauce_bearnaise",
+      "sauce_veloute",
+      "sauce_vinaigrette_dijon"
+    ],
+    "commonTechniques": [
+      "sauteed",
+      "braised",
+      "poached",
+      "roasted",
+      "reduced",
+      "emulsified"
+    ],
+    "flavorStructureNotes": "Builds deep savory foundations through browned proteins and alliums, enriched with dairy or duck fat and lifted at the finish with wine, vinegar, or fresh herbs."
+  },
+  {
+    "id": "cuisine_italian",
+    "name": "Italian (Regional Peninsula & Islands)",
+    "region": "Southern Europe / Mediterranean",
+    "description": "Spans Northern butter/rice/polenta traditions to Central/Southern olive oil, tomato, hard aged cheeses, bitter greens, and coastal seafood preparations.",
+    "signatureIngredients": [
+      "ing_olive_oil_evoo",
+      "ing_garlic",
+      "ing_tomato_fresh",
+      "ing_tomato_paste",
+      "ing_basil_sweet",
+      "ing_parmigiano_reggiano",
+      "ing_pecorino_romano",
+      "ing_lemon_fresh",
+      "ing_anchovy_fillet",
+      "ing_caper",
+      "ing_rosemary_fresh",
+      "ing_fennel_bulb"
+    ],
+    "signatureSauces": [
+      "sauce_marinara_pomodoro",
+      "sauce_pesto_genovese",
+      "sauce_salsa_verde_it",
+      "sauce_aglione_butter_sage",
+      "sauce_puttanesca_base"
+    ],
+    "commonTechniques": [
+      "sauteed",
+      "braised",
+      "roasted",
+      "grilled",
+      "raw",
+      "cured"
+    ],
+    "flavorStructureNotes": "Relies on high-quality primary ingredients, glutamates from aged cheese, cured pork, or anchovies, and bright acidity from tomatoes, wine, or citrus."
+  },
+  {
+    "id": "cuisine_spanish_med",
+    "name": "Spanish & Western Mediterranean",
+    "region": "Iberian Peninsula & Mediterranean Basin",
+    "description": "Anchored by olive oil, garlic, smoked paprika (piment\u00f3n), saffron, sherry vinegar, almonds, legumes, chorizo, and coastal shellfish.",
+    "signatureIngredients": [
+      "ing_olive_oil_evoo",
+      "ing_garlic",
+      "ing_paprika_smoked",
+      "ing_saffron",
+      "ing_vinegar_sherry",
+      "ing_almond",
+      "ing_tomato_fresh",
+      "ing_bell_pepper_red",
+      "ing_chorizo_cured",
+      "ing_shrimp_prawn",
+      "ing_chickpea",
+      "ing_parsley_flat"
+    ],
+    "signatureSauces": [
+      "sauce_romesco",
+      "sauce_aioli_garlic",
+      "sauce_picada",
+      "sauce_sherry_pan_glaze"
+    ],
+    "commonTechniques": [
+      "roasted",
+      "grilled",
+      "sauteed",
+      "braised",
+      "smoked",
+      "cured"
+    ],
+    "flavorStructureNotes": "Pairs smoky, nutty, and saffron-infused aromatics with sharp sherry vinegar acidity and rich olive oil emulsions."
+  },
+  {
+    "id": "cuisine_mexican",
+    "name": "Mexican (Central, Oaxacan & Coastal)",
+    "region": "North & Mesoamerica",
+    "description": "Built on nixtamalized corn, diverse fresh and dried chiles, tomatillos, tomatoes, lime, cilantro, epazote, pumpkin seeds, avocado, and complex toasted spice/seed moles.",
+    "signatureIngredients": [
+      "ing_corn_masa",
+      "ing_lime_fresh",
+      "ing_cilantro_fresh",
+      "ing_chile_jalapeno",
+      "ing_chile_poblano",
+      "ing_chile_ancho",
+      "ing_chile_chipotle",
+      "ing_tomatillo",
+      "ing_avocado",
+      "ing_black_bean",
+      "ing_cumin_seed",
+      "ing_cacao_dark"
+    ],
+    "signatureSauces": [
+      "sauce_salsa_verde_mex",
+      "sauce_mole_negro_style",
+      "sauce_adobo_chipotle",
+      "sauce_guajillo_rojo"
+    ],
+    "commonTechniques": [
+      "roasted",
+      "grilled",
+      "braised",
+      "toasted",
+      "raw",
+      "pickled"
+    ],
+    "flavorStructureNotes": "Balances earthy roasted chiles and toasted seeds/nuts with bright fresh lime, raw onion/cilantro, and creamy avocado or queso fresco."
+  },
+  {
+    "id": "cuisine_japanese",
+    "name": "Japanese (Washoku & Izakaya)",
+    "region": "East Asia",
+    "description": "Focused on dashi umami (kombu and katsuobushi), fermented soy (shoyu, miso), mirin, rice vinegar, ginger, scallions, sesame, and seasonal precision.",
+    "signatureIngredients": [
+      "ing_soy_sauce_shoyu",
+      "ing_miso_white",
+      "ing_miso_red",
+      "ing_mirin",
+      "ing_vinegar_rice",
+      "ing_kombu_kelp",
+      "ing_bonito_flakes",
+      "ing_ginger_fresh",
+      "ing_scallion",
+      "ing_sesame_oil_toasted",
+      "ing_daikon_radish",
+      "ing_mushroom_shiitake"
+    ],
+    "signatureSauces": [
+      "sauce_ponzu",
+      "sauce_teriyaki_glaze",
+      "sauce_miso_dengaku",
+      "sauce_goma_sesame"
+    ],
+    "commonTechniques": [
+      "raw",
+      "steamed",
+      "grilled",
+      "poached",
+      "simmered",
+      "pickled",
+      "fermented"
+    ],
+    "flavorStructureNotes": "Layers clean synergistic umami (glutamate + inosinate) with gentle sweetness from mirin and delicate acidity from rice vinegar or yuzu/citrus."
+  },
+  {
+    "id": "cuisine_chinese_sichuan",
+    "name": "Chinese (Sichuan & Southwestern)",
+    "region": "East Asia",
+    "description": "Renowned for compound flavor profiles (yu xiang, ma la, guai wei) combining fermented broad bean paste (doubanjiang), Sichuan peppercorn, ginger, garlic, scallion, black vinegar, and chili oil.",
+    "signatureIngredients": [
+      "ing_sichuan_peppercorn",
+      "ing_doubanjiang",
+      "ing_garlic",
+      "ing_ginger_fresh",
+      "ing_scallion",
+      "ing_vinegar_chinkiang",
+      "ing_soy_sauce_shoyu",
+      "ing_sesame_oil_toasted",
+      "ing_chile_dried_red",
+      "ing_pork_belly",
+      "ing_tofu_firm",
+      "ing_peanut"
+    ],
+    "signatureSauces": [
+      "sauce_mala_chili_oil",
+      "sauce_yuxiang_garlic",
+      "sauce_strange_flavor_sesame"
+    ],
+    "commonTechniques": [
+      "sauteed",
+      "braised",
+      "steamed",
+      "fried",
+      "fermented",
+      "pickled"
+    ],
+    "flavorStructureNotes": "Orchestrates numbing citrus-floral notes (Sichuan peppercorn), fiery heat, fermented savory depth, sugar, and aged black vinegar into multi-layered profiles."
+  },
+  {
+    "id": "cuisine_chinese_cantonese",
+    "name": "Chinese (Cantonese & Coastal Southern)",
+    "region": "East Asia",
+    "description": "Prioritizes ingredient freshness, wok hei (breath of the wok), gentle steaming, ginger-scallion aromatics, oyster sauce, Shaoxing wine, and clear savory broths.",
+    "signatureIngredients": [
+      "ing_ginger_fresh",
+      "ing_scallion",
+      "ing_soy_sauce_shoyu",
+      "ing_oyster_sauce",
+      "ing_wine_shaoxing",
+      "ing_sesame_oil_toasted",
+      "ing_garlic",
+      "ing_bok_choy",
+      "ing_shrimp_prawn",
+      "ing_sea_bass",
+      "ing_pork_loin",
+      "ing_star_anise"
+    ],
+    "signatureSauces": [
+      "sauce_ginger_scallion_oil",
+      "sauce_cantonese_oyster_veloute"
+    ],
+    "commonTechniques": [
+      "steamed",
+      "sauteed",
+      "roasted",
+      "poached",
+      "braised"
+    ],
+    "flavorStructureNotes": "Highlights natural sweetness of seafood, poultry, and greens using light aromatic infusions and savory umami glazes that never mask the main component."
+  },
+  {
+    "id": "cuisine_korean",
+    "name": "Korean",
+    "region": "East Asia",
+    "description": "Grounded in fermented jang pastes (gochujang, doenjang), ganjang (soy sauce), garlic, ginger, gochugaru, toasted sesame oil, perilla, and vibrant fermented kimchi accompaniments.",
+    "signatureIngredients": [
+      "ing_gochujang",
+      "ing_doenjang",
+      "ing_kimchi_napa",
+      "ing_garlic",
+      "ing_ginger_fresh",
+      "ing_scallion",
+      "ing_sesame_oil_toasted",
+      "ing_sesame_seed",
+      "ing_soy_sauce_shoyu",
+      "ing_asian_pear",
+      "ing_beef_short_rib",
+      "ing_tofu_soft"
+    ],
+    "signatureSauces": [
+      "sauce_ssamjang",
+      "sauce_chojang_vinegar_chili",
+      "sauce_galbi_marinade"
+    ],
+    "commonTechniques": [
+      "grilled",
+      "braised",
+      "fermented",
+      "steamed",
+      "sauteed",
+      "raw"
+    ],
+    "flavorStructureNotes": "Contrasts deep fermented earthiness and chili warmth with crisp pickled/fermented vegetables, toasted sesame richness, and fruit-sweetened marinades."
+  },
+  {
+    "id": "cuisine_indian_north",
+    "name": "Indian (Northern & Mughlai)",
+    "region": "South Asia",
+    "description": "Characterized by whole and ground warming spices (cumin, coriander, cardamom, cinnamon, cloves), onion-ginger-garlic-tomato bhuna foundations, ghee, yogurt, cream, and tandoor roasting.",
+    "signatureIngredients": [
+      "ing_ghee",
+      "ing_cumin_seed",
+      "ing_coriander_seed",
+      "ing_turmeric_ground",
+      "ing_garam_masala",
+      "ing_ginger_fresh",
+      "ing_garlic",
+      "ing_onion_yellow",
+      "ing_tomato_fresh",
+      "ing_yogurt_plain",
+      "ing_cilantro_fresh",
+      "ing_paneer",
+      "ing_chickpea"
+    ],
+    "signatureSauces": [
+      "sauce_makhani_spiced_tomato",
+      "sauce_mint_cilantro_chutney",
+      "sauce_yogurt_raita"
+    ],
+    "commonTechniques": [
+      "roasted",
+      "braised",
+      "sauteed",
+      "toasted",
+      "grilled"
+    ],
+    "flavorStructureNotes": "Blooms fat-soluble spices in hot ghee or oil (tadka), layers caramelized onions and ginger-garlic, and balances spice heat with cultured dairy or tangy chutney."
+  },
+  {
+    "id": "cuisine_indian_south",
+    "name": "Indian (Southern & Coastal)",
+    "region": "South Asia",
+    "description": "Built around coconut, curry leaves, black mustard seeds, tamarind, black pepper, lentils, fermented rice-lentil batters, and vibrant coastal seafood and vegetable preparations.",
+    "signatureIngredients": [
+      "ing_coconut_milk",
+      "ing_curry_leaf",
+      "ing_mustard_seed_black",
+      "ing_tamarind_paste",
+      "ing_black_pepper",
+      "ing_turmeric_ground",
+      "ing_chile_green_serrano",
+      "ing_ginger_fresh",
+      "ing_lentil_red",
+      "ing_rice_basmati",
+      "ing_shrimp_prawn"
+    ],
+    "signatureSauces": [
+      "sauce_tamarind_curry_base",
+      "sauce_coconut_curry_leaf"
+    ],
+    "commonTechniques": [
+      "sauteed",
+      "steamed",
+      "braised",
+      "fermented",
+      "toasted"
+    ],
+    "flavorStructureNotes": "Pairs pungent tempered mustard seeds and aromatic curry leaves with sharp sour tamarind and cooling, rich coconut milk."
+  },
+  {
+    "id": "cuisine_thai",
+    "name": "Thai (Central & Regional)",
+    "region": "Southeast Asia",
+    "description": "Famous for the dynamic four-corner equilibrium of salty (fish sauce), sour (lime, tamarind), sweet (palm sugar), and spicy (fresh chiles), perfumed with lemongrass, galangal, makrut lime leaf, and Thai basil.",
+    "signatureIngredients": [
+      "ing_fish_sauce",
+      "ing_lime_fresh",
+      "ing_sugar_palm_brown",
+      "ing_lemongrass",
+      "ing_galangal",
+      "ing_chile_thai_bird",
+      "ing_coconut_milk",
+      "ing_basil_thai",
+      "ing_cilantro_fresh",
+      "ing_garlic",
+      "ing_shallot",
+      "ing_tamarind_paste"
+    ],
+    "signatureSauces": [
+      "sauce_nam_jim_seafood",
+      "sauce_green_curry_coconut",
+      "sauce_peanut_satay"
+    ],
+    "commonTechniques": [
+      "sauteed",
+      "grilled",
+      "braised",
+      "steamed",
+      "raw",
+      "pounded"
+    ],
+    "flavorStructureNotes": "Demands simultaneous high-intensity contrast: pungent umami fish sauce, sharp citrus/tamarind acidity, aromatic herbs, chile heat, and palm sugar."
+  },
+  {
+    "id": "cuisine_vietnamese",
+    "name": "Vietnamese",
+    "region": "Southeast Asia",
+    "description": "Emphasizes fresh raw table herbs (mint, cilantro, Thai basil, perilla), nuoc mam (fish sauce), lime, rice noodles/paper, charred meats, and crystal-clear spiced broths.",
+    "signatureIngredients": [
+      "ing_fish_sauce",
+      "ing_lime_fresh",
+      "ing_mint_fresh",
+      "ing_cilantro_fresh",
+      "ing_basil_thai",
+      "ing_lemongrass",
+      "ing_garlic",
+      "ing_shallot",
+      "ing_ginger_fresh",
+      "ing_star_anise",
+      "ing_rice_noodle",
+      "ing_pork_belly"
+    ],
+    "signatureSauces": [
+      "sauce_nuoc_cham",
+      "sauce_lemongrass_marinade"
+    ],
+    "commonTechniques": [
+      "grilled",
+      "poached",
+      "steamed",
+      "raw",
+      "pickled",
+      "braised"
+    ],
+    "flavorStructureNotes": "Uses minimal added fat, relying on bright sweet-sour-savory nuoc cham, crisp pickled vegetables, and abundant fresh herbs to cut rich grilled or braised proteins."
+  },
+  {
+    "id": "cuisine_middle_eastern",
+    "name": "Middle Eastern & Levantine",
+    "region": "West Asia & Eastern Mediterranean",
+    "description": "Features tahini (sesame paste), sumac, za'atar, pomegranate molasses, lemon, garlic, olive oil, chickpeas, eggplant, lamb, yogurt, and warm spices (allspice, cumin, cinnamon).",
+    "signatureIngredients": [
+      "ing_tahini",
+      "ing_sumac",
+      "ing_pomegranate_molasses",
+      "ing_lemon_fresh",
+      "ing_olive_oil_evoo",
+      "ing_garlic",
+      "ing_chickpea",
+      "ing_eggplant",
+      "ing_lamb_shoulder",
+      "ing_yogurt_plain",
+      "ing_parsley_flat",
+      "ing_mint_fresh"
+    ],
+    "signatureSauces": [
+      "sauce_tahini_lemon",
+      "sauce_toum_garlic",
+      "sauce_zhoug_herb",
+      "sauce_pomegranate_walnut"
+    ],
+    "commonTechniques": [
+      "grilled",
+      "roasted",
+      "braised",
+      "raw",
+      "emulsified",
+      "pickled"
+    ],
+    "flavorStructureNotes": "Combines earthy sesame/nut richness and charred vegetables or meats with bright floral-tart acidity from sumac, lemon, and pomegranate."
+  },
+  {
+    "id": "cuisine_north_african",
+    "name": "North African (Maghrebi)",
+    "region": "North Africa",
+    "description": "Signature slow-cooked tagines combining preserved lemon, green olives, harissa, cumin, coriander, ginger, saffron, cinnamon, honey, dried fruits, almonds, and couscous.",
+    "signatureIngredients": [
+      "ing_lemon_preserved",
+      "ing_harissa_paste",
+      "ing_olive_green",
+      "ing_cumin_seed",
+      "ing_coriander_seed",
+      "ing_cinnamon_ground",
+      "ing_saffron",
+      "ing_ginger_fresh",
+      "ing_honey",
+      "ing_apricot_dried",
+      "ing_almond",
+      "ing_couscous",
+      "ing_lamb_shoulder"
+    ],
+    "signatureSauces": [
+      "sauce_chermoula",
+      "sauce_harissa_rose_glaze"
+    ],
+    "commonTechniques": [
+      "braised",
+      "roasted",
+      "steamed",
+      "grilled",
+      "cured"
+    ],
+    "flavorStructureNotes": "Weaves savory-sweet-sour harmony: aromatic warm spices and honey/dried fruit sweetness counterbalanced by briny preserved lemon, olives, and fiery harissa."
+  },
+  {
+    "id": "cuisine_west_african_caribbean",
+    "name": "West African & Caribbean Diaspora",
+    "region": "West Africa & Caribbean Basin",
+    "description": "Connects West African groundnut (peanut), tomato-chili-ginger stews, plantains, yams, and leafy greens with Caribbean allspice (pimento), Scotch bonnet/habanero, thyme, lime, and coconut.",
+    "signatureIngredients": [
+      "ing_peanut",
+      "ing_tomato_paste",
+      "ing_ginger_fresh",
+      "ing_chile_habanero_scotch",
+      "ing_allspice_ground",
+      "ing_thyme_fresh",
+      "ing_lime_fresh",
+      "ing_plantain",
+      "ing_sweet_potato",
+      "ing_black_bean",
+      "ing_coconut_milk",
+      "ing_scallion"
+    ],
+    "signatureSauces": [
+      "sauce_mafe_peanut_tomato",
+      "sauce_jerk_allspice_marinade"
+    ],
+    "commonTechniques": [
+      "braised",
+      "grilled",
+      "roasted",
+      "fried",
+      "smoked"
+    ],
+    "flavorStructureNotes": "Balances high aromatic chile heat and pungent ginger/allspice with creamy peanut or coconut richness and sweet starchy plantains or tubers."
+  }
+]

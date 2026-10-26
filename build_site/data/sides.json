@@ -1,0 +1,1091 @@
+[
+  {
+    "id": "side_pommes_puree",
+    "name": "Pommes Pur\u00e9e (Robuchon-Style Butter-Emulsified Yukon Gold Potatoes)",
+    "category": "starch_preparation",
+    "mainIngredients": [
+      "ing_potato_yukon",
+      "ing_butter_unsalted",
+      "ing_heavy_cream",
+      "ing_chives"
+    ],
+    "flavorProfile": {
+      "sweetness": 2,
+      "acidity": 0,
+      "saltiness": 2,
+      "bitterness": 0,
+      "umami": 1,
+      "fatRichness": 4,
+      "heatPungency": 0,
+      "herbalCharacter": 0,
+      "floralCharacter": 0,
+      "earthiness": 0,
+      "smokiness": 0,
+      "aromaticIntensity": 2,
+      "perceivedRichness": 4,
+      "textures": [
+        "velvety_smooth",
+        "creamy"
+      ],
+      "isEditorialApproximation": true
+    },
+    "cuisines": [
+      "cuisine_french",
+      "cuisine_italian"
+    ],
+    "complementsRoles": [
+      "braised_meat",
+      "pan_reduction",
+      "acidic_sauce",
+      "roasted_poultry"
+    ],
+    "culinaryRationale": "Provides a neutral, creamy lipid cushion that absorbs intense wine reductions, jus, and spicy or acidic braising liquids without competing for aromatic dominance.",
+    "provenanceId": "src_escoffier_pd"
+  },
+  {
+    "id": "side_pommes_roti_duckfat",
+    "name": "Crispy Rosemary-Garlic Roasted Fingerling Potatoes",
+    "category": "starch_preparation",
+    "mainIngredients": [
+      "ing_potato_yukon",
+      "ing_olive_oil_evoo",
+      "ing_rosemary_fresh",
+      "ing_garlic",
+      "ing_black_pepper"
+    ],
+    "flavorProfile": {
+      "sweetness": 1,
+      "acidity": 0,
+      "saltiness": 2,
+      "bitterness": 0,
+      "umami": 2,
+      "fatRichness": 3,
+      "heatPungency": 0,
+      "herbalCharacter": 3,
+      "floralCharacter": 0,
+      "earthiness": 0,
+      "smokiness": 0,
+      "aromaticIntensity": 3,
+      "perceivedRichness": 3,
+      "textures": [
+        "shatteringly_crisp",
+        "fluffy"
+      ],
+      "isEditorialApproximation": true
+    },
+    "cuisines": [
+      "cuisine_french",
+      "cuisine_italian",
+      "cuisine_spanish_med"
+    ],
+    "complementsRoles": [
+      "grilled_steak",
+      "roast_chicken",
+      "lamb",
+      "fish"
+    ],
+    "culinaryRationale": "Delivers high-contrast Maillard crunch and resinous rosemary-garlic aroma alongside tender steaks, roast lamb, or whole fish.",
+    "provenanceId": "src_culinary_editorial_v2"
+  },
+  {
+    "id": "side_polenta_creamy_parmigiano",
+    "name": "Creamy Stone-Ground Polenta with Parmigiano & Mascarpone",
+    "category": "starch_preparation",
+    "mainIngredients": [
+      "ing_polenta_grits",
+      "ing_parmigiano_reggiano",
+      "ing_butter_unsalted",
+      "ing_ricotta_mascarpone",
+      "ing_sage_fresh"
+    ],
+    "flavorProfile": {
+      "sweetness": 2,
+      "acidity": 0,
+      "saltiness": 2,
+      "bitterness": 0,
+      "umami": 3,
+      "fatRichness": 3,
+      "heatPungency": 0,
+      "herbalCharacter": 0,
+      "floralCharacter": 0,
+      "earthiness": 2,
+      "smokiness": 0,
+      "aromaticIntensity": 2,
+      "perceivedRichness": 3,
+      "textures": [
+        "creamy_grain"
+      ],
+      "isEditorialApproximation": true
+    },
+    "cuisines": [
+      "cuisine_italian"
+    ],
+    "complementsRoles": [
+      "braised_meat",
+      "wild_mushrooms",
+      "tomato_sauce"
+    ],
+    "culinaryRationale": "Sweet toasted corn and savory Parmigiano form the classic Northern Italian bed for braised osso buco, short ribs, sausage rag\u00f9, and wild mushrooms.",
+    "provenanceId": "src_artusi_pd"
+  },
+  {
+    "id": "side_risotto_milanese",
+    "name": "Risotto alla Milanese (Saffron, Bone Marrow & Parmigiano Carnaroli Rice)",
+    "category": "grain_pilaf",
+    "mainIngredients": [
+      "ing_rice_arborio_bomba",
+      "ing_saffron",
+      "ing_wine_dry_white",
+      "ing_stock_chicken_beef",
+      "ing_butter_unsalted",
+      "ing_parmigiano_reggiano",
+      "ing_shallot"
+    ],
+    "flavorProfile": {
+      "sweetness": 1,
+      "acidity": 1,
+      "saltiness": 2,
+      "bitterness": 0,
+      "umami": 4,
+      "fatRichness": 4,
+      "heatPungency": 0,
+      "herbalCharacter": 0,
+      "floralCharacter": 3,
+      "earthiness": 0,
+      "smokiness": 0,
+      "aromaticIntensity": 3,
+      "perceivedRichness": 4,
+      "textures": [
+        "creamy_al_dente"
+      ],
+      "isEditorialApproximation": true
+    },
+    "cuisines": [
+      "cuisine_italian"
+    ],
+    "complementsRoles": [
+      "braised_veal",
+      "seared_scallops",
+      "roasted_meats"
+    ],
+    "culinaryRationale": "Floral saffron and wave-like (all'onda) starch-butter emulsion traditionally accompany braised veal osso buco with gremolata.",
+    "provenanceId": "src_artusi_pd"
+  },
+  {
+    "id": "side_lentilles_du_puy",
+    "name": "Braised French Green Puy Lentils with Mirepoix, Bacon & Sherry Vinegar",
+    "category": "legume_accompaniment",
+    "mainIngredients": [
+      "ing_lentil_brown_puy",
+      "ing_carrot",
+      "ing_celery",
+      "ing_shallot",
+      "ing_pancetta_bacon",
+      "ing_thyme_fresh",
+      "ing_vinegar_sherry"
+    ],
+    "flavorProfile": {
+      "sweetness": 1,
+      "acidity": 3,
+      "saltiness": 2,
+      "bitterness": 0,
+      "umami": 3,
+      "fatRichness": 2,
+      "heatPungency": 0,
+      "herbalCharacter": 2,
+      "floralCharacter": 0,
+      "earthiness": 4,
+      "smokiness": 0,
+      "aromaticIntensity": 3,
+      "perceivedRichness": 3,
+      "textures": [
+        "firm_earthy"
+      ],
+      "isEditorialApproximation": true
+    },
+    "cuisines": [
+      "cuisine_french",
+      "cuisine_spanish_med"
+    ],
+    "complementsRoles": [
+      "duck_confit",
+      "salmon",
+      "pork_belly",
+      "sausages"
+    ],
+    "culinaryRationale": "Earthy, peppery lentils splashed with aged sherry vinegar absorb rendered fat from duck confit, crispy pork belly, or seared salmon while keeping the palate grounded.",
+    "provenanceId": "src_escoffier_pd"
+  },
+  {
+    "id": "side_fennel_blood_orange_salad",
+    "name": "Shaved Fennel, Blood Orange, Black Olive & Mint Salad",
+    "category": "acidic_salad",
+    "mainIngredients": [
+      "ing_fennel_bulb",
+      "ing_orange_sweet",
+      "ing_olive_green",
+      "ing_mint_fresh",
+      "ing_olive_oil_evoo",
+      "ing_lemon_fresh",
+      "ing_onion_red"
+    ],
+    "flavorProfile": {
+      "sweetness": 2,
+      "acidity": 4,
+      "saltiness": 2,
+      "bitterness": 1,
+      "umami": 0,
+      "fatRichness": 2,
+      "heatPungency": 0,
+      "herbalCharacter": 3,
+      "floralCharacter": 3,
+      "earthiness": 0,
+      "smokiness": 0,
+      "aromaticIntensity": 3,
+      "perceivedRichness": 1,
+      "textures": [
+        "crisp",
+        "juicy",
+        "refreshing"
+      ],
+      "isEditorialApproximation": true
+    },
+    "cuisines": [
+      "cuisine_italian",
+      "cuisine_spanish_med",
+      "cuisine_north_african",
+      "cuisine_french"
+    ],
+    "complementsRoles": [
+      "high_richness",
+      "oily_fish",
+      "roast_pork",
+      "duck",
+      "lamb"
+    ],
+    "culinaryRationale": "Crisp anise-scented fennel and bright citrus segments slice through oily pelagic fish (mackerel/sardines/salmon), fatty pork, duck, or rich lamb tagines.",
+    "provenanceId": "src_culinary_editorial_v2"
+  },
+  {
+    "id": "side_bitter_chicory_walnut_salad",
+    "name": "Bitter Chicory (Fris\u00e9e/Radicchio) Salad with Toasted Walnuts, Pear & Dijon Vinaigrette",
+    "category": "acidic_salad",
+    "mainIngredients": [
+      "ing_arugula_endive",
+      "ing_radicchio",
+      "ing_walnut_pecan",
+      "ing_asian_pear",
+      "ing_vinegar_wine_red_white",
+      "ing_dijon_mustard",
+      "ing_olive_oil_evoo",
+      "ing_shallot"
+    ],
+    "flavorProfile": {
+      "sweetness": 2,
+      "acidity": 4,
+      "saltiness": 0,
+      "bitterness": 3,
+      "umami": 0,
+      "fatRichness": 2,
+      "heatPungency": 0,
+      "herbalCharacter": 0,
+      "floralCharacter": 0,
+      "earthiness": 2,
+      "smokiness": 0,
+      "aromaticIntensity": 3,
+      "perceivedRichness": 2,
+      "textures": [
+        "crisp",
+        "crunchy"
+      ],
+      "isEditorialApproximation": true
+    },
+    "cuisines": [
+      "cuisine_french",
+      "cuisine_italian"
+    ],
+    "complementsRoles": [
+      "high_richness",
+      "cheese_course",
+      "braised_meat",
+      "duck_confit"
+    ],
+    "culinaryRationale": "Pleasant chicory bitterness and sharp mustard vinaigrette reset the palate after rich cream/cheese dishes, steak, or confit.",
+    "provenanceId": "src_culinary_editorial_v2"
+  },
+  {
+    "id": "side_broccolini_anchovy_garlic",
+    "name": "Charred Broccolini / Broccoli Rabe with Garlic, Anchovy, Chili & Lemon",
+    "category": "composed_vegetable",
+    "mainIngredients": [
+      "ing_broccoli_broccolini",
+      "ing_broccoli_rabe",
+      "ing_garlic",
+      "ing_anchovy_fillet",
+      "ing_chile_thai_bird",
+      "ing_lemon_fresh",
+      "ing_olive_oil_evoo"
+    ],
+    "flavorProfile": {
+      "sweetness": 0,
+      "acidity": 3,
+      "saltiness": 2,
+      "bitterness": 3,
+      "umami": 3,
+      "fatRichness": 3,
+      "heatPungency": 2,
+      "herbalCharacter": 0,
+      "floralCharacter": 0,
+      "earthiness": 0,
+      "smokiness": 0,
+      "aromaticIntensity": 3,
+      "perceivedRichness": 2,
+      "textures": [
+        "charred_crisp_tender"
+      ],
+      "isEditorialApproximation": true
+    },
+    "cuisines": [
+      "cuisine_italian",
+      "cuisine_spanish_med"
+    ],
+    "complementsRoles": [
+      "roast_meats",
+      "sausage",
+      "rich_pasta",
+      "fish"
+    ],
+    "culinaryRationale": "Bitterness and lemon acidity counterbalance rich pork sausages, ribeye steak, or creamy pasta while anchovy-garlic oil bridges savory notes.",
+    "provenanceId": "src_culinary_editorial_v2"
+  },
+  {
+    "id": "side_brussels_agrodolce_bacon",
+    "name": "Roasted Brussels Sprouts with Pancetta, Chestnuts & Balsamic Agrodolce",
+    "category": "composed_vegetable",
+    "mainIngredients": [
+      "ing_brussels_sprout",
+      "ing_pancetta_bacon",
+      "ing_chestnut",
+      "ing_vinegar_balsamic",
+      "ing_honey"
+    ],
+    "flavorProfile": {
+      "sweetness": 3,
+      "acidity": 3,
+      "saltiness": 3,
+      "bitterness": 2,
+      "umami": 3,
+      "fatRichness": 3,
+      "heatPungency": 0,
+      "herbalCharacter": 0,
+      "floralCharacter": 0,
+      "earthiness": 0,
+      "smokiness": 2,
+      "aromaticIntensity": 3,
+      "perceivedRichness": 3,
+      "textures": [
+        "crispy_leaves",
+        "tender"
+      ],
+      "isEditorialApproximation": true
+    },
+    "cuisines": [
+      "cuisine_italian",
+      "cuisine_french"
+    ],
+    "complementsRoles": [
+      "roast_poultry",
+      "pork_loin",
+      "venison",
+      "beef"
+    ],
+    "culinaryRationale": "Caramelized brassica leaves, smoky pancetta, and sweet-tart balsamic bridge autumn/winter roast turkey, duck, pork, and game.",
+    "provenanceId": "src_culinary_editorial_v2"
+  },
+  {
+    "id": "side_carrots_harissa_labneh",
+    "name": "Roasted Cumin-Honey Carrots over Lemon Labneh with Pistachios & Mint",
+    "category": "composed_vegetable",
+    "mainIngredients": [
+      "ing_carrot",
+      "ing_harissa_paste",
+      "ing_honey",
+      "ing_cumin_seed",
+      "ing_yogurt_plain",
+      "ing_lemon_fresh",
+      "ing_pistachio_cashew",
+      "ing_mint_fresh"
+    ],
+    "flavorProfile": {
+      "sweetness": 3,
+      "acidity": 3,
+      "saltiness": 2,
+      "bitterness": 0,
+      "umami": 0,
+      "fatRichness": 3,
+      "heatPungency": 2,
+      "herbalCharacter": 2,
+      "floralCharacter": 0,
+      "earthiness": 3,
+      "smokiness": 0,
+      "aromaticIntensity": 3,
+      "perceivedRichness": 3,
+      "textures": [
+        "tender_caramelized",
+        "creamy",
+        "crunchy"
+      ],
+      "isEditorialApproximation": true
+    },
+    "cuisines": [
+      "cuisine_middle_eastern",
+      "cuisine_north_african"
+    ],
+    "complementsRoles": [
+      "grilled_lamb",
+      "roast_chicken",
+      "spiced_fish"
+    ],
+    "culinaryRationale": "Pairs sweet roasted carrots and spicy harissa with cooling lactic labneh and crunchy pistachios.",
+    "provenanceId": "src_culinary_editorial_v2"
+  },
+  {
+    "id": "side_cauliflower_tahini_pomegranate",
+    "name": "Char-Roasted Cauliflower with Tahini, Pomegranate Arils, Sumac & Parsley",
+    "category": "composed_vegetable",
+    "mainIngredients": [
+      "ing_cauliflower",
+      "ing_tahini",
+      "ing_lemon_fresh",
+      "ing_pomegranate_arils",
+      "ing_sumac",
+      "ing_parsley_flat",
+      "ing_pine_nut"
+    ],
+    "flavorProfile": {
+      "sweetness": 2,
+      "acidity": 3,
+      "saltiness": 2,
+      "bitterness": 0,
+      "umami": 2,
+      "fatRichness": 3,
+      "heatPungency": 0,
+      "herbalCharacter": 2,
+      "floralCharacter": 0,
+      "earthiness": 3,
+      "smokiness": 0,
+      "aromaticIntensity": 3,
+      "perceivedRichness": 3,
+      "textures": [
+        "charred_florets",
+        "creamy",
+        "popping_crunch"
+      ],
+      "isEditorialApproximation": true
+    },
+    "cuisines": [
+      "cuisine_middle_eastern"
+    ],
+    "complementsRoles": [
+      "grilled_meats",
+      "fish",
+      "vegetarian_main"
+    ],
+    "culinaryRationale": "Nutty roasted brassica dressed in sesame-lemon emulsion with tart jewel-like pomegranate bursts.",
+    "provenanceId": "src_culinary_editorial_v2"
+  },
+  {
+    "id": "side_couscous_herbed_apricot",
+    "name": "Fluffy Steamed Couscous with Saffron, Apricots, Toasted Almonds & Herbs",
+    "category": "grain_pilaf",
+    "mainIngredients": [
+      "ing_couscous",
+      "ing_saffron",
+      "ing_apricot_dried",
+      "ing_almond",
+      "ing_cilantro_fresh",
+      "ing_mint_fresh",
+      "ing_lemon_preserved",
+      "ing_olive_oil_evoo"
+    ],
+    "flavorProfile": {
+      "sweetness": 2,
+      "acidity": 2,
+      "saltiness": 2,
+      "bitterness": 0,
+      "umami": 0,
+      "fatRichness": 2,
+      "heatPungency": 0,
+      "herbalCharacter": 3,
+      "floralCharacter": 3,
+      "earthiness": 0,
+      "smokiness": 0,
+      "aromaticIntensity": 3,
+      "perceivedRichness": 2,
+      "textures": [
+        "fluffy",
+        "crunchy"
+      ],
+      "isEditorialApproximation": true
+    },
+    "cuisines": [
+      "cuisine_north_african",
+      "cuisine_middle_eastern"
+    ],
+    "complementsRoles": [
+      "braised_tagine",
+      "grilled_lamb",
+      "roast_chicken"
+    ],
+    "culinaryRationale": "Light, aromatic semolina granules soak up rich tagine braising juices while dried apricots and almonds add sweet-crunchy contrast.",
+    "provenanceId": "src_culinary_editorial_v2"
+  },
+  {
+    "id": "side_mexican_black_beans_epazote",
+    "name": "Frijoles Negros (Simmered Black Beans with Epazote, Cumin, Lime & Cotija)",
+    "category": "legume_accompaniment",
+    "mainIngredients": [
+      "ing_black_bean",
+      "ing_onion_yellow",
+      "ing_garlic",
+      "ing_epazote",
+      "ing_cumin_seed",
+      "ing_lime_fresh",
+      "ing_cotija_queso_fresco"
+    ],
+    "flavorProfile": {
+      "sweetness": 1,
+      "acidity": 2,
+      "saltiness": 2,
+      "bitterness": 0,
+      "umami": 3,
+      "fatRichness": 2,
+      "heatPungency": 0,
+      "herbalCharacter": 2,
+      "floralCharacter": 0,
+      "earthiness": 4,
+      "smokiness": 0,
+      "aromaticIntensity": 2,
+      "perceivedRichness": 3,
+      "textures": [
+        "creamy_brothy"
+      ],
+      "isEditorialApproximation": true
+    },
+    "cuisines": [
+      "cuisine_mexican",
+      "cuisine_west_african_caribbean"
+    ],
+    "complementsRoles": [
+      "spicy_main",
+      "grilled_meats",
+      "pork_carnitas",
+      "roasted_squash"
+    ],
+    "culinaryRationale": "Earthy, protein-rich legumes temper fiery chile salsas and pair naturally with corn masa, pork, and avocado.",
+    "provenanceId": "src_culinary_editorial_v2"
+  },
+  {
+    "id": "side_elote_charred_corn",
+    "name": "Esquites / Charred Sweet Corn with Lime, Chile, Crema, Cotija & Cilantro",
+    "category": "composed_vegetable",
+    "mainIngredients": [
+      "ing_corn_sweet",
+      "ing_lime_fresh",
+      "ing_chile_chipotle",
+      "ing_cotija_queso_fresco",
+      "ing_cilantro_fresh",
+      "ing_scallion",
+      "ing_mayonnaise_aioli_base"
+    ],
+    "flavorProfile": {
+      "sweetness": 3,
+      "acidity": 3,
+      "saltiness": 2,
+      "bitterness": 0,
+      "umami": 2,
+      "fatRichness": 3,
+      "heatPungency": 2,
+      "herbalCharacter": 0,
+      "floralCharacter": 0,
+      "earthiness": 0,
+      "smokiness": 2,
+      "aromaticIntensity": 3,
+      "perceivedRichness": 3,
+      "textures": [
+        "juicy_crunch",
+        "creamy"
+      ],
+      "isEditorialApproximation": true
+    },
+    "cuisines": [
+      "cuisine_mexican"
+    ],
+    "complementsRoles": [
+      "grilled_steak",
+      "fish_tacos",
+      "barbecue_pork"
+    ],
+    "culinaryRationale": "Balances sweet blistered corn kernels with smoky chile heat, sharp lime juice, and salty cotija.",
+    "provenanceId": "src_culinary_editorial_v2"
+  },
+  {
+    "id": "side_plantains_maduros_blackbean",
+    "name": "Caramelized Sweet Plantains (Pl\u00e1tanos Maduros) with Lime & Scallion",
+    "category": "starch_preparation",
+    "mainIngredients": [
+      "ing_plantain",
+      "ing_coconut_oil",
+      "ing_lime_fresh",
+      "ing_scallion"
+    ],
+    "flavorProfile": {
+      "sweetness": 4,
+      "acidity": 2,
+      "saltiness": 0,
+      "bitterness": 0,
+      "umami": 0,
+      "fatRichness": 2,
+      "heatPungency": 0,
+      "herbalCharacter": 0,
+      "floralCharacter": 1,
+      "earthiness": 0,
+      "smokiness": 0,
+      "aromaticIntensity": 2,
+      "perceivedRichness": 3,
+      "textures": [
+        "caramelized_edges",
+        "soft_interior"
+      ],
+      "isEditorialApproximation": true
+    },
+    "cuisines": [
+      "cuisine_west_african_caribbean",
+      "cuisine_mexican"
+    ],
+    "complementsRoles": [
+      "spicy_main",
+      "jerk_seasoning",
+      "braised_oxtail"
+    ],
+    "culinaryRationale": "Natural banana-caramel sweetness and soft starch cool fiery Scotch bonnet/habanero heat in jerk chicken, curry goat, and picadillo.",
+    "provenanceId": "src_culinary_editorial_v2"
+  },
+  {
+    "id": "side_smashed_cucumber_sesame",
+    "name": "Sichuan Smashed Cucumber Salad with Garlic, Chinkiang Black Vinegar & Sesame-Chili Oil",
+    "category": "acidic_salad",
+    "mainIngredients": [
+      "ing_cucumber",
+      "ing_garlic",
+      "ing_vinegar_chinkiang",
+      "ing_soy_sauce_shoyu",
+      "ing_sesame_oil_toasted",
+      "ing_sichuan_chili_bean_oil",
+      "ing_sesame_seed",
+      "ing_cilantro_fresh"
+    ],
+    "flavorProfile": {
+      "sweetness": 1,
+      "acidity": 3,
+      "saltiness": 2,
+      "bitterness": 0,
+      "umami": 3,
+      "fatRichness": 2,
+      "heatPungency": 2,
+      "herbalCharacter": 2,
+      "floralCharacter": 0,
+      "earthiness": 0,
+      "smokiness": 0,
+      "aromaticIntensity": 3,
+      "perceivedRichness": 1,
+      "textures": [
+        "crisp",
+        "cooling_crunch"
+      ],
+      "isEditorialApproximation": true
+    },
+    "cuisines": [
+      "cuisine_chinese_sichuan",
+      "cuisine_chinese_cantonese",
+      "cuisine_japanese",
+      "cuisine_korean"
+    ],
+    "complementsRoles": [
+      "high_richness",
+      "spicy_main",
+      "braised_pork",
+      "noodles"
+    ],
+    "culinaryRationale": "Cragged salted cucumber pieces hold tangy black vinegar and toasted sesame while delivering hydrating crunch between bites of rich braised meat or spicy stir-fries.",
+    "provenanceId": "src_culinary_editorial_v2"
+  },
+  {
+    "id": "side_bok_choy_garlic_oyster",
+    "name": "Wok-Seared Baby Bok Choy with Sizzling Garlic, Ginger & Oyster Sauce",
+    "category": "composed_vegetable",
+    "mainIngredients": [
+      "ing_bok_choy",
+      "ing_garlic",
+      "ing_ginger_fresh",
+      "ing_oyster_sauce",
+      "ing_sesame_oil_toasted",
+      "ing_wine_shaoxing"
+    ],
+    "flavorProfile": {
+      "sweetness": 2,
+      "acidity": 0,
+      "saltiness": 2,
+      "bitterness": 0,
+      "umami": 3,
+      "fatRichness": 2,
+      "heatPungency": 0,
+      "herbalCharacter": 1,
+      "floralCharacter": 0,
+      "earthiness": 0,
+      "smokiness": 0,
+      "aromaticIntensity": 2,
+      "perceivedRichness": 2,
+      "textures": [
+        "crisp_stem",
+        "silky_leaf"
+      ],
+      "isEditorialApproximation": true
+    },
+    "cuisines": [
+      "cuisine_chinese_cantonese",
+      "cuisine_chinese_sichuan",
+      "cuisine_vietnamese"
+    ],
+    "complementsRoles": [
+      "roast_duck",
+      "char_siu_pork",
+      "steamed_fish",
+      "braised_beef"
+    ],
+    "culinaryRationale": "Crisp, juicy brassica stems refresh the palate while glossy oyster-garlic glaze connects seamlessly with Cantonese and Sichuan mains.",
+    "provenanceId": "src_culinary_editorial_v2"
+  },
+  {
+    "id": "side_japanese_spinach_goma_ae",
+    "name": "Spinach Goma-ae (Blanched Spinach in Toasted Sesame-Dashi-Shoyu Dressing)",
+    "category": "composed_vegetable",
+    "mainIngredients": [
+      "ing_spinach",
+      "ing_sesame_seed",
+      "ing_soy_sauce_shoyu",
+      "ing_mirin",
+      "ing_kombu_kelp"
+    ],
+    "flavorProfile": {
+      "sweetness": 2,
+      "acidity": 0,
+      "saltiness": 2,
+      "bitterness": 0,
+      "umami": 3,
+      "fatRichness": 2,
+      "heatPungency": 0,
+      "herbalCharacter": 0,
+      "floralCharacter": 0,
+      "earthiness": 3,
+      "smokiness": 0,
+      "aromaticIntensity": 2,
+      "perceivedRichness": 2,
+      "textures": [
+        "tender_leaf",
+        "nutty_coating"
+      ],
+      "isEditorialApproximation": true
+    },
+    "cuisines": [
+      "cuisine_japanese",
+      "cuisine_korean"
+    ],
+    "complementsRoles": [
+      "grilled_fish",
+      "teriyaki",
+      "raw_sashimi",
+      "tempura"
+    ],
+    "culinaryRationale": "Toasted sesame masks spinach's iron bitterness and provides a calm, nutty vegetal counterpoint to broiled salmon, mackerel, or yakitori.",
+    "provenanceId": "src_culinary_editorial_v2"
+  },
+  {
+    "id": "side_sushi_seasoned_rice_pickles",
+    "name": "Steamed Short-Grain Rice with Seasoned Rice Vinegar, Nori & Pickled Daikon/Ginger",
+    "category": "grain_pilaf",
+    "mainIngredients": [
+      "ing_rice_jasmine_short",
+      "ing_vinegar_rice",
+      "ing_kombu_kelp",
+      "ing_nori_seaweed",
+      "ing_ginger_pickled_gari",
+      "ing_radish_pickled_daikon"
+    ],
+    "flavorProfile": {
+      "sweetness": 2,
+      "acidity": 2,
+      "saltiness": 2,
+      "bitterness": 0,
+      "umami": 3,
+      "fatRichness": 0,
+      "heatPungency": 0,
+      "herbalCharacter": 0,
+      "floralCharacter": 0,
+      "earthiness": 0,
+      "smokiness": 0,
+      "aromaticIntensity": 2,
+      "perceivedRichness": 1,
+      "textures": [
+        "plump_grains",
+        "crisp_pickles"
+      ],
+      "isEditorialApproximation": true
+    },
+    "cuisines": [
+      "cuisine_japanese",
+      "cuisine_korean"
+    ],
+    "complementsRoles": [
+      "raw_fish",
+      "grilled_meats",
+      "rich_glaze"
+    ],
+    "culinaryRationale": "Gently soured rice and crisp pickled roots cleanse the palate between bites of fatty fish, unagi, or Korean BBQ.",
+    "provenanceId": "src_culinary_editorial_v2"
+  },
+  {
+    "id": "side_korean_banchan_trio",
+    "name": "Korean Banchan Trio (Aged Napa Kimchi, Seasoned Bean Sprouts & Scallion Salad)",
+    "category": "acidic_salad",
+    "mainIngredients": [
+      "ing_kimchi_napa",
+      "ing_bean_sprout",
+      "ing_scallion",
+      "ing_sesame_oil_toasted",
+      "ing_chili_gochugaru",
+      "ing_vinegar_rice",
+      "ing_garlic"
+    ],
+    "flavorProfile": {
+      "sweetness": 1,
+      "acidity": 4,
+      "saltiness": 3,
+      "bitterness": 0,
+      "umami": 4,
+      "fatRichness": 2,
+      "heatPungency": 3,
+      "herbalCharacter": 0,
+      "floralCharacter": 0,
+      "earthiness": 0,
+      "smokiness": 0,
+      "aromaticIntensity": 4,
+      "perceivedRichness": 1,
+      "textures": [
+        "crunchy",
+        "fermented_crisp"
+      ],
+      "isEditorialApproximation": true
+    },
+    "cuisines": [
+      "cuisine_korean"
+    ],
+    "complementsRoles": [
+      "high_richness",
+      "grilled_beef",
+      "pork_belly"
+    ],
+    "culinaryRationale": "Lactic fermentation, vinegar-dressed scallions, and crisp bean sprouts cut through heavily marbled galbi short ribs and samgyeopsal pork belly.",
+    "provenanceId": "src_culinary_editorial_v2"
+  },
+  {
+    "id": "side_indian_tadka_dal",
+    "name": "Tadka Dal (Yellow/Red Lentils Tempered with Ghee, Cumin, Garlic, Curry Leaf & Cilantro)",
+    "category": "legume_accompaniment",
+    "mainIngredients": [
+      "ing_lentil_red",
+      "ing_ghee",
+      "ing_cumin_seed",
+      "ing_mustard_seed_black",
+      "ing_curry_leaf",
+      "ing_garlic",
+      "ing_ginger_fresh",
+      "ing_turmeric_ground",
+      "ing_tomato_fresh",
+      "ing_cilantro_fresh",
+      "ing_lemon_fresh"
+    ],
+    "flavorProfile": {
+      "sweetness": 2,
+      "acidity": 2,
+      "saltiness": 2,
+      "bitterness": 0,
+      "umami": 3,
+      "fatRichness": 3,
+      "heatPungency": 2,
+      "herbalCharacter": 2,
+      "floralCharacter": 0,
+      "earthiness": 3,
+      "smokiness": 0,
+      "aromaticIntensity": 3,
+      "perceivedRichness": 3,
+      "textures": [
+        "velvety_puree",
+        "popped_spices"
+      ],
+      "isEditorialApproximation": true
+    },
+    "cuisines": [
+      "cuisine_indian_north",
+      "cuisine_indian_south"
+    ],
+    "complementsRoles": [
+      "tandoori_meats",
+      "dry_vegetable_fry",
+      "steamed_rice"
+    ],
+    "culinaryRationale": "Comforting spiced lentil puree topped with sizzling ghee-bloomed aromatics bridges dry roasted meats/vegetables and steamed basmati rice.",
+    "provenanceId": "src_culinary_editorial_v2"
+  },
+  {
+    "id": "side_cucumber_mint_raita",
+    "name": "Cooling Cucumber, Roasted Cumin & Fresh Mint Yogurt Raita / Tzatziki",
+    "category": "acidic_salad",
+    "mainIngredients": [
+      "ing_yogurt_plain",
+      "ing_cucumber",
+      "ing_mint_fresh",
+      "ing_cilantro_fresh",
+      "ing_cumin_seed",
+      "ing_garlic",
+      "ing_lemon_fresh"
+    ],
+    "flavorProfile": {
+      "sweetness": 1,
+      "acidity": 3,
+      "saltiness": 2,
+      "bitterness": 0,
+      "umami": 0,
+      "fatRichness": 3,
+      "heatPungency": 0,
+      "herbalCharacter": 3,
+      "floralCharacter": 0,
+      "earthiness": 1,
+      "smokiness": 0,
+      "aromaticIntensity": 2,
+      "perceivedRichness": 2,
+      "textures": [
+        "creamy",
+        "crisp_cooling"
+      ],
+      "isEditorialApproximation": true
+    },
+    "cuisines": [
+      "cuisine_indian_north",
+      "cuisine_indian_south",
+      "cuisine_middle_eastern"
+    ],
+    "complementsRoles": [
+      "spicy_main",
+      "biryani_pilaf",
+      "grilled_lamb"
+    ],
+    "culinaryRationale": "Casein proteins and lactic fat in yogurt bind capsaicin on the tongue, providing immediate thermal relief alongside fiery curries, biryanis, and spiced kebabs.",
+    "provenanceId": "src_culinary_editorial_v2"
+  },
+  {
+    "id": "side_som_tum_papaya_mango",
+    "name": "Green Papaya & Mango Salad (Som Tum) with Lime, Fish Sauce, Thai Chile & Peanuts",
+    "category": "acidic_salad",
+    "mainIngredients": [
+      "ing_papaya_green",
+      "ing_mango_pineapple",
+      "ing_lime_fresh",
+      "ing_fish_sauce",
+      "ing_sugar_palm_brown",
+      "ing_chile_thai_bird",
+      "ing_garlic",
+      "ing_tomato_fresh",
+      "ing_peanut",
+      "ing_green_bean"
+    ],
+    "flavorProfile": {
+      "sweetness": 3,
+      "acidity": 4,
+      "saltiness": 3,
+      "bitterness": 0,
+      "umami": 3,
+      "fatRichness": 2,
+      "heatPungency": 4,
+      "herbalCharacter": 0,
+      "floralCharacter": 0,
+      "earthiness": 0,
+      "smokiness": 0,
+      "aromaticIntensity": 4,
+      "perceivedRichness": 1,
+      "textures": [
+        "crunchy",
+        "juicy"
+      ],
+      "isEditorialApproximation": true
+    },
+    "cuisines": [
+      "cuisine_thai",
+      "cuisine_vietnamese"
+    ],
+    "complementsRoles": [
+      "grilled_chicken",
+      "pork_neck",
+      "fried_fish",
+      "sticky_rice"
+    ],
+    "culinaryRationale": "Crisp shredded fruit bruised with lime, fish sauce, and roasted peanuts cuts fatty grilled meats (Gai Yang / Kor Moo Yang) and fried fish.",
+    "provenanceId": "src_culinary_editorial_v2"
+  },
+  {
+    "id": "side_tuscan_white_beans_rosemary",
+    "name": "Tuscan Braised Cannellini Beans (Fagioli all'Uccelletto) with Rosemary, Sage, Garlic & Tomato",
+    "category": "legume_accompaniment",
+    "mainIngredients": [
+      "ing_white_bean",
+      "ing_olive_oil_evoo",
+      "ing_garlic",
+      "ing_sage_fresh",
+      "ing_rosemary_fresh",
+      "ing_tomato_fresh",
+      "ing_black_pepper"
+    ],
+    "flavorProfile": {
+      "sweetness": 2,
+      "acidity": 2,
+      "saltiness": 2,
+      "bitterness": 0,
+      "umami": 2,
+      "fatRichness": 3,
+      "heatPungency": 0,
+      "herbalCharacter": 3,
+      "floralCharacter": 0,
+      "earthiness": 2,
+      "smokiness": 0,
+      "aromaticIntensity": 2,
+      "perceivedRichness": 3,
+      "textures": [
+        "creamy",
+        "velvety"
+      ],
+      "isEditorialApproximation": true
+    },
+    "cuisines": [
+      "cuisine_italian",
+      "cuisine_french"
+    ],
+    "complementsRoles": [
+      "grilled_steak",
+      "roast_pork",
+      "sausages",
+      "tuna_fish"
+    ],
+    "culinaryRationale": "Velvety white beans infused with sage, rosemary, and olive oil provide a classic Italian accompaniment to Bistecca alla Fiorentina, roast pork, or oil-poached tuna.",
+    "provenanceId": "src_artusi_pd"
+  }
+]
