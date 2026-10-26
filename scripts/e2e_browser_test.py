@@ -23,8 +23,12 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import WebDriverWait, Select
 from selenium.webdriver.support import expected_conditions as EC
 
-BUILD_SITE_DIR = "/working_dir/c_c6eac74e7224c867/culinary-intelligence-app/build_site"
-HTML_PATH = "/working_dir/c_c6eac74e7224c867/artifacts/file_generation/ttl=63d/output/culinary_intelligence_app.html"
+ROOT_DIR = Path(__file__).resolve().parent.parent
+BUILD_SITE_DIR = os.environ.get("BUILD_SITE_DIR", str(ROOT_DIR / "build_site"))
+HTML_PATH = os.environ.get(
+    "STANDALONE_HTML_PATH",
+    str(Path(BUILD_SITE_DIR) / "culinary_intelligence_app.html")
+)
 
 
 class QuietHandler(SimpleHTTPRequestHandler):

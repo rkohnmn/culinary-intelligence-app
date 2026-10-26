@@ -173,10 +173,19 @@ ${standaloneBootstrap}
 </html>
 `;
 
-const standaloneOutPath = "/working_dir/c_c6eac74e7224c867/artifacts/file_generation/ttl=63d/output/culinary_intelligence_app.html";
-fs.mkdirSync(path.dirname(standaloneOutPath), { recursive: true });
-fs.writeFileSync(standaloneOutPath, standaloneHtml);
+const distStandalonePath = path.join(distDir, "culinary_intelligence_app.html");
+fs.writeFileSync(distStandalonePath, standaloneHtml);
+
+const optionalCanvasPath = process.env.STANDALONE_OUT_PATH || "/working_dir/c_c6eac74e7224c867/artifacts/file_generation/ttl=63d/output/culinary_intelligence_app.html";
+let extraCanvasCreated = false;
+try {
+  fs.mkdirSync(path.dirname(optionalCanvasPath), { recursive: true });
+  fs.writeFileSync(optionalCanvasPath, standaloneHtml);
+  extraCanvasCreated = true;
+} catch {
+  // Gracefully ignored in environments where the container artifact path is not writable
+}
 
 console.log(`Production build complete:
   - GitHub Pages static bundle: ${distDir} (index.html + ./assets/styles.css + ./assets/app.bundle.js + ./assets/*.jpg + ./data/*.json)
-  - Standalone Canvas Web App:  ${standaloneOutPath}`);
+  - Standalone Canvas Web App:  ${distStandalonePath}${extraCanvasCreated ? `\n  - Container Artifact Copy:    ${optionalCanvasPath}` : ""}`);
